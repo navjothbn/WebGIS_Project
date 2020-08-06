@@ -1,0 +1,272 @@
+<html>
+    <head>
+        <title>
+            Attendance Form
+        </title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+
+       
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <style>
+
+            body{
+                background-image: url("images/attend.jpg");
+            }
+
+            input{
+
+                margin-left: 15px;
+                border-radius: 7px;
+                border-bottom: 2%;
+                width: 40%;
+                text-align: center;
+            }
+
+
+            div{
+                height:auto;
+                width:60%;
+                background-color: rgba(33, 29, 238, 0.288);
+                opacity: 0.5;
+                border-radius: 25px;
+                padding-left: 2%;
+                padding-right: 2%;
+
+            }
+
+            button{
+                width: 30%;
+                border-radius: 12px;
+                height: 6%;
+            }
+
+        </style>
+
+        <script src="alertifyjs/alertify.js" type="text/javascript"></script>
+
+	<link href="alertifyjs/css/alertify.css" rel="stylesheet">
+	<link href="alertifyjs/css/themes/default.css" rel="stylesheet">
+
+
+       
+	<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+
+    </head>
+
+    <body>
+
+
+            <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+
+            <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-storage.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+
+
+        
+            
+
+            
+
+            <script>
+                   
+            
+            
+                        const firebaseConfig = {
+                            apiKey: "AIzaSyDBBWGfaoqjZI9t5F1PR4xoclojFJsiqp8",
+                            authDomain: "webgis-bb33b.firebaseapp.com",
+                            databaseURL: "https://webgis-bb33b.firebaseio.com",
+                            projectId: "webgis-bb33b",
+                            storageBucket: "webgis-bb33b.appspot.com",
+                            messagingSenderId: "326058066601",
+                             appId: "1:326058066601:web:6f8dd78b829519eee39fb8",
+                             measurementId: "G-RREE79W18P"
+                            };
+                            firebase.initializeApp(firebaseConfig);
+
+
+                            
+                            
+                            
+                            
+                            function writeData(){
+
+
+                                firebase.database().ref().child("geo").set({
+                                    presents:parseInt(document.getElementById("1").value),
+                                   absents:parseInt(document.getElementById("2").value)
+                               });
+                           
+                               firebase.database().ref().child("architecture").set({
+                                   presents:parseInt(document.getElementById("3").value),
+                                   absents:parseInt(document.getElementById("4").value)
+                               });
+                           
+                               firebase.database().ref().child("civil").set({
+                                   presents:parseInt(document.getElementById("5").value),
+                                   absents:parseInt(document.getElementById("6").value)
+                               });
+                           
+                               firebase.database().ref().child("mech").set({
+                                   presents:parseInt(document.getElementById("7").value),
+                                   absents:parseInt(document.getElementById("8").value)
+                               });
+                           
+                               firebase.database().ref().child("eee").set({
+                                   presents:parseInt(document.getElementById("9").value),
+                                   absents:parseInt(document.getElementById("10").value)
+                               });
+                           
+                               firebase.database().ref().child("cse").set({
+                                   presents:parseInt(document.getElementById("11").value),
+                                   absents:parseInt(document.getElementById("12").value)
+                               });
+                           
+                               firebase.database().ref().child("metallurgy").set({
+                                   presents:parseInt(document.getElementById("13").value),
+                                   absents:parseInt(document.getElementById("14").value)
+                               });
+                           
+                               firebase.database().ref().child("ece").set({
+                                   presents:parseInt(document.getElementById("15").value),
+                                   absents:parseInt(document.getElementById("16").value)
+                               });
+                           
+                           
+                           
+                               firebase.database().ref().child("marine").set({
+                                   presents:parseInt(document.getElementById("17").value),
+                                   absents:parseInt(document.getElementById("18").value),
+                                  
+                               });
+
+
+                               firebase.database().ref().child("chemical").set({
+                                presents:parseInt(document.getElementById("19").value),
+                                absents:parseInt(document.getElementById("20").value),
+                               
+                            });
+                            firebase.database().ref().child("instrumentation").set({
+                                presents:parseInt(document.getElementById("21").value),
+                                absents:parseInt(document.getElementById("22").value),
+                               
+                            });
+
+                          
+
+
+                            }    
+            
+                   
+                </script>
+
+                <script>
+
+                        function myfunction(){
+                            alertify.prompt( 'Admin Panal', 'Enter Your Access Code', ''
+                               , function(evt, value) { 
+                                alertify.alert-success('Successfully Saved')
+                                 
+                                 }
+                               , function() { alertify.error('Cancel') });
+                
+                        }
+
+                    </script>
+
+               <center> <div>
+                <h1><center>Attendance Form</center></h1>
+                <center>
+                 <label >Geo-Engineering Department</label>  
+                 <br>
+                <input type="number" placeholder="present" id="1">
+                <input type="number" placeholder="absent" id="2">
+                <br>
+               <br>
+                <label >Architecture Department</label> 
+                <br>
+                <input type="number" placeholder="present" id="3">
+                <input type="number" placeholder="absent" id="4">
+
+                <br>
+                <br>
+
+
+                <label >Civil Department</label>
+                <br>
+                <input type="number" placeholder="present" id="5">
+                <input type="number" placeholder="absent" id="6">
+                <br>
+                <br>
+                <label >Mechanical Department</label>  
+                 <br> 
+                <input type="number" placeholder="present" id="7">
+                <input type="number" placeholder="absent" id="8">
+                <br>
+                <br>
+               
+                <label >EEE Department</label> 
+                <br>
+                <input type="number" placeholder="present" id="9">
+                <input type="number" placeholder="absent" id="10">
+
+                <br>
+                <br>
+
+
+                <label >CSE Department</label>
+                <br>
+                <input type="number" placeholder="present" id="11">
+                <input type="number" placeholder="absent" id="12">
+                <br>
+                <br>
+                <label >Metallurgy Department</label>
+                <br>
+                <input type="number" placeholder="present" id="17">
+                <input type="number" placeholder="absent" id="18">
+                <br>
+                <br>
+                <label >ECE Department</label>  
+                 <br> 
+                <input type="number" placeholder="present" id="13">
+                <input type="number" placeholder="absent" id="14">
+                <br>
+                <br>
+               
+                <label >Marine Department</label> 
+                <br>
+                <input type="number" placeholder="present" id="15">
+                <input type="number" placeholder="absent" id="16">
+
+                <br>
+                <br>
+                
+                <label >Chemical Department</label>
+                <br>
+                <input type="number" placeholder="present" id="19">
+                <input type="number" placeholder="absent" id="20">
+                <br>
+                <br>
+                <label >Instrumentation Department</label>
+                <br>
+                <input type="number" placeholder="present" id="21">
+                <input type="number" placeholder="absent" id="22">
+               
+                
+                <br>
+                <br>
+
+                <button onclick="writeData()">Submit</button></center>
+
+            </div></center>
+
+    </body>
+</html>

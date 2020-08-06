@@ -1,0 +1,1364 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>AUSIS</title>
+		<link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+
+
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+
+
+
+
+
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+
+
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=vQA98UAN"></script>
+
+
+
+
+
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/animate.css">
+  
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="alertifyjs/alertify.js" type="text/javascript"></script>
+
+  <link href="alertifyjs/css/alertify.css" rel="stylesheet">
+  <link href="alertifyjs/css/themes/default.css" rel="stylesheet">
+
+
+
+
+
+
+  <style>
+
+
+		.marker {
+			background-image: url('canteen.png');
+			background-size: cover;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			cursor: pointer;
+		  }
+		
+		
+		
+		  .marker1 {
+			background-image: url('dustbin.png');
+			background-size: cover;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			cursor: pointer;
+		  }
+		
+		
+		  .marker2 {
+			background-image: url('hostel.png');
+			background-size: cover;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			cursor: pointer;
+		  }
+		
+		  .marker3 {
+			background-image: url('images/electric_pole.png');
+			background-size: cover;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			cursor: pointer;
+		  }
+
+		  .marker11 {
+			background-image: url('images/building_icon.png');
+			background-size: cover;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			cursor: pointer;
+		  }
+		
+		
+		
+		  .mapboxgl-popup {
+			max-width: auto;
+	  
+			line-height: 20px;
+			
+			
+			}
+	  
+	  
+	  
+			.mapboxgl-popup-close-button {
+			  display:none;
+			  }
+			  .mapboxgl-popup-content {
+			  font:300 10px/18px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+			  padding:0;
+			  width:auto;
+			  }
+		
+			  
+			  .mapboxgl-popup-content-wrapper {
+			  padding:1%;
+			  }
+			  .mapboxgl-popup-content h3 {
+			  background:#007bff;
+			  color:#fff;
+			  margin:0;
+			  display:block;
+			  padding:10px;
+			  border-radius:3px 3px 0 0;
+			  font-weight:500;
+			  font-size:20px;
+			  margin-top:-15px;
+			  }
+		  
+			  .mapboxgl-popup-content h4 {
+			  margin:0;
+			  display:block;
+			  padding: 10px 10px 10px 10px;
+			  font-weight:200;
+			  font-size:15px;
+			  }
+		  
+			  .mapboxgl-popup-content div {
+			  padding:10px;
+			  }
+		  
+			  .mapboxgl-container .leaflet-marker-icon {
+			  cursor:pointer;
+			  }
+		  
+			  .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+			  margin-top: 15px;
+			  }
+		  
+			  .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
+			  border-bottom-color: #91c949;
+			  }
+		
+	
+	  
+	
+	  
+	  .content {
+		display: table-cell;
+		text-align: center;
+		
+	  }
+	  
+	  h1 {
+		font-family: 'Lato', sans-serif;
+		font-size: 20px;
+		font-weight: 300;
+		color: rgb(245, 241, 17);
+	  }
+	  
+	  .icon-container {
+		margin-top: 10px;
+		width: 100%;
+		height: auto;
+	  }
+	  
+	  .icon {
+		cursor: pointer;
+		position: relative;
+		display: inline-block;
+		width: 60px;
+		height: 60px;
+		margin-left: 12px;
+		margin-right: 12px;
+		border-radius: 30px;
+		overflow: hidden;
+		text-align: center;
+		vertical-align: middle;
+	  }
+	  .icon::before, .icon::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		-webkit-transition: all 0.25s ease;
+		transition: all 0.25s ease;
+		border-radius: 30px;
+	  }
+	  .icon i {
+		position: relative;
+		color: #FFFFFF;
+		font-size: 30px;
+		margin-top: 15px;
+		-webkit-transition: all 0.25s ease;
+		transition: all 0.25s ease;
+	  }
+	  
+	  .icon-fill::before {
+		-webkit-transition-duration: 0.5s;
+				transition-duration: 0.5s;
+		box-shadow: inset 0 0 0 1px #16A085;
+	  }
+	  .icon-fill:hover::before {
+		box-shadow: inset 0 0 0 60px #16A085;
+	  }
+	  
+	  .icon-enter::after {
+		box-shadow: inset 0 0 0 1px #EB9532;
+	  }
+	  .icon-enter::before {
+		border-radius: 0;
+		margin-left: -100%;
+		box-shadow: inset 0 0 0 60px #EB9532;
+	  }
+	  .icon-enter:hover::before {
+		margin-left: 0;
+	  }
+	  
+	  .icon-expand::after {
+		box-shadow: inset 0 0 0 1px #C82647;
+	  }
+	  .icon-expand::before {
+		background: #C82647;
+		box-shadow: inset 0 0 0 60px #2d2c3e;
+	  }
+	  .icon-expand:hover::before {
+		box-shadow: inset 0 0 0 1px #2d2c3e;
+	  }
+	  
+	  .icon-collapse::before {
+		border-radius: 0;
+	  }
+	  .icon-collapse:hover::before {
+		box-shadow: inset 0 30px 0 0 #8CC63F, inset 0 -30px 0 0 #8CC63F;
+	  }
+	  .icon-collapse::after {
+		box-shadow: inset 0 0 0 1px #8CC63F;
+	  }
+	  
+	  .icon-rotate {
+		box-shadow: inset 0 0 0 1px #7E3661;
+	  }
+	  .icon-rotate::after, .icon-rotate::before {
+		border: 0px solid transparent;
+	  }
+	  .icon-rotate:hover::before {
+		-webkit-transition: border-top-width 0.3s ease, border-top-color 0.3s ease;
+		transition: border-top-width 0.3s ease, border-top-color 0.3s ease;
+		border-width: 60px;
+		border-top-color: #7E3661;
+	  }
+	  .icon-rotate:hover::after {
+		-webkit-transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
+		transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
+		border-width: 60px;
+		border-left-color: #7E3661;
+	  }
+	  .icon-rotate:hover {
+		-webkit-transition: background 0.001s ease 0.3s;
+		transition: background 0.001s ease 0.3s;
+		background: #7E3661;
+	  }
+	  .icon-rotate i {
+		z-index: 1;
+	  }
+	  
+  </style>
+
+
+  <script>
+		"use strict";
+		
+		!function() {
+		  var t = window.driftt = window.drift = window.driftt || [];
+		  if (!t.init) {
+			if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+			t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+			t.factory = function(e) {
+			  return function() {
+				var n = Array.prototype.slice.call(arguments);
+				return n.unshift(e), t.push(n), t;
+			  };
+			}, t.methods.forEach(function(e) {
+			  t[e] = t.factory(e);
+			}), t.load = function(t) {
+			  var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+			  o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+			  var i = document.getElementsByTagName("script")[0];
+			  i.parentNode.insertBefore(o, i);
+			};
+		  }
+		}();
+		drift.SNIPPET_VERSION = '0.3.1';
+		drift.load('5ti6ahfc4hry');
+		</script>
+  
+
+
+	</head>
+	<body class="subpage">
+		
+		<!-- Header -->
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+			<div class="container1">
+					
+					<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Smiley face" height="32" width="32">  <span> AUSIS</span></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span> Menu
+			  </button>
+			  <div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+						<li class="nav-item"><a href="https://www.andhrauniversity.edu.in/about/au-profile" class="nav-link">AU Profile</a></li>
+						<li class="nav-item"><a href="Department_locations.html" class="nav-link">Department Locations</a></li>
+						<li class="nav-item"><a href="getdirections.html" class="nav-link">Get Directions</a></li>
+						<li class="nav-item"><a href="Optimized_with_Directions.html" class="nav-link">Optimized Routes</a></li>
+						<li class="nav-item"><a href="getnearbylocations.html" class="nav-link">NearBy Places</a></li>
+						
+						<li class="nav-item"><a href="attendance_map.html" class="nav-link">Attendance Map</a></li>
+						<li class="nav-item"><a href="https://forms.gle/7nCk3rDwbfpa4Bgt5" class="nav-link">Swachh AU</a></li>
+						<li class="nav-item"><a href="buildingrecognition.html" class="nav-link">Building Recognition</a></li>
+		
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+	
+
+		<!-- One -->
+			<div id="One" class="wrapper style3">
+				<div class="inner">
+					<div class="align-center">
+						
+						
+
+						<div class="container" >
+							<div class="animated zoomInDown"  class="content">
+							  <h1 class="animated zoomInDown" id="showtext">Choose Your Location</h1>
+							  <div class="icon-container">
+								<div id="one" value="canteen" class="icon icon-fill" onclick="myfunction1()" style="color: transparent;"><i class="fa fa-cutlery" aria-hidden="true"></i>Canteens</div>
+								<div id="two" value="water" class="icon icon-enter"  onclick="myfunction2()" style="color: transparent;"><i class="fa fa-tint" aria-hidden="true"></i>Drinking water</div>
+								<div id="three" value="bore" class="icon icon-enter" onclick="myfunction3()" style="color: transparent;"><i class="fa fa-circle-o" aria-hidden="true"></i>Borewells</div>
+								<div id="four" value="building" class="icon icon-collapse" onclick="myfunction4()" style="color: transparent;"><i class="fa fa-building" aria-hidden="true"></i>Adminstrative Buildings</div>
+								<div id="five" value="road" class="icon icon-rotate" onclick="myfunction5()" style="color: transparent;"><i class="fa fa-road" aria-hidden="true"></i>Road Network</div>
+								
+								<div id="six" class="icon icon-rotate" onclick="myfunction6()" style="color: transparent;"><i class="fa fa-trash" aria-hidden="true"></i>Dustbins</div>
+								
+								<div id="seven" class="icon icon-rotate" onclick="myfunction7()" style="color: transparent;"><i class="fa fa-bed" aria-hidden="true"></i>Hostels</div>
+							
+								<div  id="eight" class="icon icon-rotate" onclick="myfunction8()" style="color: transparent;"><i class="fa fa-book" aria-hidden="true"></i>Libraries</div>
+								<div  id="nine" class="icon icon-rotate" onclick="myfunction9()" style="color: transparent;"><i class="fa fa-shower" aria-hidden="true"></i>Electric Poles</div>
+
+							  </div>
+							</div>
+						  </div>
+				
+					</div>
+				</div>
+			</div>
+
+			<script>
+				function myfunction1(){
+					var obj1=document.getElementById("one").textContent;
+					
+					 if(obj1=="Canteens"){
+
+						
+
+						document.getElementById("showtext").innerHTML=obj1;
+
+						
+						responsiveVoice.speak(document.getElementById("showtext").textContent);
+
+
+						myCanteens();
+
+					}
+				}
+					function myfunction2(){
+						var obj2=document.getElementById("two").textContent;
+					
+
+					if(obj2=="Drinking water"){
+
+						document.getElementById("showtext").innerHTML=obj2;
+						responsiveVoice.speak(document.getElementById("showtext").textContent);
+
+						
+					}
+					}
+
+					function myfunction3(){
+						var obj3=document.getElementById("three").textContent;
+						
+						 if(obj3=="Borewells"){
+	
+	
+							document.getElementById("showtext").innerHTML=obj3;
+							responsiveVoice.speak(document.getElementById("showtext").textContent);
+
+	
+							
+	
+	
+						}
+					}
+
+					function myfunction4(){
+						var obj4=document.getElementById("four").textContent;
+						
+						 if(obj4=="Adminstrative Buildings"){
+	
+	
+							document.getElementById("showtext").innerHTML=obj4;
+	
+							
+	
+							responsiveVoice.speak(document.getElementById("showtext").textContent);
+							adminstrative_buildings1()
+						}
+					}
+
+					function myfunction5(){
+						var obj5=document.getElementById("five").textContent;
+						
+						 if(obj5=="Road Network"){
+	
+	
+							document.getElementById("showtext").innerHTML=obj5;
+	
+							
+							responsiveVoice.speak(document.getElementById("showtext").textContent);
+							myroadnetwork();
+
+	
+						}
+					}
+					function myfunction6(){
+						var obj6=document.getElementById("six").textContent;
+						
+						 if(obj6=="Dustbins"){
+	
+	
+							document.getElementById("showtext").innerHTML=obj6;
+
+	
+							responsiveVoice.speak(document.getElementById("showtext").textContent);
+
+							myDustbins();
+
+						}
+					}
+
+					function myfunction7(){
+						var obj7=document.getElementById("seven").textContent;
+						
+						 if(obj7=="Hostels"){
+	
+	
+							document.getElementById("showtext").innerHTML=obj7;
+	
+							responsiveVoice.speak(document.getElementById("showtext").textContent);
+							myHostels();
+
+	
+	
+						}
+					}
+					function myfunction8(){
+						var obj8=document.getElementById("eight").textContent;
+						
+						 if(obj8=="Libraries"){
+	
+	
+							document.getElementById("showtext").innerHTML=obj8;
+	
+							responsiveVoice.speak(document.getElementById("showtext").textContent);
+							
+
+	
+	
+						}
+					}
+
+					function myfunction9(){
+						var obj9=document.getElementById("nine").textContent;
+						
+						 if(obj9=="Electric Poles"){
+	
+	
+							document.getElementById("showtext").innerHTML=obj9;
+	
+							responsiveVoice.speak(document.getElementById("showtext").textContent);
+							electricpoles();
+							
+
+	
+	
+						}
+					}
+
+
+				
+			</script>
+			
+		<!-- Main -->
+
+		<div  class="wrapper style2" >
+		<div id="map" class="inner">
+			
+			</div>
+		</div>
+	</div>
+			
+
+			<script>
+
+
+
+					var bounds = [
+					[83.320431, 17.719369], // Southwest coordinates, 
+
+
+					[83.324803, 17.738207] // Northeast coordinates, 
+
+
+					];
+					mapboxgl.accessToken = 'pk.eyJ1IjoibmF2am90aGJuIiwiYSI6ImNrNTJhNmNpZTE1bDQzbnFyMWMxZXRkazYifQ.rnHOJ9lVdiKfrVYlZVzqMg';
+					 /** 
+					  * Add the map to the page
+					 */
+					 var map = new mapboxgl.Map({
+					   container: 'map',
+					   style: 'mapbox://styles/navjothbn/ck8hg1f4f02kz1ioh92ffvpeq',
+					   center: [83.319903, 17.728981],
+					   pitch:80,
+					   bearing:-70, 
+					   zoom: 15,
+					   scrollZoom: true,
+
+					  // maxBounds: bounds 
+					 });
+
+
+
+
+					 function rotateCamera(timestamp) {
+						// clamp the rotation between 0 -360 degrees
+						// Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+						map.rotateTo((timestamp / 100) % 360, { duration: 0 });
+						// Request the next frame of the animation.
+						requestAnimationFrame(rotateCamera);
+						}
+
+					 var road_network = {
+						"type": "FeatureCollection",
+						"features": [
+					  
+						{ "type": "Feature", "properties": { "highway": "tertiary", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.329204, 17.7299639 ], [ 83.3292585, 17.7299118 ], [ 83.3293198, 17.7298532 ], [ 83.3304398, 17.729426 ], [ 83.3315671, 17.7289567 ], [ 83.3319762, 17.72879 ], [ 83.3329943, 17.7282295 ], [ 83.3333819, 17.7280417 ], [ 83.3345725, 17.727669 ], [ 83.3348751, 17.7275188 ], [ 83.3352859, 17.727385 ], [ 83.3359536, 17.7271353 ], [ 83.3364409, 17.7269473 ], [ 83.3369243, 17.7267807 ], [ 83.3370128, 17.7267395 ], [ 83.3373711, 17.7265677 ], [ 83.3377349, 17.7263839 ], [ 83.3379078, 17.7262947 ], [ 83.338306, 17.7260489 ], [ 83.3388424, 17.7258611 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3299872, 17.7255193 ], [ 83.3300315, 17.725472 ], [ 83.3300845, 17.7253915 ], [ 83.3301549, 17.7253008 ], [ 83.3302018, 17.7252357 ], [ 83.3303668, 17.7251271 ], [ 83.3307812, 17.724809 ], [ 83.3309555, 17.7246417 ], [ 83.3310561, 17.724565 ], [ 83.3312868, 17.7243734 ], [ 83.3315161, 17.7242495 ], [ 83.3317585, 17.7241237 ], [ 83.3317843, 17.7241103 ], [ 83.3318648, 17.7240809 ], [ 83.331964, 17.7240157 ], [ 83.3320351, 17.7239838 ], [ 83.3320954, 17.7239672 ], [ 83.3324844, 17.7237998 ], [ 83.332644, 17.7237366 ], [ 83.3327395, 17.7236974 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3320954, 17.7239672 ], [ 83.3319506, 17.7236504 ], [ 83.3318192, 17.7233138 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": null, "AND_import": "2", "AND_a_nosr": "15062474", "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3338188, 17.7223244 ], [ 83.3336391, 17.7223755 ], [ 83.3335479, 17.7224183 ], [ 83.333462, 17.7224733 ], [ 83.3333246, 17.7225757 ], [ 83.3333162, 17.7225843 ], [ 83.3332853, 17.7226083 ], [ 83.333235, 17.7226632 ], [ 83.3330879, 17.7228226 ], [ 83.3328116, 17.7230704 ], [ 83.3327191, 17.7231349 ], [ 83.3325286, 17.7232033 ], [ 83.3324254, 17.7232384 ], [ 83.3322376, 17.7232768 ], [ 83.3321384, 17.7232921 ], [ 83.3319774, 17.7233023 ], [ 83.3318192, 17.7233138 ], [ 83.3317387, 17.72331 ], [ 83.3315349, 17.7232972 ], [ 83.3312854, 17.7232154 ], [ 83.3311057, 17.7231426 ], [ 83.3308804, 17.7230136 ], [ 83.3306792, 17.7229217 ], [ 83.3305263, 17.7228603 ], [ 83.3302943, 17.7227952 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3302943, 17.7227952 ], [ 83.3303462, 17.7224242 ], [ 83.3303914, 17.7222759 ], [ 83.330425, 17.7221264 ], [ 83.3304777, 17.7219258 ], [ 83.3305442, 17.7217302 ], [ 83.3306047, 17.721567 ], [ 83.3306549, 17.7214213 ], [ 83.3312694, 17.7214045 ], [ 83.3316797, 17.7214083 ], [ 83.3319931, 17.721361 ], [ 83.332337, 17.7212918 ], [ 83.3324861, 17.7212263 ], [ 83.3326122, 17.721088 ], [ 83.3327628, 17.7208475 ], [ 83.3327964, 17.7208104 ], [ 83.3329738, 17.7205212 ], [ 83.3331834, 17.7202767 ], [ 83.3332275, 17.7202207 ], [ 83.3333754, 17.7200052 ], [ 83.3334521, 17.7199027 ], [ 83.3335526, 17.7197662 ], [ 83.3337127, 17.719555 ], [ 83.3338378, 17.7194158 ], [ 83.3338703, 17.7193761 ], [ 83.3339194, 17.7193122 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": "asphalt", "horse": null, "maxspeed": "30", "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3269079, 17.7309252 ], [ 83.3268651, 17.7308749 ], [ 83.3268728, 17.7307888 ], [ 83.3268754, 17.7307563 ], [ 83.3268903, 17.7307076 ], [ 83.3269051, 17.7306589 ], [ 83.3269768, 17.7304337 ], [ 83.3270355, 17.730294 ], [ 83.3270835, 17.7302149 ], [ 83.3271445, 17.7301169 ], [ 83.3272567, 17.7299376 ], [ 83.3273144, 17.7298468 ], [ 83.3273686, 17.7297485 ], [ 83.3274032, 17.7296967 ], [ 83.3274626, 17.7295742 ], [ 83.3274767, 17.7295423 ], [ 83.3275294, 17.7294234 ], [ 83.3275764, 17.7293197 ], [ 83.3276233, 17.7291784 ], [ 83.3276428, 17.7290586 ], [ 83.3276646, 17.728996 ], [ 83.3276886, 17.7289568 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "road", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": "yes", "foot": "yes", "name": null, "surface": null, "horse": "permissive", "maxspeed": null, "junction": null, "motor_vehi": "yes" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3269768, 17.7304337 ], [ 83.3270466, 17.7304517 ], [ 83.3271203, 17.7304581 ], [ 83.3272075, 17.7304109 ], [ 83.327241, 17.7303943 ], [ 83.3272558, 17.7303189 ], [ 83.3272303, 17.7302474 ], [ 83.327186, 17.7301797 ], [ 83.3271445, 17.7301169 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3274767, 17.7295423 ], [ 83.3272986, 17.7294601 ], [ 83.327108, 17.7293318 ], [ 83.3268211, 17.7291336 ], [ 83.3265868, 17.7289687 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3292108, 17.7276627 ], [ 83.3295137, 17.7280953 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3299699, 17.7271372 ], [ 83.3302334, 17.7275301 ], [ 83.3298774, 17.727841 ], [ 83.3295137, 17.7280953 ], [ 83.3290189, 17.7284413 ], [ 83.3285842, 17.7287726 ], [ 83.3282172, 17.7292227 ], [ 83.3281808, 17.7292673 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3287287, 17.7279727 ], [ 83.3285877, 17.7277154 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "tertiary", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3276886, 17.7289568 ], [ 83.327717, 17.7289152 ], [ 83.3279768, 17.7285348 ], [ 83.3280036, 17.7284992 ], [ 83.3282373, 17.7282819 ], [ 83.3282861, 17.7281984 ], [ 83.3285857, 17.7280647 ], [ 83.3287287, 17.7279727 ], [ 83.3290275, 17.7277806 ], [ 83.3292108, 17.7276627 ], [ 83.3293262, 17.7275897 ], [ 83.3294772, 17.7274946 ], [ 83.3296759, 17.7272962 ], [ 83.3297546, 17.7272837 ], [ 83.3299152, 17.7271639 ], [ 83.3299699, 17.7271372 ], [ 83.3300903, 17.7270674 ], [ 83.3301966, 17.7270064 ], [ 83.3304787, 17.7268089 ], [ 83.3307411, 17.7266301 ], [ 83.3308146, 17.7265822 ], [ 83.3309118, 17.7265225 ], [ 83.331255, 17.7263074 ], [ 83.3313051, 17.726276 ], [ 83.331463, 17.7261986 ], [ 83.3316694, 17.7260697 ], [ 83.3321874, 17.7258138 ], [ 83.3325698, 17.7256216 ], [ 83.3326207, 17.7255891 ], [ 83.3327891, 17.7254977 ], [ 83.3328476, 17.7254604 ], [ 83.3330713, 17.7253659 ], [ 83.3332487, 17.7252643 ], [ 83.333338, 17.7252094 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3298373, 17.7266248 ], [ 83.3300903, 17.7270674 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3296759, 17.7272962 ], [ 83.3294925, 17.7271851 ], [ 83.3279048, 17.7277134 ], [ 83.327983, 17.7278538 ], [ 83.3280742, 17.7279663 ], [ 83.3282861, 17.7281984 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3271494, 17.7286209 ], [ 83.3271803, 17.7285665 ], [ 83.3274989, 17.7280043 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3270741, 17.7275134 ], [ 83.3265891, 17.7281914 ], [ 83.3265514, 17.7282441 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3273783, 17.727094 ], [ 83.3278708, 17.7277893 ], [ 83.3279048, 17.7277134 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": "Hostels Road", "surface": "asphalt", "horse": null, "maxspeed": "40", "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3235268, 17.7299498 ], [ 83.3237368, 17.7301942 ], [ 83.3239952, 17.7305515 ], [ 83.3242165, 17.7308428 ], [ 83.3245763, 17.7314185 ], [ 83.324606, 17.7314654 ], [ 83.3246503, 17.7314795 ], [ 83.3247213, 17.7315025 ], [ 83.3247991, 17.7315318 ], [ 83.3248514, 17.7315587 ], [ 83.3249185, 17.7316072 ], [ 83.3249654, 17.7316596 ], [ 83.3249815, 17.7316979 ], [ 83.3249762, 17.7317554 ], [ 83.3249735, 17.7317963 ], [ 83.3249641, 17.7318231 ], [ 83.324948, 17.7318448 ], [ 83.3249212, 17.7318652 ], [ 83.3248823, 17.7318742 ], [ 83.3248407, 17.7318538 ], [ 83.3247938, 17.7317912 ], [ 83.324685, 17.7316095 ], [ 83.3246315, 17.7315318 ], [ 83.324606, 17.7314654 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "road", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": "sand", "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3236441, 17.7298066 ], [ 83.3238532, 17.7299912 ], [ 83.3239839, 17.7301191 ], [ 83.32404, 17.7301625 ], [ 83.3241042, 17.7302014 ], [ 83.3241509, 17.730217 ], [ 83.3241777, 17.7302236 ], [ 83.3242198, 17.7302248 ], [ 83.3242571, 17.730237 ], [ 83.3242898, 17.730247 ], [ 83.3243634, 17.730277 ], [ 83.3244322, 17.7303071 ], [ 83.3244789, 17.7303371 ], [ 83.324507, 17.7303571 ], [ 83.324535, 17.7303882 ], [ 83.3245572, 17.7304205 ], [ 83.32457, 17.7304438 ], [ 83.324584, 17.7304638 ], [ 83.3245899, 17.730495 ], [ 83.324605, 17.730515 ], [ 83.3246225, 17.7305428 ], [ 83.3246739, 17.7305962 ], [ 83.3246938, 17.7306206 ], [ 83.3247206, 17.730654 ], [ 83.3247405, 17.7306874 ], [ 83.3247475, 17.7307385 ], [ 83.3247524, 17.7307608 ], [ 83.324758, 17.7307859 ], [ 83.324765, 17.7308175 ], [ 83.3247879, 17.7308928 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3197074, 17.7345554 ], [ 83.3198498, 17.7343954 ], [ 83.3201181, 17.7341233 ], [ 83.3204447, 17.7337271 ], [ 83.3213991, 17.7325783 ], [ 83.3216309, 17.7322877 ], [ 83.3221634, 17.7316205 ], [ 83.3232082, 17.7303388 ], [ 83.3235268, 17.7299498 ], [ 83.3236441, 17.7298066 ], [ 83.323814, 17.7295992 ], [ 83.3239238, 17.729483 ], [ 83.324062, 17.7293203 ], [ 83.3241555, 17.729208 ], [ 83.3242734, 17.7290686 ], [ 83.3243832, 17.7289641 ], [ 83.3244929, 17.7288866 ], [ 83.3246962, 17.7287782 ], [ 83.3248548, 17.728693 ], [ 83.3249645, 17.7286078 ], [ 83.3250487, 17.7285291 ], [ 83.32518, 17.7283794 ], [ 83.3254199, 17.7280773 ], [ 83.3256028, 17.7278488 ], [ 83.3257104, 17.7277088 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3216309, 17.7322877 ], [ 83.3215747, 17.7322058 ], [ 83.3212739, 17.7318064 ], [ 83.3206811, 17.730993 ], [ 83.3199943, 17.7300857 ], [ 83.319983, 17.729961 ], [ 83.3198783, 17.7299325 ], [ 83.3196967, 17.7296926 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3250487, 17.7285291 ], [ 83.3248914, 17.7285013 ], [ 83.3247816, 17.7284858 ], [ 83.3247023, 17.7284994 ], [ 83.3245397, 17.7285497 ], [ 83.3244563, 17.7286136 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3189567, 17.7240605 ], [ 83.3191136, 17.7241601 ], [ 83.319489, 17.7243836 ], [ 83.3197975, 17.7245612 ], [ 83.3200349, 17.7246826 ], [ 83.3204211, 17.7248793 ], [ 83.320798, 17.7250505 ], [ 83.3210796, 17.725159 ], [ 83.3212821, 17.7252421 ], [ 83.3215114, 17.7253276 ], [ 83.3220009, 17.7255487 ], [ 83.3227547, 17.7259537 ], [ 83.324128, 17.726738 ], [ 83.3243935, 17.7268913 ], [ 83.3252008, 17.7273818 ], [ 83.3257104, 17.7277088 ], [ 83.3265514, 17.7282441 ], [ 83.3268235, 17.7284203 ], [ 83.3271494, 17.7286209 ], [ 83.3276886, 17.7289568 ], [ 83.3281808, 17.7292673 ], [ 83.3287574, 17.7296492 ], [ 83.329204, 17.7299639 ], [ 83.3293975, 17.7300968 ], [ 83.3296192, 17.7302462 ], [ 83.3300547, 17.7305342 ], [ 83.3303775, 17.7307413 ], [ 83.330745, 17.7309701 ], [ 83.3320069, 17.731753 ], [ 83.3320706, 17.731792 ], [ 83.3321008, 17.7318092 ], [ 83.3321521, 17.7318282 ], [ 83.3322121, 17.7318399 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3322389, 17.7317735 ], [ 83.3321344, 17.7317427 ], [ 83.332052, 17.731703 ], [ 83.331158, 17.7311374 ], [ 83.3303654, 17.7306571 ], [ 83.3297539, 17.7302649 ], [ 83.3292585, 17.7299118 ], [ 83.329078, 17.729791 ], [ 83.3287896, 17.729593 ], [ 83.3282172, 17.7292227 ], [ 83.327717, 17.7289152 ], [ 83.3271803, 17.7285665 ], [ 83.3265891, 17.7281914 ], [ 83.3260564, 17.7278416 ], [ 83.3254248, 17.7274469 ], [ 83.3249782, 17.7271659 ], [ 83.3241692, 17.7266806 ], [ 83.3236733, 17.726393 ], [ 83.3232053, 17.7261312 ], [ 83.3227681, 17.7258923 ], [ 83.322292, 17.7256202 ], [ 83.3221136, 17.7255218 ], [ 83.3218977, 17.7254158 ], [ 83.3216482, 17.7253047 ], [ 83.3212969, 17.7251654 ], [ 83.3210944, 17.7250926 ], [ 83.3207953, 17.7249738 ], [ 83.3204144, 17.7247962 ], [ 83.3200631, 17.7246302 ], [ 83.3195347, 17.7243453 ], [ 83.3190049, 17.7240055 ], [ 83.3188413, 17.7239071 ], [ 83.3185624, 17.72369 ], [ 83.3182552, 17.7234639 ], [ 83.3181748, 17.7233847 ], [ 83.3180361, 17.7232566 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3252008, 17.7273818 ], [ 83.325131, 17.7274815 ], [ 83.3249376, 17.7277234 ], [ 83.3248808, 17.7277984 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3241956, 17.7272234 ], [ 83.3243177, 17.7272998 ], [ 83.3244553, 17.7274119 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3243935, 17.7268913 ], [ 83.3243717, 17.7269284 ], [ 83.3243036, 17.7270521 ], [ 83.324264, 17.7270916 ], [ 83.3242329, 17.7271359 ], [ 83.3241956, 17.7272234 ], [ 83.324163, 17.7272816 ], [ 83.3240968, 17.7274519 ], [ 83.3242009, 17.7275143 ], [ 83.3243419, 17.7275912 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.324012, 17.7268934 ], [ 83.3240905, 17.7269236 ], [ 83.3241948, 17.7269928 ], [ 83.3243036, 17.7270521 ], [ 83.3244534, 17.7271548 ], [ 83.3246151, 17.7272558 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "living_street", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": "Principal Office Road", "surface": "asphalt", "horse": "permissive", "maxspeed": "35", "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3239238, 17.729483 ], [ 83.323748, 17.7293937 ], [ 83.3234838, 17.7292736 ], [ 83.3230752, 17.7291458 ], [ 83.3221645, 17.7288128 ], [ 83.3213779, 17.7285398 ], [ 83.3209379, 17.7283567 ], [ 83.3208067, 17.7284062 ], [ 83.3207355, 17.7284469 ], [ 83.3205932, 17.7284992 ], [ 83.3205038, 17.7285456 ], [ 83.3203208, 17.7286289 ], [ 83.3202375, 17.7287354 ], [ 83.3201414, 17.7288534 ], [ 83.3200749, 17.7289445 ], [ 83.3199956, 17.7290819 ], [ 83.3199428, 17.7292581 ], [ 83.3199204, 17.729384 ], [ 83.3199082, 17.7294808 ], [ 83.3198696, 17.7295602 ], [ 83.3197598, 17.7296609 ], [ 83.3196967, 17.7296926 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3227547, 17.7259537 ], [ 83.3226491, 17.7261234 ], [ 83.3225259, 17.726315 ], [ 83.3224209, 17.7264958 ], [ 83.3223406, 17.7266325 ], [ 83.3222717, 17.7267584 ], [ 83.3221923, 17.7267703 ], [ 83.3220522, 17.7268284 ], [ 83.3219866, 17.7268758 ], [ 83.3219279, 17.7269511 ], [ 83.3218578, 17.7270544 ], [ 83.3217494, 17.7271857 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3210925, 17.7269012 ], [ 83.3210782, 17.7268716 ], [ 83.3210619, 17.7268516 ], [ 83.3210409, 17.7268316 ], [ 83.3210082, 17.726826 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3298373, 17.7266248 ], [ 83.3307104, 17.7261632 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3309118, 17.7265225 ], [ 83.3307104, 17.7261632 ], [ 83.3305248, 17.725825 ], [ 83.3296113, 17.7262054 ], [ 83.3298373, 17.7266248 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3307812, 17.724809 ], [ 83.3308952, 17.7251284 ], [ 83.3309461, 17.7252446 ], [ 83.3309729, 17.7253417 ], [ 83.3310078, 17.7254567 ], [ 83.3310172, 17.7255091 ], [ 83.3310547, 17.7256189 ], [ 83.3311379, 17.725886 ], [ 83.3312811, 17.7262292 ], [ 83.3313051, 17.726276 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3312888, 17.7249621 ], [ 83.3310561, 17.724565 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3289211, 17.7225052 ], [ 83.328962, 17.7229945 ], [ 83.3289345, 17.7234394 ], [ 83.3289121, 17.7236126 ], [ 83.3288767, 17.7243927 ], [ 83.3288655, 17.7245453 ], [ 83.3287942, 17.7247164 ], [ 83.3282224, 17.7253128 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3279769, 17.7244073 ], [ 83.3284476, 17.7244111 ], [ 83.3286676, 17.7243971 ], [ 83.3287346, 17.7243958 ], [ 83.3288767, 17.7243927 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3269671, 17.724392 ], [ 83.327136, 17.7243818 ], [ 83.3272514, 17.7243818 ], [ 83.3274767, 17.7243894 ], [ 83.327643, 17.7243869 ], [ 83.3279769, 17.7244073 ], [ 83.3280091, 17.7238298 ], [ 83.3280064, 17.7235858 ], [ 83.328001, 17.7234644 ], [ 83.3280024, 17.7233527 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3269976, 17.725913 ], [ 83.3269671, 17.724392 ], [ 83.3267884, 17.7243638 ], [ 83.3267833, 17.7234664 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3239227, 17.722518 ], [ 83.3240595, 17.7225563 ], [ 83.3242232, 17.722592 ], [ 83.3244404, 17.722592 ], [ 83.3249447, 17.722592 ], [ 83.3254731, 17.7225767 ], [ 83.3257745, 17.7225824 ], [ 83.3258197, 17.7236234 ], [ 83.3256989, 17.7243135 ], [ 83.3256809, 17.7244136 ], [ 83.3256648, 17.7244954 ], [ 83.32565, 17.7246576 ], [ 83.3255991, 17.72494 ], [ 83.325633, 17.7256344 ], [ 83.3264937, 17.7258624 ], [ 83.326625, 17.7258903 ], [ 83.3267471, 17.7258941 ], [ 83.3269976, 17.725913 ], [ 83.327195, 17.7259465 ], [ 83.3274928, 17.7259669 ], [ 83.3282224, 17.7253128 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": "yes", "AND_import": "2", "AND_a_nosr": "15062474", "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3278553, 17.7221115 ], [ 83.3279474, 17.7221795 ], [ 83.3289211, 17.7225052 ], [ 83.3294911, 17.72267 ], [ 83.3298276, 17.7227472 ], [ 83.3301643, 17.722806 ], [ 83.3302943, 17.7227952 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": "yes", "AND_import": "2", "AND_a_nosr": "15062474", "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3302943, 17.7227952 ], [ 83.3301951, 17.7227312 ], [ 83.33001, 17.7226987 ], [ 83.3297894, 17.722661 ], [ 83.3296332, 17.7226303 ], [ 83.3294917, 17.7225974 ], [ 83.329318, 17.722553 ], [ 83.3290699, 17.7224742 ], [ 83.3289131, 17.7224243 ], [ 83.328559, 17.7223078 ], [ 83.3279742, 17.7221059 ], [ 83.3278553, 17.7221115 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3285257, 17.7209928 ], [ 83.3290586, 17.721047 ], [ 83.3290332, 17.7214084 ], [ 83.3289076, 17.7223344 ], [ 83.3289131, 17.7224243 ], [ 83.3289211, 17.7225052 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3290332, 17.7214084 ], [ 83.3298769, 17.7214185 ], [ 83.3304055, 17.7214315 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3296747, 17.7231822 ], [ 83.3295702, 17.7232461 ], [ 83.3294897, 17.7232767 ], [ 83.3293261, 17.7233482 ], [ 83.3291719, 17.7233994 ], [ 83.3289345, 17.7234394 ], [ 83.3286328, 17.723446 ], [ 83.3285771, 17.7233502 ], [ 83.3285476, 17.7232857 ], [ 83.3283792, 17.7232275 ], [ 83.3282411, 17.7232212 ], [ 83.3281104, 17.7232588 ], [ 83.3280024, 17.7233527 ], [ 83.3278495, 17.7234396 ], [ 83.3272728, 17.7234434 ], [ 83.3267833, 17.7234664 ], [ 83.3267457, 17.7226398 ], [ 83.327285, 17.7226457 ], [ 83.3272728, 17.7234434 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.327285, 17.7226457 ], [ 83.3279112, 17.7225651 ], [ 83.3282487, 17.7226867 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.327682, 17.7209868 ], [ 83.3283017, 17.7212882 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3275327, 17.7213516 ], [ 83.3281858, 17.7216579 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3267457, 17.7226398 ], [ 83.3262958, 17.7226348 ], [ 83.3257745, 17.7225824 ], [ 83.3257332, 17.7221694 ], [ 83.3256025, 17.7217265 ], [ 83.3255509, 17.7213452 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3246443, 17.7250473 ], [ 83.3246688, 17.7255893 ], [ 83.3245591, 17.7259183 ], [ 83.324375, 17.7263122 ], [ 83.3243105, 17.7264757 ], [ 83.3241692, 17.7266806 ], [ 83.324128, 17.726738 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3255991, 17.72494 ], [ 83.3247623, 17.7249425 ], [ 83.3246443, 17.7250473 ], [ 83.3238637, 17.7250166 ], [ 83.3234453, 17.7249323 ], [ 83.3229303, 17.7247867 ], [ 83.3225682, 17.7246334 ], [ 83.3221605, 17.7244673 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321844, 17.7243294 ], [ 83.3221173, 17.7239554 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3212969, 17.7251654 ], [ 83.3213538, 17.7250437 ], [ 83.3214772, 17.7248055 ], [ 83.3215677, 17.7246308 ], [ 83.3216526, 17.7244634 ], [ 83.321844, 17.7243294 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": null, "AND_import": "2", "AND_a_nosr": "15062474", "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3278553, 17.7221115 ], [ 83.3276054, 17.7220351 ], [ 83.3272541, 17.7218894 ], [ 83.3270824, 17.7217975 ], [ 83.3265889, 17.7216135 ], [ 83.3265138, 17.7215777 ], [ 83.3261195, 17.7214704 ], [ 83.3258727, 17.721427 ], [ 83.3255509, 17.7213452 ], [ 83.3251834, 17.7212763 ], [ 83.3245799, 17.7211511 ], [ 83.3242512, 17.7210428 ], [ 83.3241379, 17.7210172 ], [ 83.3237961, 17.72094 ], [ 83.3237628, 17.7209332 ], [ 83.3233461, 17.7208675 ], [ 83.3232361, 17.7208598 ], [ 83.3227729, 17.7208229 ], [ 83.3224341, 17.7208343 ], [ 83.3223027, 17.7208368 ], [ 83.3221096, 17.7208266 ], [ 83.3219326, 17.7208215 ], [ 83.3217971, 17.7208227 ], [ 83.3217059, 17.7208215 ], [ 83.3216026, 17.7208291 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3239227, 17.722518 ], [ 83.323794, 17.7219993 ], [ 83.3238148, 17.72189 ], [ 83.3238457, 17.7218543 ], [ 83.3239154, 17.7218032 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.32035, 17.7211312 ], [ 83.320413, 17.721227 ], [ 83.3204922, 17.7213586 ], [ 83.3206213, 17.7215078 ], [ 83.3214612, 17.7221583 ], [ 83.3218279, 17.7224311 ], [ 83.3221837, 17.7226993 ], [ 83.3221173, 17.7239554 ], [ 83.3221605, 17.7244673 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3221837, 17.7226993 ], [ 83.32223, 17.7220871 ], [ 83.3222846, 17.7219871 ], [ 83.3225099, 17.721959 ], [ 83.3227379, 17.7219514 ], [ 83.322923, 17.7219181 ], [ 83.3231295, 17.7218389 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3312694, 17.7214045 ], [ 83.3311165, 17.7208092 ], [ 83.3310559, 17.7206046 ], [ 83.3309402, 17.7204577 ], [ 83.3307681, 17.7202918 ], [ 83.330403, 17.719961 ], [ 83.3301605, 17.7197899 ], [ 83.3299337, 17.7196647 ], [ 83.3297346, 17.7195442 ], [ 83.3296308, 17.7195813 ], [ 83.3294508, 17.7196119 ], [ 83.3290941, 17.7196826 ], [ 83.3287638, 17.7197726 ], [ 83.328386, 17.7199202 ], [ 83.32815, 17.7200556 ], [ 83.3280534, 17.720168 ], [ 83.3279457, 17.7203577 ], [ 83.327796, 17.7206329 ], [ 83.327682, 17.7209868 ], [ 83.3276377, 17.7211004 ], [ 83.3275327, 17.7213516 ], [ 83.3274043, 17.7216216 ], [ 83.3272541, 17.7218894 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.327796, 17.7206329 ], [ 83.3283836, 17.7209238 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3265138, 17.7215777 ], [ 83.3269723, 17.7208705 ], [ 83.3272562, 17.7204395 ], [ 83.3273559, 17.7202549 ], [ 83.3274068, 17.7201195 ], [ 83.3274202, 17.7199687 ], [ 83.3273988, 17.7198052 ], [ 83.3273425, 17.7196724 ], [ 83.3272325, 17.7195472 ], [ 83.3271413, 17.7194118 ], [ 83.3271145, 17.7192533 ], [ 83.327152, 17.7191486 ], [ 83.3272083, 17.7190745 ], [ 83.3275061, 17.7190541 ], [ 83.3278467, 17.7190081 ], [ 83.3280345, 17.71898 ], [ 83.3281203, 17.7189238 ], [ 83.3281713, 17.7188445 ], [ 83.3281739, 17.7187526 ], [ 83.3281766, 17.7186504 ], [ 83.3282008, 17.7185533 ], [ 83.3282388, 17.7184318 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3258727, 17.721427 ], [ 83.3258597, 17.7195105 ], [ 83.3260949, 17.7187971 ], [ 83.3260565, 17.7186874 ], [ 83.3257781, 17.7186737 ], [ 83.3256244, 17.718788 ], [ 83.3258597, 17.7195105 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3245799, 17.7211511 ], [ 83.3246657, 17.7208834 ], [ 83.3247891, 17.7206841 ], [ 83.3247435, 17.7205972 ], [ 83.3246228, 17.7205436 ], [ 83.3241742, 17.7204569 ], [ 83.3234468, 17.7203362 ], [ 83.3233269, 17.7202181 ], [ 83.3232763, 17.7200786 ], [ 83.3233354, 17.7199357 ], [ 83.3236687, 17.7197911 ], [ 83.3242241, 17.7195697 ], [ 83.3246864, 17.7193854 ], [ 83.3248508, 17.7199738 ], [ 83.3249232, 17.7205257 ], [ 83.3247891, 17.7206841 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": "yes", "AND_import": "2", "AND_a_nosr": "15062474", "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3208273, 17.7210049 ], [ 83.3210689, 17.7209505 ], [ 83.3211735, 17.7209268 ], [ 83.3212861, 17.7209007 ], [ 83.321484, 17.7208706 ], [ 83.3216026, 17.7208291 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": "yes", "AND_import": "2", "AND_a_nosr": "15062474", "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3216026, 17.7208291 ], [ 83.3214551, 17.7207965 ], [ 83.3208081, 17.7209141 ], [ 83.3207174, 17.7209308 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3215114, 17.7253276 ], [ 83.3214927, 17.7254107 ], [ 83.321491, 17.7255743 ], [ 83.3214771, 17.7258649 ], [ 83.321454, 17.7263109 ], [ 83.3214479, 17.7265002 ], [ 83.3214371, 17.7266088 ], [ 83.321397, 17.7267071 ], [ 83.3213508, 17.7267688 ], [ 83.3212553, 17.7268363 ], [ 83.321149, 17.7268803 ], [ 83.3210925, 17.7269012 ], [ 83.3210181, 17.7269287 ], [ 83.3207024, 17.7270289 ], [ 83.3203585, 17.7271924 ], [ 83.3201866, 17.7273216 ], [ 83.3200482, 17.7274293 ], [ 83.3195653, 17.727928 ], [ 83.3194562, 17.7280441 ], [ 83.3193759, 17.7281246 ], [ 83.3192983, 17.7282118 ], [ 83.3192696, 17.7282479 ], [ 83.3191725, 17.7283799 ], [ 83.3191222, 17.7284574 ], [ 83.319097, 17.7284959 ], [ 83.3190323, 17.7286147 ], [ 83.3189883, 17.7286878 ], [ 83.3189168, 17.7289214 ], [ 83.3188582, 17.7291107 ], [ 83.3188028, 17.7293117 ], [ 83.3187751, 17.7294159 ], [ 83.3187596, 17.729476 ], [ 83.318755, 17.7295245 ], [ 83.3187581, 17.7295582 ], [ 83.3187735, 17.7295846 ], [ 83.3188028, 17.7295993 ], [ 83.3188675, 17.7296169 ], [ 83.3189445, 17.7296316 ], [ 83.3191459, 17.729663 ], [ 83.3192172, 17.7296741 ], [ 83.3195284, 17.7296932 ], [ 83.3195924, 17.7296932 ], [ 83.3196424, 17.7296932 ], [ 83.3196967, 17.7296926 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3221605, 17.7244673 ], [ 83.3219701, 17.7244111 ], [ 83.321844, 17.7243294 ], [ 83.3217099, 17.7242783 ], [ 83.3215731, 17.7242195 ], [ 83.3213076, 17.7241199 ], [ 83.3209375, 17.7239768 ], [ 83.3207416, 17.7238797 ], [ 83.3205298, 17.7237954 ], [ 83.3203581, 17.7236549 ], [ 83.3202481, 17.7235348 ], [ 83.3201355, 17.7234019 ], [ 83.3200389, 17.7232384 ], [ 83.3198592, 17.722937 ], [ 83.3197278, 17.7227326 ], [ 83.319591, 17.7225205 ], [ 83.3195347, 17.7224209 ], [ 83.319414, 17.7224847 ], [ 83.3192021, 17.7226176 ], [ 83.3190358, 17.7227045 ], [ 83.3188748, 17.7227862 ], [ 83.3187112, 17.7228756 ], [ 83.318576, 17.722981 ], [ 83.3184685, 17.7230487 ], [ 83.3183666, 17.7230883 ], [ 83.3182298, 17.7231317 ], [ 83.3181708, 17.7231432 ], [ 83.3180354, 17.7231551 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3311097, 17.7320199 ], [ 83.3301271, 17.7320618 ], [ 83.3297283, 17.7321036 ], [ 83.3283784, 17.7321631 ], [ 83.3274603, 17.7323339 ], [ 83.3271961, 17.7323817 ], [ 83.3266572, 17.7324994 ], [ 83.3257227, 17.732591 ], [ 83.3252543, 17.7326979 ], [ 83.3252158, 17.7329322 ], [ 83.3247365, 17.7330322 ], [ 83.3247984, 17.7334392 ], [ 83.3248022, 17.7336578 ], [ 83.3248396, 17.7339491 ], [ 83.3248383, 17.734114 ], [ 83.3248319, 17.734315 ], [ 83.3247137, 17.7344685 ], [ 83.3247058, 17.7344795 ], [ 83.3247795, 17.7347369 ], [ 83.3248316, 17.7349191 ], [ 83.3249822, 17.7353642 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3280985, 17.7343667 ], [ 83.32809, 17.734154 ], [ 83.3278607, 17.7338358 ], [ 83.3277288, 17.7336344 ], [ 83.3276443, 17.7333123 ], [ 83.3276082, 17.7330794 ], [ 83.3275751, 17.7328659 ], [ 83.3274603, 17.7323339 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3212614, 17.7345185 ], [ 83.3219217, 17.7352087 ], [ 83.3221617, 17.7354596 ], [ 83.3227736, 17.7360892 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3202043, 17.7350782 ], [ 83.3204366, 17.734842 ], [ 83.3209591, 17.7346371 ], [ 83.3212614, 17.7345185 ], [ 83.321351, 17.7344834 ], [ 83.3218812, 17.7343955 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3247365, 17.7330322 ], [ 83.3241328, 17.7331926 ], [ 83.3239747, 17.7332399 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "track", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.324685, 17.7316095 ], [ 83.3246289, 17.7316461 ], [ 83.32442, 17.7317985 ], [ 83.3243755, 17.7318431 ], [ 83.3243188, 17.7318723 ], [ 83.3242282, 17.7319021 ], [ 83.3241578, 17.7319049 ], [ 83.3240536, 17.731892 ], [ 83.3240102, 17.7319019 ], [ 83.3239668, 17.7319311 ], [ 83.3238937, 17.7319907 ], [ 83.3238308, 17.7320271 ], [ 83.3237313, 17.7320537 ], [ 83.3236245, 17.7321178 ], [ 83.3235441, 17.7321625 ], [ 83.3234746, 17.7322084 ], [ 83.3234023, 17.7322721 ], [ 83.3233895, 17.732385 ], [ 83.3233952, 17.7325005 ], [ 83.32344, 17.7326405 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3218812, 17.7343955 ], [ 83.3221041, 17.7344834 ], [ 83.322496, 17.7349005 ], [ 83.3227111, 17.7348932 ], [ 83.3233028, 17.7347688 ], [ 83.3237024, 17.7347908 ], [ 83.3242326, 17.7344687 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3218812, 17.7343955 ], [ 83.3220549, 17.7343375 ], [ 83.3224291, 17.7342609 ], [ 83.3226443, 17.7342259 ], [ 83.3229101, 17.7341859 ], [ 83.3232022, 17.7341493 ], [ 83.323503, 17.7341109 ], [ 83.3236237, 17.7341143 ], [ 83.3237233, 17.7341176 ], [ 83.3238318, 17.7341376 ], [ 83.3239297, 17.7341709 ], [ 83.3240347, 17.7342209 ], [ 83.3241116, 17.7342892 ], [ 83.3241938, 17.7343925 ], [ 83.3242326, 17.7344687 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3213991, 17.7325783 ], [ 83.3215508, 17.7326886 ], [ 83.3217126, 17.7327996 ], [ 83.3218934, 17.7329155 ], [ 83.3220556, 17.7330163 ], [ 83.3222186, 17.7330883 ], [ 83.3224278, 17.7331461 ], [ 83.3225514, 17.7331701 ], [ 83.3226408, 17.7331879 ], [ 83.3227594, 17.7332028 ], [ 83.3228709, 17.7332057 ], [ 83.3230041, 17.7331732 ], [ 83.3231579, 17.7331222 ], [ 83.3232362, 17.7330877 ], [ 83.3233357, 17.7330425 ], [ 83.3233972, 17.7329865 ], [ 83.3234544, 17.732886 ], [ 83.3234784, 17.7328256 ], [ 83.3234713, 17.7327588 ], [ 83.32344, 17.7326405 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "road", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": "yes", "foot": "yes", "name": null, "surface": "ground", "horse": "yes", "maxspeed": null, "junction": null, "motor_vehi": "no" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3248514, 17.7315587 ], [ 83.3249027, 17.7315385 ], [ 83.3249517, 17.7315007 ], [ 83.3250007, 17.7314584 ], [ 83.3250638, 17.7313984 ], [ 83.3251198, 17.7313472 ], [ 83.3251875, 17.7313205 ], [ 83.3252482, 17.7313027 ], [ 83.3253183, 17.7312983 ], [ 83.3254024, 17.7313072 ], [ 83.3254864, 17.7313428 ], [ 83.3255471, 17.7313939 ], [ 83.3255962, 17.7314406 ], [ 83.3256382, 17.7314606 ], [ 83.3256942, 17.7314673 ], [ 83.3257596, 17.7314651 ], [ 83.325853, 17.7314784 ], [ 83.3259044, 17.7314962 ], [ 83.3259628, 17.7315162 ], [ 83.3260281, 17.731534 ], [ 83.3260912, 17.7315452 ], [ 83.3261893, 17.7315674 ], [ 83.3262967, 17.7315652 ], [ 83.3263877, 17.7315563 ], [ 83.3264951, 17.7314918 ], [ 83.3265745, 17.7314362 ], [ 83.3266189, 17.7313806 ], [ 83.326703, 17.7312916 ], [ 83.3267497, 17.731216 ], [ 83.326759, 17.7310714 ], [ 83.3267777, 17.7309925 ], [ 83.3267964, 17.7309135 ], [ 83.3268728, 17.7307888 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.324839, 17.7308973 ], [ 83.3247879, 17.7308928 ], [ 83.3242165, 17.7308428 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "tertiary", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3205577, 17.735558 ], [ 83.3205371, 17.7354879 ], [ 83.3202567, 17.7351328 ], [ 83.3202043, 17.7350782 ], [ 83.319927, 17.7347895 ], [ 83.3197074, 17.7345554 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "trunk_link", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": "1", "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3203595, 17.7354403 ], [ 83.3202285, 17.7352564 ], [ 83.3201403, 17.7351432 ], [ 83.3200553, 17.7350342 ], [ 83.3198234, 17.734764 ], [ 83.3197074, 17.7345554 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "trunk_link", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": "1", "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3197079, 17.7352428 ], [ 83.3197414, 17.7351582 ], [ 83.3197731, 17.7350836 ], [ 83.3197997, 17.7350211 ], [ 83.3198159, 17.7349316 ], [ 83.3198234, 17.734764 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "trunk_link", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": "1", "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3195734, 17.7346831 ], [ 83.3196038, 17.7347328 ], [ 83.3196414, 17.7348067 ], [ 83.319678, 17.7349273 ], [ 83.3196848, 17.7350178 ], [ 83.3196747, 17.7350449 ], [ 83.3196468, 17.7351196 ], [ 83.3196124, 17.7352116 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "trunk_link", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": "1", "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3195734, 17.7346831 ], [ 83.3195454, 17.7347511 ], [ 83.3195065, 17.7348212 ], [ 83.3194543, 17.7348867 ], [ 83.3193859, 17.7349325 ], [ 83.3192047, 17.7349842 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary_link", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3195734, 17.7346831 ], [ 83.3196386, 17.7346246 ], [ 83.3197074, 17.7345554 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3208081, 17.7209141 ], [ 83.320751, 17.7207812 ], [ 83.320749, 17.7206758 ], [ 83.3207551, 17.7206241 ], [ 83.3207645, 17.7205398 ], [ 83.320743, 17.7205117 ], [ 83.3204399, 17.7204746 ], [ 83.3203366, 17.7204593 ], [ 83.3201864, 17.720458 ], [ 83.3201341, 17.7204669 ], [ 83.3200845, 17.7204963 ], [ 83.320059, 17.7205295 ], [ 83.3200684, 17.7205806 ], [ 83.32011, 17.720665 ], [ 83.3201422, 17.7207122 ], [ 83.3201677, 17.720725 ], [ 83.3202548, 17.7207518 ], [ 83.3202884, 17.7207735 ], [ 83.3203112, 17.7208144 ], [ 83.3203045, 17.720877 ], [ 83.3202549, 17.7209202 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": "yes", "AND_import": "2", "AND_a_nosr": "15062474", "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3207174, 17.7209308 ], [ 83.3205566, 17.7209447 ], [ 83.3203918, 17.7209428 ], [ 83.3202549, 17.7209202 ], [ 83.3200572, 17.7208925 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3208273, 17.7210049 ], [ 83.3208081, 17.7209141 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": "yes", "foot": "yes", "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3200631, 17.7246302 ], [ 83.3200349, 17.7246826 ], [ 83.3198353, 17.7252826 ], [ 83.3196633, 17.7257283 ], [ 83.3209984, 17.7258513 ], [ 83.3210796, 17.725159 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3209984, 17.7258513 ], [ 83.3209706, 17.7261536 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3201809, 17.7263939 ], [ 83.3202154, 17.7265585 ], [ 83.3202906, 17.7266534 ], [ 83.3204289, 17.7267734 ], [ 83.3207024, 17.7270289 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3208332, 17.7283065 ], [ 83.3208035, 17.7282484 ], [ 83.3207568, 17.7281168 ], [ 83.3207263, 17.7280355 ], [ 83.3206937, 17.7279348 ], [ 83.3206714, 17.7278496 ], [ 83.3206328, 17.7277373 ], [ 83.3206002, 17.7276192 ], [ 83.320586, 17.7275475 ], [ 83.3205352, 17.7274662 ], [ 83.3204959, 17.7274029 ], [ 83.3203585, 17.7271924 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3175317, 17.7323805 ], [ 83.3179224, 17.7320556 ], [ 83.3181197, 17.7324378 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3185853, 17.733619 ], [ 83.3181345, 17.7337069 ], [ 83.3175605, 17.7336685 ], [ 83.3171475, 17.733551 ], [ 83.3169919, 17.7335101 ], [ 83.3168397, 17.7334923 ], [ 83.3165655, 17.733505 ], [ 83.3164206, 17.7335153 ], [ 83.3163482, 17.7336302 ], [ 83.3161256, 17.7337069 ], [ 83.3158117, 17.7336481 ], [ 83.3156803, 17.733643 ], [ 83.3154872, 17.7336481 ], [ 83.315396, 17.7336609 ], [ 83.3150205, 17.7336839 ], [ 83.3145136, 17.7336711 ], [ 83.3145484, 17.734062 ], [ 83.3145538, 17.7341974 ], [ 83.3145592, 17.7343404 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.316732, 17.7318119 ], [ 83.3168215, 17.7332084 ], [ 83.3168397, 17.7334923 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": "2", "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3152482, 17.7304347 ], [ 83.3154199, 17.730547 ], [ 83.3155199, 17.7306183 ], [ 83.3158367, 17.730919 ], [ 83.3161501, 17.7311985 ], [ 83.3164453, 17.7315058 ], [ 83.3167005, 17.7317818 ], [ 83.316732, 17.7318119 ], [ 83.3169128, 17.7319847 ], [ 83.3174066, 17.7324854 ], [ 83.3180511, 17.7331027 ], [ 83.3181983, 17.7332529 ], [ 83.3183604, 17.7333984 ], [ 83.3184162, 17.7334579 ], [ 83.3185853, 17.733619 ], [ 83.3190721, 17.7341517 ], [ 83.3193234, 17.7343925 ], [ 83.3195734, 17.7346831 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3199943, 17.7300857 ], [ 83.3199679, 17.7301722 ], [ 83.3199545, 17.7302719 ], [ 83.3199652, 17.7303153 ], [ 83.3199974, 17.7303741 ], [ 83.3201959, 17.7306423 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3199545, 17.7302719 ], [ 83.3199331, 17.7303792 ], [ 83.319925, 17.7304175 ], [ 83.319858, 17.7304788 ], [ 83.3198177, 17.7304737 ], [ 83.3197775, 17.7304456 ], [ 83.3197587, 17.7304047 ], [ 83.3198016, 17.730346 ], [ 83.3198767, 17.7303051 ], [ 83.3199545, 17.7302719 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.319983, 17.729961 ], [ 83.3199331, 17.7299608 ], [ 83.3198668, 17.7299606 ], [ 83.3197915, 17.7299603 ], [ 83.3197517, 17.7299601 ], [ 83.3196914, 17.7299599 ], [ 83.3196141, 17.7299596 ], [ 83.3195671, 17.7299594 ], [ 83.3194892, 17.7299591 ], [ 83.3194041, 17.7299587 ], [ 83.3193087, 17.7299584 ], [ 83.3192405, 17.7299581 ], [ 83.3191707, 17.7299578 ], [ 83.3191204, 17.7299576 ], [ 83.3191001, 17.7299576 ], [ 83.3190585, 17.7299574 ], [ 83.3190044, 17.7299572 ], [ 83.3189824, 17.7299526 ], [ 83.318937, 17.7299403 ], [ 83.318883, 17.7299279 ], [ 83.3187782, 17.7299028 ], [ 83.3184965, 17.7298708 ], [ 83.3184003, 17.7299351 ], [ 83.3182881, 17.7299779 ], [ 83.3182398, 17.7299727 ], [ 83.3181829, 17.7299835 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "road", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3198783, 17.7299325 ], [ 83.3198654, 17.7298869 ], [ 83.3198623, 17.7298627 ], [ 83.3198745, 17.7298375 ], [ 83.3198999, 17.7298143 ], [ 83.3199589, 17.7297881 ], [ 83.320029, 17.7297649 ], [ 83.3201002, 17.7297436 ], [ 83.3201855, 17.7297165 ], [ 83.3202506, 17.7296904 ], [ 83.3203268, 17.7296623 ], [ 83.3203929, 17.7296371 ], [ 83.3204661, 17.7296119 ], [ 83.3205148, 17.7296042 ], [ 83.3205596, 17.7295935 ], [ 83.3205961, 17.7295877 ], [ 83.3206297, 17.7295597 ], [ 83.3206581, 17.7295238 ], [ 83.3206866, 17.7294551 ], [ 83.3206978, 17.7294038 ], [ 83.3207049, 17.729367 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3190044, 17.7299572 ], [ 83.3190459, 17.7299074 ], [ 83.3190601, 17.7298967 ], [ 83.3190957, 17.7298725 ], [ 83.31912, 17.7298657 ], [ 83.3191302, 17.7298464 ], [ 83.3191333, 17.7297999 ], [ 83.3191363, 17.7297525 ], [ 83.3191459, 17.729663 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3178525, 17.7307297 ], [ 83.3179262, 17.7305738 ], [ 83.318004, 17.7304116 ], [ 83.3180858, 17.7302226 ], [ 83.3181408, 17.7300948 ], [ 83.3181829, 17.7299835 ], [ 83.3182092, 17.7299288 ], [ 83.3183111, 17.7297193 ], [ 83.3183391, 17.7296553 ], [ 83.3183755, 17.7295724 ], [ 83.3184171, 17.7294893 ], [ 83.3184587, 17.72946 ], [ 83.3185297, 17.7294625 ], [ 83.3186719, 17.7294689 ], [ 83.3187596, 17.729476 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3184965, 17.7298708 ], [ 83.3184419, 17.7298181 ], [ 83.3184073, 17.7297666 ], [ 83.3183728, 17.7297167 ], [ 83.3183391, 17.7296553 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3184587, 17.72946 ], [ 83.3183648, 17.729493 ], [ 83.3183135, 17.7295486 ], [ 83.3182675, 17.7296211 ], [ 83.3182392, 17.7296936 ], [ 83.3181985, 17.7297795 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3170378, 17.731879 ], [ 83.317315, 17.7315431 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3162034, 17.7302233 ], [ 83.3168229, 17.7302521 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3174828, 17.7279113 ], [ 83.3170643, 17.7282083 ], [ 83.3168176, 17.728458 ], [ 83.3168122, 17.7288189 ], [ 83.3168337, 17.7290565 ], [ 83.3168739, 17.7292123 ], [ 83.3169383, 17.7295266 ], [ 83.3168578, 17.729685 ], [ 83.316839, 17.7297948 ], [ 83.3168229, 17.7302521 ], [ 83.316772, 17.7304999 ], [ 83.3167379, 17.7307649 ], [ 83.3166317, 17.73146 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3196424, 17.7296932 ], [ 83.3196633, 17.7296326 ], [ 83.3196848, 17.7294829 ], [ 83.3196879, 17.7294008 ], [ 83.3196972, 17.729298 ], [ 83.3197341, 17.7291513 ], [ 83.3197957, 17.7290369 ], [ 83.3198851, 17.7288432 ], [ 83.3199514, 17.7287678 ], [ 83.320048, 17.7286579 ], [ 83.3201552, 17.7285481 ], [ 83.3202625, 17.7284663 ], [ 83.32041, 17.7283692 ], [ 83.3205562, 17.7283066 ], [ 83.3206824, 17.728267 ], [ 83.3207387, 17.7282747 ], [ 83.3207708, 17.7282811 ], [ 83.3208013, 17.7282951 ], [ 83.3208332, 17.7283065 ], [ 83.3209379, 17.7283567 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "unclassified", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3201414, 17.7288534 ], [ 83.320184, 17.7288853 ], [ 83.3202938, 17.7289675 ], [ 83.3203641, 17.7290202 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3189883, 17.7286878 ], [ 83.3189099, 17.7286478 ], [ 83.3188717, 17.7286075 ], [ 83.3188656, 17.7285405 ], [ 83.3189139, 17.7284383 ], [ 83.3189662, 17.7284031 ], [ 83.3190521, 17.7284217 ], [ 83.3191222, 17.7284574 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3194562, 17.7280441 ], [ 83.3194311, 17.7280208 ], [ 83.3193809, 17.7279803 ], [ 83.3192879, 17.7279064 ], [ 83.3192259, 17.7279696 ], [ 83.3191672, 17.7280315 ], [ 83.3191301, 17.7280727 ], [ 83.3192983, 17.7282118 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3186934, 17.7292839 ], [ 83.3186598, 17.7292192 ], [ 83.3186509, 17.7291704 ], [ 83.3186952, 17.7290945 ], [ 83.318727, 17.7290338 ], [ 83.3187129, 17.7289934 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3187751, 17.7294159 ], [ 83.3186934, 17.7292839 ], [ 83.3185653, 17.7292142 ], [ 83.3182096, 17.7290748 ], [ 83.3178477, 17.7289354 ], [ 83.3177847, 17.7289373 ], [ 83.3177237, 17.7289586 ], [ 83.3176668, 17.7289993 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "service", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3203585, 17.7271924 ], [ 83.3202391, 17.7271695 ], [ 83.3201466, 17.7271841 ], [ 83.3200886, 17.7272278 ], [ 83.3200406, 17.7272784 ], [ 83.3200197, 17.7273425 ], [ 83.3200482, 17.7274293 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3186004, 17.7270731 ], [ 83.3185936, 17.7267224 ], [ 83.3186879, 17.7265975 ], [ 83.3188006, 17.7265037 ], [ 83.3188559, 17.7265242 ], [ 83.3192985, 17.726389 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3195334, 17.7260477 ], [ 83.3192985, 17.726389 ], [ 83.3187267, 17.7269033 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.317749, 17.7271616 ], [ 83.3186004, 17.7270731 ], [ 83.3186503, 17.7270679 ], [ 83.3187267, 17.7269033 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "tertiary", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": "2", "bicycle": null, "foot": null, "name": "BRTS BUS only", "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3087564, 17.7247553 ], [ 83.309293, 17.725347 ], [ 83.3093526, 17.7254092 ], [ 83.3095235, 17.7256025 ], [ 83.3101672, 17.7262617 ], [ 83.3107305, 17.7268544 ], [ 83.3109746, 17.7270945 ], [ 83.3115941, 17.7277741 ], [ 83.3119187, 17.7281267 ], [ 83.3124471, 17.7285304 ], [ 83.3129782, 17.728888 ], [ 83.3138874, 17.7294808 ], [ 83.314034, 17.7295591 ], [ 83.3140662, 17.7295762 ], [ 83.3141528, 17.7296224 ], [ 83.3142027, 17.7296494 ], [ 83.3147538, 17.7299994 ], [ 83.3153412, 17.7303596 ], [ 83.3159554, 17.7309115 ], [ 83.3163524, 17.7313228 ], [ 83.316811, 17.7317903 ], [ 83.3173475, 17.7323345 ], [ 83.3177444, 17.7327228 ], [ 83.3181146, 17.7330728 ], [ 83.3186752, 17.7336272 ], [ 83.3191955, 17.7341432 ], [ 83.3193269, 17.7342838 ], [ 83.3195078, 17.7344701 ], [ 83.3196386, 17.7346246 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": "2", "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3197074, 17.7345554 ], [ 83.3195608, 17.7344126 ], [ 83.3192208, 17.7340792 ], [ 83.3188688, 17.7337215 ], [ 83.3184464, 17.7332757 ], [ 83.3175317, 17.7323805 ], [ 83.3174565, 17.732307 ], [ 83.317184, 17.732045 ], [ 83.3170378, 17.731879 ], [ 83.3170047, 17.7318414 ], [ 83.3167832, 17.7316339 ], [ 83.3166317, 17.73146 ], [ 83.3163677, 17.7311572 ], [ 83.3161416, 17.7309352 ], [ 83.3155653, 17.7304257 ], [ 83.3151902, 17.7301617 ], [ 83.3145891, 17.7297992 ], [ 83.3144225, 17.729702 ], [ 83.3142372, 17.7295842 ], [ 83.3142202, 17.7295734 ], [ 83.3141892, 17.7295537 ], [ 83.3141056, 17.729507 ], [ 83.3140686, 17.7294864 ], [ 83.313884, 17.72939 ], [ 83.3136191, 17.7292267 ], [ 83.3133307, 17.7290272 ], [ 83.3130465, 17.7288365 ], [ 83.3129683, 17.7287669 ], [ 83.3128075, 17.7286458 ], [ 83.3125712, 17.7284977 ], [ 83.3123023, 17.7283002 ], [ 83.3120212, 17.7280812 ], [ 83.3117455, 17.727796 ], [ 83.311597, 17.7276501 ], [ 83.3113986, 17.7274364 ], [ 83.3112821, 17.7273027 ], [ 83.3111069, 17.7271179 ], [ 83.310864, 17.7268418 ], [ 83.310621, 17.7265983 ], [ 83.3104788, 17.7264562 ], [ 83.3104158, 17.7263933 ], [ 83.3100542, 17.7260383 ], [ 83.3098364, 17.7258058 ], [ 83.3095322, 17.7254982 ], [ 83.3093808, 17.7253384 ], [ 83.3088796, 17.7247943 ], [ 83.3087368, 17.7246378 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": "yes", "foot": "yes", "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3167653, 17.7259242 ], [ 83.3189564, 17.7256374 ], [ 83.3193886, 17.7255827 ], [ 83.3195334, 17.7260477 ], [ 83.3196633, 17.7257283 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3198353, 17.7252826 ], [ 83.3197017, 17.7250055 ], [ 83.319489, 17.7243836 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": "yes", "foot": "yes", "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3193886, 17.7255827 ], [ 83.3192489, 17.7251554 ], [ 83.3189363, 17.7241973 ], [ 83.3189016, 17.7240679 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3189564, 17.7256374 ], [ 83.3186278, 17.7241308 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3180427, 17.7243517 ], [ 83.3181136, 17.7243098 ], [ 83.3184041, 17.7241909 ], [ 83.3186278, 17.7241308 ], [ 83.3189016, 17.7240679 ], [ 83.3189567, 17.7240605 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3179048, 17.7241254 ], [ 83.3179213, 17.7242463 ], [ 83.3179515, 17.7242865 ], [ 83.3179857, 17.7243261 ], [ 83.3180427, 17.7243517 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": "Modi Xerox Road", "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3179093, 17.7239162 ], [ 83.3177867, 17.7239245 ], [ 83.3168732, 17.7236121 ], [ 83.3165768, 17.7236466 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3189567, 17.7240605 ], [ 83.3181131, 17.7234422 ], [ 83.3180065, 17.7233129 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": "roundabout", "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3180393, 17.7231677 ], [ 83.3180354, 17.7231551 ], [ 83.3179996, 17.7230408 ], [ 83.317916, 17.7229448 ], [ 83.3178303, 17.7228931 ], [ 83.3177885, 17.7229031 ], [ 83.3177489, 17.7229342 ], [ 83.3177129, 17.7230016 ], [ 83.3177245, 17.7231004 ], [ 83.3177548, 17.7231526 ], [ 83.3177859, 17.7231892 ], [ 83.3178838, 17.7232799 ], [ 83.3179614, 17.723309 ], [ 83.3180065, 17.7233129 ], [ 83.3180361, 17.7232566 ], [ 83.3180393, 17.7231677 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3179996, 17.7230408 ], [ 83.318046, 17.7227868 ], [ 83.3182043, 17.7225748 ], [ 83.3184028, 17.7223959 ], [ 83.3189365, 17.7219641 ], [ 83.3193818, 17.7216422 ], [ 83.3199397, 17.7213177 ], [ 83.3201006, 17.7212309 ], [ 83.32035, 17.7211312 ], [ 83.3205673, 17.7210609 ], [ 83.3208273, 17.7210049 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3199397, 17.7213177 ], [ 83.3200067, 17.7212488 ], [ 83.3200785, 17.7211297 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": "roundabout", "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3200785, 17.7211297 ], [ 83.3201222, 17.7210889 ], [ 83.3201435, 17.7210342 ], [ 83.3201383, 17.7209761 ], [ 83.3201076, 17.7209257 ], [ 83.3200572, 17.7208925 ], [ 83.3200415, 17.7208875 ], [ 83.3200254, 17.7208842 ], [ 83.3200089, 17.7208828 ], [ 83.3199614, 17.7208892 ], [ 83.319919, 17.7209106 ], [ 83.3199048, 17.7209249 ], [ 83.3198866, 17.7209443 ], [ 83.3198693, 17.7209816 ], [ 83.3198646, 17.7210222 ], [ 83.3198731, 17.7210623 ], [ 83.319893, 17.721097 ], [ 83.3199225, 17.7211244 ], [ 83.3199591, 17.7211425 ], [ 83.3199997, 17.7211496 ], [ 83.3200406, 17.7211452 ], [ 83.3200785, 17.7211297 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3193335, 17.720983 ], [ 83.3194208, 17.7210266 ], [ 83.3196232, 17.7210712 ], [ 83.3197117, 17.7210865 ], [ 83.319772, 17.7210814 ], [ 83.3198731, 17.7210623 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3198866, 17.7209443 ], [ 83.3197197, 17.7209728 ], [ 83.3196124, 17.720983 ], [ 83.3194596, 17.72096 ], [ 83.3193335, 17.720983 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": "yes", "AND_import": "2", "AND_a_nosr": "15062474", "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.319893, 17.721097 ], [ 83.3198002, 17.7212398 ], [ 83.3196886, 17.7213415 ], [ 83.319298, 17.7215937 ], [ 83.3189255, 17.7218543 ], [ 83.3184142, 17.7222555 ], [ 83.31815, 17.7224828 ], [ 83.3179366, 17.7227202 ], [ 83.3178303, 17.7228931 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "secondary", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3161306, 17.7212917 ], [ 83.316373, 17.7212685 ], [ 83.3167511, 17.7212283 ], [ 83.3170764, 17.7211874 ], [ 83.3174021, 17.7211175 ], [ 83.3176145, 17.7210517 ], [ 83.3178836, 17.7209471 ], [ 83.3185381, 17.7208475 ], [ 83.3190181, 17.720914 ], [ 83.3193335, 17.720983 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "residential", "oneway": null, "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": "yes", "foot": "yes", "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3166789, 17.7229759 ], [ 83.317252, 17.7232851 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": "Governor Bungalow Road", "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3148354, 17.7209396 ], [ 83.3150086, 17.7210103 ], [ 83.315396, 17.7211976 ], [ 83.3156012, 17.721319 ], [ 83.3156482, 17.72136 ], [ 83.3158238, 17.7215131 ], [ 83.3164769, 17.722065 ], [ 83.3169986, 17.7224905 ], [ 83.3174559, 17.7228724 ], [ 83.3177245, 17.7231004 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": "yes", "AND_import": "2", "AND_a_nosr": "15062474", "lanes": null, "bicycle": null, "foot": null, "name": "Sampath Vinayaka Temple Road", "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3177859, 17.7231892 ], [ 83.3178424, 17.7233487 ], [ 83.3179093, 17.7239162 ], [ 83.3179048, 17.7241254 ], [ 83.3178189, 17.7243521 ], [ 83.3177056, 17.724501 ], [ 83.3175071, 17.7247335 ], [ 83.3174005, 17.7248376 ], [ 83.3172744, 17.7248963 ], [ 83.3170598, 17.7249474 ], [ 83.3170223, 17.7249506 ], [ 83.3168453, 17.7249653 ], [ 83.3165234, 17.7249679 ], [ 83.3152601, 17.724927 ], [ 83.3147183, 17.7249091 ], [ 83.3143964, 17.7248887 ], [ 83.3139753, 17.724835 ], [ 83.3139554, 17.7248301 ], [ 83.3133007, 17.7246698 ], [ 83.312944, 17.7245795 ], [ 83.3119744, 17.7243177 ], [ 83.3116155, 17.7242903 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "tertiary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3200089, 17.7208828 ], [ 83.319913, 17.7206525 ], [ 83.3198318, 17.7205953 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "tertiary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3198318, 17.7205953 ], [ 83.3198089, 17.7206956 ], [ 83.3198431, 17.7207953 ], [ 83.3199048, 17.7209249 ] ] ] } },
+{ "type": "Feature", "properties": { "highway": "primary", "oneway": "yes", "AND_import": null, "AND_a_nosr": null, "lanes": null, "bicycle": null, "foot": null, "name": null, "surface": null, "horse": null, "maxspeed": null, "junction": null, "motor_vehi": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3178303, 17.7228931 ], [ 83.3174948, 17.7227843 ], [ 83.3173272, 17.7226604 ], [ 83.3170429, 17.7224266 ], [ 83.3166687, 17.7221174 ], [ 83.3159063, 17.7214398 ], [ 83.3156736, 17.7212424 ], [ 83.3155032, 17.7211468 ], [ 83.3154027, 17.7210903 ], [ 83.3152807, 17.7210328 ], [ 83.3151657, 17.7209785 ], [ 83.3151264, 17.72096 ], [ 83.3148549, 17.7208393 ], [ 83.3143057, 17.7206279 ], [ 83.3138537, 17.7204158 ], [ 83.3136767, 17.7203264 ], [ 83.3134286, 17.7201731 ], [ 83.3130772, 17.7199521 ], [ 83.3125113, 17.719574 ], [ 83.3120929, 17.7192987 ], [ 83.3116605, 17.7190135 ], [ 83.3116172, 17.7189849 ], [ 83.3112969, 17.7187749 ], [ 83.3109724, 17.7185571 ], [ 83.3105788, 17.7183118 ], [ 83.3101885, 17.718064 ], [ 83.3100474, 17.7179831 ], [ 83.3098479, 17.7178826 ], [ 83.3095498, 17.717746 ] ] ] } }
+					  
+						]
+					  };
+					
+					  function myroadnetwork(){
+						var x=map.addLayer({
+					  'id': 'line-animations',
+					  'type': 'line',
+					  'source': {
+					  'type': 'geojson',
+					  'data': road_network
+					  },
+					  'layout': {
+					  'line-cap': 'round',
+					  'line-join': 'miter'
+					  },
+					  'paint': {
+					  'line-color': '#000000',
+					  'line-width': 6,
+					  'line-opacity': 1
+					  },
+					  
+					  });
+					  $( ".marker1" ).remove();
+					  $( ".marker" ).remove();
+					  
+					  
+					  }					
+
+
+
+
+					 var dustbins = {
+						"type": "FeatureCollection",
+					"name": "PointsGeoJson",
+					"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+					"features": [
+					{ "type": "Feature", "properties": { "id": 1, "location": "AUCE canteen  dustbin" }, "geometry": { "type": "Point", "coordinates": [ 83.319587229553875, 17.729555728920754 ] } },
+				{ "type": "Feature", "properties": { "id": 2, "location": "Dustabin 2" }, "geometry": { "type": "Point", "coordinates": [ 83.320703283540809, 17.728213638090111 ] } },
+				{ "type": "Feature", "properties": { "id": 3, "location": "chemical dustbin" }, "geometry": { "type": "Point", "coordinates": [ 83.322289738213911, 17.728765727310755 ] } },
+				{ "type": "Feature", "properties": { "id": 4, "location": "geo dustbin" }, "geometry": { "type": "Point", "coordinates": [ 83.321191401323702, 17.7268330908406 ] } },
+				{ "type": "Feature", "properties": { "id": 5, "location": "mech dustbin" }, "geometry": { "type": "Point", "coordinates": [ 83.319438212825105, 17.728013349073539 ] } },
+				{ "type": "Feature", "properties": { "id": 6, "location": "ncrc dustbin" }, "geometry": { "type": "Point", "coordinates": [ 83.318586984131983, 17.729251243652271 ] } }
+				
+				
+					]
+					};
+
+
+					var electric_poles = {
+						"type": "FeatureCollection",
+					"name": "PointsGeoJson",
+					"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+					"features": [
+					{ "type": "Feature", "properties": { "meta_insta": "uuid:b4faaf29-04fb-4e73-b1a1-b91488cca634", "pole": "Pole1", "location_L": 17.7262733333, "location_1": 83.324418333300002, "location_A": 64.7, "location_2": 4.7, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ab4faaf29-04fb-4e73-b1a1-b91488cca634%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.324418333300002, 17.7262733333 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:a0a0cf26-8492-4c1e-b347-5620c3196eef", "pole": "Pole 2", "location_L": 17.726311666699999, "location_1": 83.324358333299998, "location_A": 64.6, "location_2": 4.8, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Aa0a0cf26-8492-4c1e-b347-5620c3196eef%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.324358333299998, 17.726311666699999 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:3b286e6d-8f3b-4c95-a7ed-80a1f8eff763", "pole": "Pole 3", "location_L": 17.726025, "location_1": 83.324563333300006, "location_A": 64.6, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A3b286e6d-8f3b-4c95-a7ed-80a1f8eff763%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.324563333300006, 17.726025 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:de4757ac-007d-4550-93d0-563cdd4ce2f5", "pole": "Pole 4", "location_L": 17.725906666699998, "location_1": 83.324498333299999, "location_A": 64.5, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ade4757ac-007d-4550-93d0-563cdd4ce2f5%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.324498333299999, 17.725906666699998 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:fe077c85-3894-4f0c-8927-51a4f7241de3", "pole": "Pole 5-(32)", "location_L": 17.7259016667, "location_1": 83.324791666699994, "location_A": 64.5, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Afe077c85-3894-4f0c-8927-51a4f7241de3%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.324791666699994, 17.7259016667 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:0fa752ce-e70d-4ff2-997d-18ec1a3bb1d5", "pole": "Pole 6-(33)", "location_L": 17.7257766667, "location_1": 83.3250383333, "location_A": 64.9, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A0fa752ce-e70d-4ff2-997d-18ec1a3bb1d5%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.3250383333, 17.7257766667 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:7d93a2c0-7574-4f5d-b1c3-789b79dc26f4", "pole": "Pole-7(34)", "location_L": 17.725865, "location_1": 83.32524, "location_A": 64.8, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A7d93a2c0-7574-4f5d-b1c3-789b79dc26f4%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.32524, 17.725865 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:2b94e154-438d-47cc-96a6-3929e5eeda99", "pole": "Pole-8(35)", "location_L": 17.72584, "location_1": 83.325498333300004, "location_A": 64.9, "location_2": 4.6, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A2b94e154-438d-47cc-96a6-3929e5eeda99%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.325498333300004, 17.72584 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:c1ee2c0e-ed4b-498d-81ae-36098bb828d7", "pole": "Pole-9", "location_L": 17.7256233333, "location_1": 83.3256616667, "location_A": 64.0, "location_2": 4.7, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ac1ee2c0e-ed4b-498d-81ae-36098bb828d7%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.3256616667, 17.7256233333 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:24297f2c-8f78-4aee-8705-e0fdc2f6bb08", "pole": "Pole-10(36)", "location_L": 17.72619, "location_1": 83.325621666700002, "location_A": 63.9, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A24297f2c-8f78-4aee-8705-e0fdc2f6bb08%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.325621666700002, 17.72619 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:5b7d49e1-3e55-4511-9fb1-ee13f7d09878", "pole": "Pole-11(37)", "location_L": 17.725835, "location_1": 83.325586666700005, "location_A": 63.7, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A5b7d49e1-3e55-4511-9fb1-ee13f7d09878%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.325586666700005, 17.725835 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:78c1f20b-22f5-4d87-9b74-f3df28f42ed1", "pole": "Pole-12", "location_L": 17.726015, "location_1": 83.3257066667, "location_A": 63.7, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A78c1f20b-22f5-4d87-9b74-f3df28f42ed1%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.3257066667, 17.726015 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:9b1efbbe-3ab9-4824-87f5-2c205e193334", "pole": "Pole-13", "location_L": 17.726521666699998, "location_1": 83.325573333299999, "location_A": 64.0, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A9b1efbbe-3ab9-4824-87f5-2c205e193334%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.325573333299999, 17.726521666699998 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:2048e35c-13c8-4948-a1d8-71619b772034", "pole": "Pole-14", "location_L": 17.72681, "location_1": 83.325901666700005, "location_A": 63.5, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A2048e35c-13c8-4948-a1d8-71619b772034%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.325901666700005, 17.72681 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:686253d7-e92b-44bc-aa6e-82eb87e79cec", "pole": "Pole-15", "location_L": 17.7264183333, "location_1": 83.325861666700007, "location_A": 63.4, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A686253d7-e92b-44bc-aa6e-82eb87e79cec%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.325861666700007, 17.7264183333 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:44c2d310-4893-4aca-b1a0-c3bfb84e2ea8", "pole": "Pole-16", "location_L": 17.72678, "location_1": 83.325985, "location_A": 63.5, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A44c2d310-4893-4aca-b1a0-c3bfb84e2ea8%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.325985, 17.72678 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:8c99a3fd-b1c0-4510-9a26-f4e9e26b7a97", "pole": "Pole-17(87)", "location_L": 17.7257933333, "location_1": 83.32603, "location_A": 63.2, "location_2": 4.7, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A8c99a3fd-b1c0-4510-9a26-f4e9e26b7a97%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.32603, 17.7257933333 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:e9b32ce5-f30d-41df-a92c-99e3c9883c77", "pole": "Pole-18(88)", "location_L": 17.725815, "location_1": 83.326201666700001, "location_A": 63.2, "location_2": 4.7, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ae9b32ce5-f30d-41df-a92c-99e3c9883c77%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.326201666700001, 17.725815 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:9ce109da-8f04-479f-8e07-7fbe7ad88542", "pole": "Pole-19(91)", "location_L": 17.726176666699999, "location_1": 83.326515, "location_A": 63.1, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A9ce109da-8f04-479f-8e07-7fbe7ad88542%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.326515, 17.726176666699999 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:2bd539e0-a281-4aac-aeab-2fcad8314b3d", "pole": "Pole-20(90)", "location_L": 17.726478333300001, "location_1": 83.326486666700006, "location_A": 62.9, "location_2": 4.8, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A2bd539e0-a281-4aac-aeab-2fcad8314b3d%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.326486666700006, 17.726478333300001 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:40925c7b-dec3-4586-833a-b555cb026a27", "pole": "Pole-21", "location_L": 17.726398333300001, "location_1": 83.32632, "location_A": 62.7, "location_2": 4.8, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A40925c7b-dec3-4586-833a-b555cb026a27%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.32632, 17.726398333300001 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:ea367b34-cf0d-4511-a672-9780fa5cb635", "pole": "Pole-22", "location_L": 17.725698333299999, "location_1": 83.3269183333, "location_A": 62.4, "location_2": 4.3, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Aea367b34-cf0d-4511-a672-9780fa5cb635%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.3269183333, 17.725698333299999 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:0c7058eb-88f6-45a3-9b8c-a82fec243173", "pole": "Pole-23(83)", "location_L": 17.72465, "location_1": 83.326851666699994, "location_A": 62.3, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A0c7058eb-88f6-45a3-9b8c-a82fec243173%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.326851666699994, 17.72465 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:af527925-da38-408f-879d-47a19f300ff4", "pole": "Pole-24", "location_L": 17.7247183333, "location_1": 83.326923333300002, "location_A": 62.4, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Aaf527925-da38-408f-879d-47a19f300ff4%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.326923333300002, 17.7247183333 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:e6e8d4db-2ee5-4d7f-b53f-09f846a160e6", "pole": "Pole-25(109)", "location_L": 17.724323333299999, "location_1": 83.327466666700005, "location_A": 62.5, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ae6e8d4db-2ee5-4d7f-b53f-09f846a160e6%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.327466666700005, 17.724323333299999 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:77061eaf-f49e-4190-afad-c6ff4f7d699a", "pole": "Pole-26(110)", "location_L": 17.724381666700001, "location_1": 83.327616666699996, "location_A": 62.3, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A77061eaf-f49e-4190-afad-c6ff4f7d699a%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.327616666699996, 17.724381666700001 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:b10020c6-5796-4d3f-b87c-ff2283543028", "pole": "Pole-27", "location_L": 17.724405, "location_1": 83.327953333300002, "location_A": 36.4, "location_2": 4.8, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ab10020c6-5796-4d3f-b87c-ff2283543028%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.327953333300002, 17.724405 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:050c0c29-c0ab-4a87-a7d9-b8214efff2b2", "pole": "Pole-28(105,106)", "location_L": 17.724433333299999, "location_1": 83.328773333300006, "location_A": 36.2, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A050c0c29-c0ab-4a87-a7d9-b8214efff2b2%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.328773333300006, 17.724433333299999 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:718b5dd7-f33d-48e9-ae1e-a8434b9d9c11", "pole": "Pole-29", "location_L": 17.723486666700001, "location_1": 83.328886666700001, "location_A": 36.5, "location_2": 4.6, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A718b5dd7-f33d-48e9-ae1e-a8434b9d9c11%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.328886666700001, 17.723486666700001 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:4fa38162-2eee-40c1-bdf3-070a541db239", "pole": "Pole-30(107)", "location_L": 17.7240966667, "location_1": 83.328905, "location_A": 36.4, "location_2": 4.4, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A4fa38162-2eee-40c1-bdf3-070a541db239%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.328905, 17.7240966667 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:5e9636f4-8aad-42a0-a7d7-0545bb8c2c0a", "pole": "Pole-31(99)", "location_L": 17.725786666699999, "location_1": 83.328036666700001, "location_A": 36.5, "location_2": 4.7, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A5e9636f4-8aad-42a0-a7d7-0545bb8c2c0a%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.328036666700001, 17.725786666699999 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:95742251-4a39-42bb-bb2e-493e01ba3b09", "pole": "Pole-32(95)", "location_L": 17.72603, "location_1": 83.327663333299995, "location_A": 36.6, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A95742251-4a39-42bb-bb2e-493e01ba3b09%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.327663333299995, 17.72603 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:8fb8f0c5-e46a-466c-849e-f49bcd9881bd", "pole": "Pole-33(93)", "location_L": 17.7260666667, "location_1": 83.327241666700004, "location_A": 36.6, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A8fb8f0c5-e46a-466c-849e-f49bcd9881bd%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.327241666700004, 17.7260666667 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:8fca4fe0-50f8-483c-9dbb-7d499b95a184", "pole": "Pole-34(39)", "location_L": 17.725203333300001, "location_1": 83.325623333300001, "location_A": 36.7, "location_2": 4.8, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A8fca4fe0-50f8-483c-9dbb-7d499b95a184%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.325623333300001, 17.725203333300001 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:e014d781-e3cc-48d3-b64f-ac2b4ddb2ce9", "pole": "Pole-35(45)", "location_L": 17.72385, "location_1": 83.32565, "location_A": 36.6, "location_2": 4.8, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ae014d781-e3cc-48d3-b64f-ac2b4ddb2ce9%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.32565, 17.72385 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:62fec24b-e0a5-40e5-9bc5-701867d3ed04", "pole": "Pole-36", "location_L": 17.723268333299998, "location_1": 83.325838333299998, "location_A": 36.6, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A62fec24b-e0a5-40e5-9bc5-701867d3ed04%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.325838333299998, 17.723268333299998 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:f1ba76b2-1c30-4b5a-8b7d-8371cb4dc7e7", "pole": "Pole-37(54)", "location_L": 17.72239, "location_1": 83.325748333299998, "location_A": 36.8, "location_2": 4.8, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Af1ba76b2-1c30-4b5a-8b7d-8371cb4dc7e7%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.325748333299998, 17.72239 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:7c552990-6de3-4905-9901-d459192c0ae8", "pole": "Pole-38(125)", "location_L": 17.722626666699998, "location_1": 83.324456666700002, "location_A": 37.0, "location_2": 4.6, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A7c552990-6de3-4905-9901-d459192c0ae8%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.324456666700002, 17.722626666699998 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:020566b9-5a7d-401c-8edb-4efa008430c0", "pole": "Pole-39(132)", "location_L": 17.7220433333, "location_1": 83.323678333299995, "location_A": 37.0, "location_2": 4.7, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A020566b9-5a7d-401c-8edb-4efa008430c0%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.323678333299995, 17.7220433333 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:86365c54-7362-4820-bac0-3708df21b337", "pole": "Pole-40(135)", "location_L": 17.72199, "location_1": 83.32334, "location_A": 36.9, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A86365c54-7362-4820-bac0-3708df21b337%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.32334, 17.72199 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:6b3d91d5-7782-40d4-a680-60aa48ca2fae", "pole": "Pole-41(156)", "location_L": 17.7216833333, "location_1": 83.322801666700002, "location_A": 37.0, "location_2": 4.8, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A6b3d91d5-7782-40d4-a680-60aa48ca2fae%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.322801666700002, 17.7216833333 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:b05830ae-548e-4330-87e3-f7a86524b032", "pole": "Pole-42(138)", "location_L": 17.722135, "location_1": 83.322613333299998, "location_A": 37.0, "location_2": 4.6, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ab05830ae-548e-4330-87e3-f7a86524b032%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.322613333299998, 17.722135 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:e7f0bb8d-75c5-4847-be10-475374a52d19", "pole": "Pole-43(146)", "location_L": 17.7218283333, "location_1": 83.3219033333, "location_A": 69.0, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ae7f0bb8d-75c5-4847-be10-475374a52d19%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.3219033333, 17.7218283333 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:57fc2fe8-37e4-48b9-afe6-d0b58181b775", "pole": "Pole-44(141)", "location_L": 17.722575, "location_1": 83.322253333299997, "location_A": 69.1, "location_2": 4.7, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A57fc2fe8-37e4-48b9-afe6-d0b58181b775%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.322253333299997, 17.722575 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:e029cb0f-8555-4285-8d5f-2575e5223948", "pole": "Pole-45", "location_L": 17.722131666700001, "location_1": 83.321643333300003, "location_A": 68.9, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ae029cb0f-8555-4285-8d5f-2575e5223948%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.321643333300003, 17.722131666700001 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:f6ca85ef-5df3-4571-ad31-29adb805a056", "pole": "Pole-46", "location_L": 17.721913333300002, "location_1": 83.320956666699999, "location_A": 68.9, "location_2": 5.0, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Af6ca85ef-5df3-4571-ad31-29adb805a056%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.320956666699999, 17.721913333300002 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:33577203-5cd5-45e4-8d29-5bf49f6ffc2d", "pole": "Pole-47", "location_L": 17.72253, "location_1": 83.320178333300007, "location_A": 70.3, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A33577203-5cd5-45e4-8d29-5bf49f6ffc2d%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.320178333300007, 17.72253 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:1946a26c-fc53-4664-8ca3-febe3a96d143", "pole": "Pole-48", "location_L": 17.72347, "location_1": 83.320168333300003, "location_A": 70.1, "location_2": 4.7, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A1946a26c-fc53-4664-8ca3-febe3a96d143%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.320168333300003, 17.72347 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:2cf5cf98-d12c-4816-9ad6-45b61a93d7ab", "pole": "Pole-49", "location_L": 17.723926666699999, "location_1": 83.320751666700005, "location_A": 69.8, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A2cf5cf98-d12c-4816-9ad6-45b61a93d7ab%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.320751666700005, 17.723926666699999 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:ef65a997-ba9b-4178-89cd-63ef92b8f159", "pole": "Pole-50", "location_L": 17.724093333300001, "location_1": 83.321388333300007, "location_A": 69.7, "location_2": 4.7, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Aef65a997-ba9b-4178-89cd-63ef92b8f159%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.321388333300007, 17.724093333300001 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:474eedae-90ab-4182-a7c8-7ac2568f5ad3", "pole": "Pole-51(6)", "location_L": 17.724733333300001, "location_1": 83.321633333299999, "location_A": 69.7, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A474eedae-90ab-4182-a7c8-7ac2568f5ad3%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.321633333299999, 17.724733333300001 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:1fcbb634-f2d1-48aa-91bf-bf123bfad803", "pole": "Pole-52", "location_L": 17.7235883333, "location_1": 83.3220833333, "location_A": 69.4, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A1fcbb634-f2d1-48aa-91bf-bf123bfad803%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.3220833333, 17.7235883333 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:26341b32-d259-49eb-afd3-c1fea20e5425", "pole": "Pole-53(8)", "location_L": 17.724596666699998, "location_1": 83.32206, "location_A": 69.3, "location_2": 4.6, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A26341b32-d259-49eb-afd3-c1fea20e5425%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.32206, 17.724596666699998 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:0081a9bd-ea45-4391-b5ea-b4c691aa649e", "pole": "Pole-54(11)", "location_L": 17.724958333299998, "location_1": 83.323078333300003, "location_A": 69.0, "location_2": 4.6, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A0081a9bd-ea45-4391-b5ea-b4c691aa649e%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.323078333300003, 17.724958333299998 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:445b5667-a2af-427f-9238-13e16c03b5b7", "pole": "Pole-54(21)", "location_L": 17.725606666699999, "location_1": 83.323318333299994, "location_A": 68.8, "location_2": 4.9, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3A445b5667-a2af-427f-9238-13e16c03b5b7%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.323318333299994, 17.725606666699999 ] } },
+{ "type": "Feature", "properties": { "meta_insta": "uuid:b717b9f8-79b5-4885-9046-c738065154d6", "pole": "Pole-55(25,26)", "location_L": 17.72583, "location_1": 83.324033333299994, "location_A": 69.4, "location_2": 4.8, "photo": "http:\/\/117.218.101.246:8181\/ODKAggregate\/view\/binaryData?blobKey=build_AU-S-Poles_1490698505%5B%40version%3Dnull+and+%40uiVersion%3Dnull%5D%2Fdata%5B%40key%3Duuid%3Ab717b9f8-79b5-4885-9046-c738065154d6%5D%2Fphoto" }, "geometry": { "type": "Point", "coordinates": [ 83.324033333299994, 17.72583 ] } }
+					]
+					};
+
+
+
+
+
+
+
+
+					var canteens = {
+						"type": "FeatureCollection",
+					"name": "PointsGeoJson",
+					"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+					"features": [
+					{ "type": "Feature", "properties": { "Name": "Basketball Court Canteen", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/North_Campus\/AUCE_Canteen_2.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 1 }, "geometry": { "type": "Point", "coordinates": [ 83.320184837128281, 17.7300413265115, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Principal Block Canteen", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/North_Campus\/Canteen_2.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 2 }, "geometry": { "type": "Point", "coordinates": [ 83.319527962216341, 17.729608538989279, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "NCRC Canteen", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/North_Campus\/Canteen_1.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 3 }, "geometry": { "type": "Point", "coordinates": [ 83.318396607782731, 17.72923512727397, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "South Campus Canteen", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/central_canteen.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 4 }, "geometry": { "type": "Point", "coordinates": [ 83.326419907743983, 17.723691216705269, 0.0 ] } }
+					]
+					};
+
+
+
+
+
+
+
+
+
+					var hostels = {
+						"type": "FeatureCollection",
+					"name": "PointsGeoJson",
+					"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+					"features": [
+					{ "type": "Feature", "properties": { "Name": "Block 1 hostel", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/block_1.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 1, "Students": "ECE,CSE,CIVIL", "Hstl_Name": "Block 1 hostel" }, "geometry": { "type": "Point", "coordinates": [ 83.321516710861587, 17.733011013518482, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Block 2 hostel", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/block_2.jpeg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 2, "Students": "INFORMATICS", "Hstl_Name": "Block 2 hostel" }, "geometry": { "type": "Point", "coordinates": [ 83.322100687549877, 17.733281189619579, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "BLOCK 3", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/block_4.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 3, "Students": "MARINE,MATELLURGY,MECHNICAL", "Hstl_Name": "BLOCK 3" }, "geometry": { "type": "Point", "coordinates": [ 83.322766856197561, 17.733447871378051, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "PG hostel", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/PG Block.jpeg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 4, "Students": "Chemical Department", "Hstl_Name": "PG hostel" }, "geometry": { "type": "Point", "coordinates": [ 83.323698054912981, 17.732484418047491, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Block 6 Hostel", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/block 6.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 5, "Students": "4TH Year Students", "Hstl_Name": "Block 6 Hostel" }, "geometry": { "type": "Point", "coordinates": [ 83.325346606781352, 17.73179650756104, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Block 7 hostel", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/block_7.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 6, "Students": "IST,Pharmacy", "Hstl_Name": "Block 7 hostel" }, "geometry": { "type": "Point", "coordinates": [ 83.325046887165868, 17.73083600313193, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Block 4", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/block_4.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 7, "Students": "First year Students", "Hstl_Name": "Block 4" }, "geometry": { "type": "Point", "coordinates": [ 83.324248552346418, 17.730464062048799, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Block 5 Hostel", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/girls hostel.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 8, "Students": "First Year Students (Girls)", "Hstl_Name": "Block 5 Hostel" }, "geometry": { "type": "Point", "coordinates": [ 83.324348699786, 17.729539951967379, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Girls PG Block", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/girls hostel.jpg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 9, "Students": "4th Year (Girls)", "Hstl_Name": "Girls PG Block" }, "geometry": { "type": "Point", "coordinates": [ 83.32496301148818, 17.729814146756169, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Samatha Hostel", "description": "<img style=\"max-width:170px;\" src=\"Navjoth\/PG Block.jpeg\">", "timestamp": null, "begin": null, "end": null, "altitudeMode": null, "tessellate": -1, "extrude": 0, "visibility": -1, "drawOrder": null, "icon": null, "id_2": 10, "Students": "PG students", "Hstl_Name": "Samatha Hostel" }, "geometry": { "type": "Point", "coordinates": [ 83.32706910162176, 17.73103297513855, 0.0 ] } }
+					]
+					};
+
+
+
+					
+					var adminstrative_buildings = {
+						"type": "FeatureCollection",
+					"name": "PointsGeoJson",
+					"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+					"features": [
+					{ "type": "Feature", "properties": { "id": 1, "Name": "AUCE Principal Block","description": "<img style=\"max-width:170px;\" src=\"Navjoth\/North_Campus\/Chemistry_1.jpg\">" }, "geometry": { "type": "Point", "coordinates": [ 83.319946869543799, 17.728726191407382 ] } },
+					{ "type": "Feature", "properties": { "id": 2, "Name": "AUCE Examination Block","description": "<img style=\"max-width:170px;\" src=\"Navjoth\/North_Campus\/Examination_Block_3.jpg\">" }, "geometry": { "type": "Point", "coordinates": [ 83.318860357979972, 17.728480695486972 ] } },
+					{ "type": "Feature", "properties": { "id": 3, "Name": "Placement Cell","description": "<img style=\"max-width:170px;\" src=\"Navjoth\/North_Campus\/Placement_2.jpg\">" }, "geometry": { "type": "Point", "coordinates": [ 83.32270741475854, 17.728854672224806 ] } },
+					{ "type": "Feature", "properties": { "id": 4, "Name": "A U Administrative Office","description": "<img style=\"max-width:170px;\" src=\"Navjoth\/North_Campus\/adm_building.jpg\">" }, "geometry": { "type": "Point", "coordinates": [ 83.324043729790759, 17.725935026502921 ] } },
+					{ "type": "Feature", "properties": { "id": 5, "Name": "AU Audit Cell" ,"description": "<img style=\"max-width:170px;\" src=\"Navjoth\/North_Campus\/audit_cell.jpg\">"}, "geometry": { "type": "Point", "coordinates": [ 83.324065980156931, 17.72545022836762 ] } },
+					{ "type": "Feature", "properties": { "id": 6, "Name": "E-5 Block" ,"description": "<img style=\"max-width:170px;\" src=\"Navjoth\/North_Campus\/adm_building.jpg\">"}, "geometry": { "type": "Point", "coordinates": [ 83.32334394799814, 17.725296907202026 ] } }
+					
+]
+					};
+
+
+
+					function myCanteens(){
+
+
+  
+
+						canteens.features.forEach(function(marker) {
+							/* Create a div element for the marker. */
+							var el = document.createElement('div');
+							/* Assign a unique `id` to the marker. */
+							el.id = "marker-" + marker.properties.id;
+							/* Assign the `marker` class to each marker for styling. */
+							el.className = 'marker';
+							
+							/**
+							 * Create a marker using the div element
+							 * defined above and add it to the map.
+							**/
+							new mapboxgl.Marker(el, { offset: [0, -23] })
+							  .setLngLat(marker.geometry.coordinates)
+							  .addTo(map);
+					        
+							/**
+							 * Listen to the element and when it is clicked, do three things:
+							 * 1. Fly to the point
+							 * 2. Close all other popups and display popup for clicked store
+							 * 3. Highlight listing in sidebar (and remove highlight for all other listings)
+							**/
+							el.addEventListener('click', function(e){
+							  /* Fly to the point */
+							  flyToStore(marker);
+							  /* Close all other popups and display popup for clicked store */
+							  createPopUp3(marker);
+							  var activeItem = document.getElementsByClassName('active');
+							e.stopPropagation();
+							if (activeItem[0]) {
+							  activeItem[0].classList.remove('active');
+							}
+							var listing = document.getElementById('listing-' + marker.properties.id);
+							listing.classList.add('active');
+					
+							});
+						  });
+						  
+						  
+						  
+
+
+
+						  $( ".marker1" ).remove();
+						  $( ".marker2" ).remove();
+						  $( ".marker3" ).remove();
+						  $( ".marker11" ).remove();
+						  map.removeLayer('line-animations');
+					  }
+
+
+
+					  
+					  function flyToStore(currentFeature) {
+						map.flyTo({
+						  center: currentFeature.geometry.coordinates,
+						  zoom: 2
+						});
+					  }
+				  
+				  
+					  function createPopUp3(currentFeature) {
+						  var popUps = document.getElementsByClassName('mapboxgl-popup');
+						  if (popUps[0]) popUps[0].remove();
+						  var popup = new mapboxgl.Popup({closeOnClick: false})
+							.setLngLat(currentFeature.geometry.coordinates)
+							.setHTML('<h3><center>Location</center></h3>' +
+							'<center><h4 class="pop" id="pop"><center><b>' + currentFeature.properties.Name + '</b></center><center align="right">'+currentFeature.properties.description+'</center></h4></b><center><button style="background-color:#007bff;font-size:13px"><a id="para" href='+currentFeature.properties.website_link+'>Click Here For More Info</a></button></center></center>')
+						  
+							.addTo(map);
+				  
+				  
+							responsiveVoice.speak(document.getElementById("pop").textContent);
+
+				  
+				  
+						}
+				  
+				  
+
+
+
+					function myDustbins(){
+
+
+  
+
+						dustbins.features.forEach(function(marker) {
+							/* Create a div element for the marker. */
+							var el = document.createElement('div');
+							/* Assign a unique `id` to the marker. */
+							el.id = "marker-" + marker.properties.id;
+							/* Assign the `marker` class to each marker for styling. */
+							el.className = 'marker1';
+							
+							/**
+							 * Create a marker using the div element
+							 * defined above and add it to the map.
+							**/
+							new mapboxgl.Marker(el, { offset: [0, -23] })
+							  .setLngLat(marker.geometry.coordinates)
+							  .addTo(map);
+					
+							/**
+							 * Listen to the element and when it is clicked, do three things:
+							 * 1. Fly to the point
+							 * 2. Close all other popups and display popup for clicked store
+							 * 3. Highlight listing in sidebar (and remove highlight for all other listings)
+							**/
+							el.addEventListener('click', function(e){
+							  /* Fly to the point */
+							  flyToStore(marker);
+							  /* Close all other popups and display popup for clicked store */
+							  createPopUp1(marker);
+					
+							});
+						  });
+
+
+
+
+						  $( ".marker").remove();
+						  $( ".marker11").remove();
+						  $( ".marker2").remove();
+						  $( ".marker3").remove();
+						  map.removeLayer('line-animations');
+					  }
+
+
+
+					  function flyToStore(currentFeature) {
+						map.flyTo({
+						  center: currentFeature.geometry.coordinates,
+						  zoom: 19
+						});
+					  }
+				  
+				  
+					  function createPopUp1(currentFeature) {
+						  var popUps = document.getElementsByClassName('mapboxgl-popup');
+						  if (popUps[0]) popUps[0].remove();
+						  var popup = new mapboxgl.Popup({closeOnClick: false})
+							.setLngLat(currentFeature.geometry.coordinates)
+							.setHTML('<h3><center>Location</center></h3>' +
+							'<h4 class="pop" id="pop"><center><b>' + currentFeature.properties.location + '</b></center></h4></b>')
+						  
+							.addTo(map);
+				  
+				  
+							responsiveVoice.speak(document.getElementById("pop").textContent);
+
+				  
+				  
+						}
+				  
+				  
+
+
+						
+
+					function adminstrative_buildings1(){
+
+
+  
+
+						adminstrative_buildings.features.forEach(function(marker) {
+							/* Create a div element for the marker. */
+							var el = document.createElement('div');
+							/* Assign a unique `id` to the marker. */
+							el.id = "marker-" + marker.properties.id;
+							/* Assign the `marker` class to each marker for styling. */
+							el.className = 'marker11';
+							
+							/**
+							 * Create a marker using the div element
+							 * defined above and add it to the map.
+							**/
+							new mapboxgl.Marker(el, { offset: [0, -23] })
+							  .setLngLat(marker.geometry.coordinates)
+							  .addTo(map);
+					
+							/**
+							 * Listen to the element and when it is clicked, do three things:
+							 * 1. Fly to the point
+							 * 2. Close all other popups and display popup for clicked store
+							 * 3. Highlight listing in sidebar (and remove highlight for all other listings)
+							**/
+							el.addEventListener('click', function(e){
+							  /* Fly to the point */
+							  flyToStore(marker);
+							  /* Close all other popups and display popup for clicked store */
+							  createPopUp11(marker);
+					
+							});
+						  });
+
+
+
+
+						  $( ".marker" ).remove();
+						  $( ".marker2" ).remove();
+						  $( ".marker3" ).remove();
+						  map.removeLayer('line-animations');
+					  }
+
+
+
+					  function flyToStore(currentFeature) {
+						map.flyTo({
+						  center: currentFeature.geometry.coordinates,
+						  zoom: 19
+						});
+					  }
+				  
+				  
+					  function createPopUp11(currentFeature) {
+						  var popUps = document.getElementsByClassName('mapboxgl-popup');
+						  if (popUps[0]) popUps[0].remove();
+						  var popup = new mapboxgl.Popup({closeOnClick: false})
+							.setLngLat(currentFeature.geometry.coordinates)
+							.setHTML('<h3><center>Location</center></h3>' +
+							'<center><h4 class="pop" id="pop"><center><b>' + currentFeature.properties.Name + '</b></center><center align="right">'+currentFeature.properties.description+'</center></h4></b><center><button style="background-color:#007bff;font-size:13px"><a id="para" href="https://www.andhrauniversity.edu.in/university-hostels/engineering-hostel">Click Here For More Info</a></button></center></center>')
+						  
+							.addTo(map);
+				  
+				  
+							responsiveVoice.speak(document.getElementById("pop").textContent);
+
+				  
+				  
+						}
+				  
+				  
+
+
+
+					  
+					function myHostels(){
+
+
+  
+						hostels.features.forEach(function(marker) {
+							/* Create a div element for the marker. */
+							var el = document.createElement('div');
+							/* Assign a unique `id` to the marker. */
+							el.id = "marker-" + marker.properties.id;
+							/* Assign the `marker` class to each marker for styling. */
+							el.className = 'marker2';
+							
+							/**
+							 * Create a marker using the div element
+							 * defined above and add it to the map.
+							**/
+							new mapboxgl.Marker(el, { offset: [0, -23] })
+							  .setLngLat(marker.geometry.coordinates)
+							  .addTo(map);
+					
+							/**
+							 * Listen to the element and when it is clicked, do three things:
+							 * 1. Fly to the point
+							 * 2. Close all other popups and display popup for clicked store
+							 * 3. Highlight listing in sidebar (and remove highlight for all other listings)
+							**/
+							el.addEventListener('click', function(e){
+							  /* Fly to the point */
+							  flyToStore(marker);
+							  /* Close all other popups and display popup for clicked store */
+							  createPopUp2(marker);
+
+							 
+					
+							});
+						  });
+
+
+						  $( ".marker1" ).remove();
+						  $( ".marker3" ).remove();
+						  $( ".marker" ).remove();
+						  $( ".marker11" ).remove();
+						  map.removeLayer('line-animations');
+					  
+					  }
+					  
+					  
+					  
+					  function flyToStore(currentFeature) {
+						map.flyTo({
+						  center: currentFeature.geometry.coordinates,
+						  zoom: 19
+						});
+					  }
+				  
+				  
+					  function createPopUp2(currentFeature) {
+						  var popUps = document.getElementsByClassName('mapboxgl-popup');
+						  if (popUps[0]) popUps[0].remove();
+						  var popup = new mapboxgl.Popup({closeOnClick: false})
+							.setLngLat(currentFeature.geometry.coordinates)
+							.setHTML('<h3><center>Location</center></h3>' +
+							'<center><h4 class="pop" id="pop"><center><b>' + currentFeature.properties.Name + '</b></center><center align="right">'+currentFeature.properties.description+'</center></h4></b><center><button style="background-color:#007bff;font-size:13px"><a id="para" href="https://www.andhrauniversity.edu.in/university-hostels/engineering-hostel">Click Here For More Info</a></button></center></center>')
+						  
+							.addTo(map);
+				  
+				  
+							responsiveVoice.speak(document.getElementById("pop").textContent);
+
+							
+				  
+						}
+
+
+
+
+
+						function electricpoles(){
+
+
+  
+
+							electric_poles.features.forEach(function(marker) {
+								/* Create a div element for the marker. */
+								var el = document.createElement('div');
+								/* Assign a unique `id` to the marker. */
+								el.id = "marker-" + marker.properties.id;
+								/* Assign the `marker` class to each marker for styling. */
+								el.className = 'marker3';
+								
+								/**
+								 * Create a marker using the div element
+								 * defined above and add it to the map.
+								**/
+								new mapboxgl.Marker(el, { offset: [0, -23] })
+								  .setLngLat(marker.geometry.coordinates)
+								  .addTo(map);
+						
+								/**
+								 * Listen to the element and when it is clicked, do three things:
+								 * 1. Fly to the point
+								 * 2. Close all other popups and display popup for clicked store
+								 * 3. Highlight listing in sidebar (and remove highlight for all other listings)
+								**/
+								el.addEventListener('click', function(e){
+								  /* Fly to the point */
+								  flyToStore(marker);
+								  /* Close all other popups and display popup for clicked store */
+								  createPopUp4(marker);
+						
+								});
+							  });
+
+
+						  rotateCamera(0);
+ 
+							  //Add 3d buildings and remove label layers to enhance the map
+						//	 var layers = map.getStyle().layers;
+						//	 for (var i = 0; i < layers.length; i++) {
+						//	 if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+							 // remove text labels
+							 
+						//	 }
+						//	 }
+	
+							  $( ".marker1" ).remove();
+							  $( ".marker" ).remove();
+							  $( ".marker2" ).remove();
+							  $( ".marker11" ).remove();
+							  map.removeLayer('line-animations');
+
+
+
+						  }
+						
+	
+						  function flyToStore(currentFeature) {
+							map.flyTo({
+							  center: currentFeature.geometry.coordinates,
+							  zoom: 19
+							});
+						  }
+					  
+					  
+						  function createPopUp4(currentFeature) {
+							  
+							  var popUps = document.getElementsByClassName('mapboxgl-popup');
+							  if (popUps[0]) popUps[0].remove();
+							  var popup = new mapboxgl.Popup({closeOnClick: false})
+								.setLngLat(currentFeature.geometry.coordinates)
+								.setHTML('<h3><center>Location</center></h3>' +
+								'<h4 class="pop" id="pop"><center><b style="font-size:10px">' + currentFeature.properties.location_L + '   ,  '+currentFeature.properties.location_1+'</b></center></h4></b>')
+							  
+								.addTo(map);
+					  
+					  
+								responsiveVoice.speak(document.getElementById("pop").textContent);
+	
+					  
+					  
+							}
+					  
+				  
+					  
+
+
+
+					  map.addControl(
+						new mapboxgl.GeolocateControl({
+						positionOptions: {
+						enableHighAccuracy: true
+						},
+						trackUserLocation: true
+						})
+						);
+
+
+
+
+
+
+			   
+					 
+			   </script>
+
+		
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery-migrate-3.0.1.min.js"></script>
+			<script src="js/popper.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+			<script src="js/jquery.easing.1.3.js"></script>
+			<script src="js/jquery.waypoints.min.js"></script>
+			<script src="js/jquery.stellar.min.js"></script>
+			<script src="js/jquery.animateNumber.min.js"></script>
+			<script src="js/owl.carousel.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>
+			<script src="js/scrollax.min.js"></script>
+		   
+			<script src="js/main.js"></script>
+
+			
+
+
+	</body>
+</html>

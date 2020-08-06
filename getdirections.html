@@ -1,0 +1,2980 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+	<head>
+		<title>AUSIS</title>
+		<link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+
+<script src='https://npmcdn.com/@turf/turf@5.1.6/turf.min.js'></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script> -->
+
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+
+  <!-- <script src="talkify.min.js"></script> -->
+  <script src="alertifyjs/alertify.js" type="text/javascript"></script>
+
+  <link href="alertifyjs/css/alertify.css" rel="stylesheet">
+  <link href="alertifyjs/css/themes/default.css" rel="stylesheet">
+  
+
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=vQA98UAN"></script>
+
+
+
+
+
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="alertifyjs/alertify.js" type="text/javascript"></script>
+
+	<link href="alertifyjs/css/alertify.css" rel="stylesheet">
+	<link href="alertifyjs/css/themes/default.css" rel="stylesheet">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <style>
+
+	.grow:hover
+{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+}
+
+
+
+
+input[type="text"] {
+	width: 100%;
+	float: center;
+	border: 2px solid #aaa;
+	border-radius: 4px;
+	margin: 8px 0;
+	outline: none;
+	padding: 8px;
+	box-sizing: border-box;
+	transition: 0.3s;
+	text-align: center;
+  }
+  
+  input[type="text"]:focus {
+	border-color: dodgerBlue;
+	box-shadow: 0 0 8px 0 dodgerBlue;
+  }
+  
+  .inputWithIcon input[type="text"] {
+	padding-left: 40px;
+  }
+  
+  .inputWithIcon {
+	position: relative;
+  }
+  
+  .inputWithIcon i {
+	position: absolute;
+	left: 6px;
+	top: 4px;
+	padding: 9px 9px;
+	color: #aaa;
+	transition: 0.3s;
+	border-radius: 20px;
+  }
+  
+  .inputWithIcon input[type="text"]:focus + i {
+	color: dodgerBlue;
+  }
+  
+  .inputWithIcon.inputIconBg i {
+	background-color: #aaa;
+	color: #fff;
+	padding: 9px 4px;
+	border-radius: 4px 0 0 4px;
+  }
+  
+  .inputWithIcon.inputIconBg input[type="text"]:focus + i {
+	color: #fff;
+	background-color: dodgerBlue;
+  }
+
+
+  i:hover {
+	background-color: yellow;
+  }
+
+
+  .marker {
+	background-image: url('images/mapbox-icon.png');
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+  }
+  
+  </style>
+
+
+
+  <script>
+		"use strict";
+		
+		!function() {
+		  var t = window.driftt = window.drift = window.driftt || [];
+		  if (!t.init) {
+			if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+			t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+			t.factory = function(e) {
+			  return function() {
+				var n = Array.prototype.slice.call(arguments);
+				return n.unshift(e), t.push(n), t;
+			  };
+			}, t.methods.forEach(function(e) {
+			  t[e] = t.factory(e);
+			}), t.load = function(t) {
+			  var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+			  o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+			  var i = document.getElementsByTagName("script")[0];
+			  i.parentNode.insertBefore(o, i);
+			};
+		  }
+		}();
+		drift.SNIPPET_VERSION = '0.3.1';
+		drift.load('5ti6ahfc4hry');
+		</script>
+  
+
+
+
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+			<div class="container1">
+					
+					<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Smiley face" height="32" width="32">  <span> AUSIS</span></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span> Menu
+			  </button>
+			  <div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+						<li class="nav-item"><a href="https://www.andhrauniversity.edu.in/about/au-profile" class="nav-link">AU Profile</a></li>
+						<li class="nav-item"><a href="Department_locations.html" class="nav-link">Department Locations</a></li>
+						<li class="nav-item"><a href="getdirections.html" class="nav-link">Get Directions</a></li>
+						<li class="nav-item"><a href="Optimized_with_Directions.html" class="nav-link">Optimized Routes</a></li>
+						<li class="nav-item"><a href="getnearbylocations.html" class="nav-link">NearBy Places</a></li>
+						
+						<li class="nav-item"><a href="attendance_map.html" class="nav-link">Attendance Map</a></li>
+						<li class="nav-item"><a href="https://forms.gle/7nCk3rDwbfpa4Bgt5" class="nav-link">Swachh AU</a></li>
+						<li class="nav-item"><a href="buildingrecognition.html" class="nav-link">Building Recognition</a></li>
+		
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+	
+	
+		<!-- One -->
+			<div id="One" class="wrapper style3"  >
+				<div class="inner">
+					
+					<div class="align-center">	
+							<h2 class="animated jackInTheBox"  style="padding-top: 0%;font-size:20px ;color:#007bff;text-shadow: 0.5px 0.5px rgb(240, 236, 11)">Andhra University Navigation Information System</h2>
+
+
+							<div class="popup-overlay">
+									<!--Creates the popup content-->
+							  
+									<div style="width: 100% ;background:#02021a9f ;top: 0%"><h2>Directions</h2></div>
+									<div class="popup-content" style="margin-top: 0%">
+									  
+									  
+									  <p id="ed" style="color: black"> This is an example pop-up that you can make using jQuery.</p>
+									  <!--popup's close button-->
+									  <!-- <button class="close" style="width: auto;height:auto;background-color:aquamarine">Close</button>  -->
+									</div>
+								  </div>
+							  
+								  
+							<center>	  <div class="inputWithIcon" >
+										<input type="text" placeholder="Your Origin Place Name" id="id1" list="places1">
+										<datalist id="places1">
+
+												
+											<option value="Department of Geo engineering">
+											<option value="Department of Architecture">
+											<option value="Department of ECE">
+											<option value="Department of CSE">
+											<option value="Department of EEE engineering">
+											<option value="Department of civil engineering">
+											<option value="Department of Mechanical">
+											<option value="Department of Marine engineering">
+										
+											<option value="Department of Instrumentation">
+											<option value="Department of Engineering Physics">
+											<option value="Department of Engineering Chemistry">
+											<option value="Department of Engineering Mathematics">
+											<option value="AUCE Examination Block">
+											<option value="AUCE In Gate">
+											<option value="AUCE Out Gate">
+											<option value="NCRC">
+											<option value="New Classroom Complex">
+											<option value="Y V S Murthy Auditorium">
+											<option value=" AUCE Placement Office">
+											<option value=" Chemical Engg PG Block">	
+											<option value=" IIPE">
+											<option value="Principal Block">
+											<option value="Administrative Building ">
+										    <option value="South Campus Administrative Building">
+											<option value="Civil Gallery">
+											<option value="Audit Cell">
+
+											<option value="E-V Block">
+											<option value="South Campus Canteen">
+											<option value="Engineering Library">
+											<option value="Department of Metallurgy">	
+
+
+													
+															
+										</datalist>
+										<i class="fa fa-microphone"  onclick="record1()"  style="color:#007bff;" ></i>
+									  </div></center>
+									<center>  <div class="inputWithIcon">
+											<input type="text" placeholder="Your Destination Place Name" id="id2" list="places2">
+
+											<datalist id="places2">
+													       
+													        <option value="Department of Geo engineering">
+															<option value="Department of Architecture">	
+															<option value="Department of ECE">
+															<option value="Department of CSE">
+															<option value="Department of EEE">
+															<option value="Department of civil engineering">
+															<option value="Department of Mechanical">
+															<option value="Department of Marine engineering">
+														
+															<option value="Department of Instrumentation">
+															<option value="Department of Engineering Physics ">
+															<option value="Department of Engineering Chemistry ">
+															<option value="Department of Engineering Mathematics ">
+															<option	value="Department of Chemical Engineering"	>
+															<option value="AUCE Examination Block">
+															<option value="AUCE In Gate">
+															<option value="AUCE Out Gate">
+															<option value="NCRC">
+															<option value="New Classroom Complex">	
+															<option value="Y V S Murthy Auditorium">
+															<option value=" AUCE Placement Office">
+															<option value=" Chemical Engg PG Block">	
+															<option value=" IIPE">
+															<option value="Principal Block">
+															<option value="Administrative Building ">
+															<option value="South Campus Administrative Building">
+															<option value="Civil Gallery">
+															<option value="Audit Cell">
+															<option value="E-V Block">
+															<option value="South Campus Canteen">
+															<option value="Engineering Library">
+															<option value="Department of Metallurgy">		
+															
+																	
+												</datalist>
+
+
+
+											<i class="fa fa-microphone"  onclick="record2()"  style="color:#007bff" ></i>
+										  </div></center>
+										   <button  style="width: auto;border-radius:12px;background:#007bff;opacity:0.6;border: 2px solid white;color:yellow;font-style:initial" onclick="myfunction()">Get Route With Directions</button>
+										   <button  style="width: auto;border-radius:12px;background:#007bff;opacity:0.6;border: 2px solid white;color:yellow;font-style:initial" onclick="location.reload()">Refresh Map</button>	
+					</div>
+				</div>
+			</div>
+
+
+<!-- Two -->
+<div  class="wrapper style2" >
+		<div id="map" class="inner" >
+			
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+			function record1() {
+				var recognition = new webkitSpeechRecognition();
+				recognition.lang = "en-GB";
+	
+				recognition.onresult = function(event) {
+					// console.log(event);
+				var	a=event.results[0][0].transcript;
+				var result=a.toLowerCase();
+					document.getElementById('id1').value = result;
+					
+				}
+				recognition.start();
+	
+			}
+
+			function record2() {
+				var recognition = new webkitSpeechRecognition();
+				recognition.lang = "en-GB";
+	
+				recognition.onresult = function(event) {
+					// console.log(event);
+					var	b=event.results[0][0].transcript;
+				var result1=b.toLowerCase();
+					document.getElementById('id2').value = result1;
+					
+				}
+				recognition.start();
+	
+			}
+		</script>
+
+
+
+			<script>
+
+				function hidefn(){
+					$(".marker").remove();
+					map.removeLayer('line-animation1');
+					responsiveVoice.cancel();
+					alt.close(); 
+				}
+
+
+					function myfunction(){
+					
+					 var obj=document.getElementById("id1").value;
+					 var obj1=document.getElementById("id2").value;
+					  
+					  
+					  if((obj=="Department of Geo engineering" || obj=="department of geo engineering" || obj=="geo engineering" || obj=="geoengineering") &&( obj1=="Principal Block" || obj1=="AUCE principal block")){
+					
+						map.addLayer({
+							'id': 'line-animation1',
+							'type': 'line',
+							'source': {
+							'type': 'geojson',
+							'data': Geo_to_principal_block 
+							},
+							'layout': {
+							'line-cap': 'round',
+							'line-join': 'miter'
+							},
+							'paint': {
+							'line-color': '#000000',
+							'line-width': 10,
+							'line-opacity': 1
+							},
+							
+							});
+		
+	
+							Geo_to_principal_block_point.features.forEach(function(marker) {
+	
+								// create a HTML element for each feature
+								var el = document.createElement('div');
+								el.className = 'marker';
+							  
+								// make a marker for each feature and add to the map
+								new mapboxgl.Marker(el)
+								  .setLngLat(marker.geometry.coordinates)
+								  .addTo(map);
+	
+	
+								  
+	
+							  map.flyTo({
+								center: marker.geometry.coordinates,
+							  zoom: 17,
+								essential: true // this animation is considered essential with respect to prefers-reduced-motion
+								});
+							  });
+		
+	
+	
+	
+	
+	
+										var length = turf.length(Geo_to_principal_block, {units: 'kilometers'});
+							var final=Math.round((length + Number.EPSILON) * 100) / 100
+							alertify.set('notifier','position', 'top-center');
+							alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+					
+							responsiveVoice.speak(final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination');
+							
+							// $(".open").on("click", function() {
+							 // $(".popup-overlay, .popup-content").addClass("active");
+							// });
+						//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+							//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+							
+						//	$(".close, .popup-overlay").on("click", function() {
+						//	  $(".popup-overlay, .popup-content").removeClass("active");
+							  //location.reload();
+							// map.removeLayer('line-animation1');
+							  //responsiveVoice.cancel();
+							  
+						//	});
+					
+					  }
+
+
+
+
+
+
+					  else if((obj=="Principal Block" || obj=="Principal block" || obj=="principal block" || obj=="principalblock" || obj=="Principalblock") && ( obj1=="Administrative Building " || obj1=="Administrative building" || obj1=="administrative Building")){
+					
+						// add the line which will be modified in the animation
+						map.addLayer({
+						'id': 'line-animation1',
+						'type': 'line',
+						'source': {
+						'type': 'geojson',
+						'data': Principal_block_to_vc_office 
+						},
+						'layout': {
+						'line-cap': 'round',
+						'line-join': 'miter'
+						},
+						'paint': {
+						'line-color': '#228B22',
+						'line-width': 14,
+						'line-opacity': 1
+						},
+						
+						});
+	
+
+						principal_block_to_vc_office_point.features.forEach(function(marker) {
+
+							// create a HTML element for each feature
+							var el = document.createElement('div');
+							el.className = 'marker';
+						  
+							// make a marker for each feature and add to the map
+							new mapboxgl.Marker(el)
+							  .setLngLat(marker.geometry.coordinates)
+							  .addTo(map);
+
+
+							  
+
+						  map.flyTo({
+							center: marker.geometry.coordinates,
+						  zoom: 17,
+							essential: true // this animation is considered essential with respect to prefers-reduced-motion
+							});
+						  });
+	
+
+
+
+
+
+									var length = turf.length(Principal_block_to_vc_office, {units: 'kilometers'});
+						var final=Math.round((length + Number.EPSILON) * 100) / 100
+						alertify.set('notifier','position', 'top-center');
+						alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+							 
+						  
+				
+						responsiveVoice.speak('Distance'+final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left ,then turn right, Turn right and again Turn right,You have arrived at your destination.');
+						// $(".open").on("click", function() {
+						 // $(".popup-overlay, .popup-content").addClass("active");
+						// });
+					//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+						//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+						
+					//	$(".close, .popup-overlay").on("click", function() {
+					//	  $(".popup-overlay, .popup-content").removeClass("active");
+						  //location.reload();
+						// map.removeLayer('line-animation1');
+						  //responsiveVoice.cancel();
+						  
+					//	});
+						
+						  }
+	
+	                    //CSE TO ARCHITECTURE
+
+
+						  else if((obj=="department of cse" || obj=="Department of CSE" || obj=="cse department" || obj=="department of computer science" || obj=="computer science department") &&( obj1=="department of architecture" || obj1=="architecture department" || obj1=="architecture"||obj1=="Department of Architecture")){
+					
+							// add the line which will be modified in the animation
+							map.addLayer({
+							'id': 'line-animation1',
+							'type': 'line',
+							'source': {
+							'type': 'geojson',
+							'data': cse_to_architecture 
+							},
+							'layout': {
+							'line-cap': 'round',
+							'line-join': 'miter'
+							},
+							'paint': {
+							'line-color': '#228B22',
+							'line-width': 14,
+							'line-opacity': 1
+							},
+							
+							});
+		
+	
+							cse_to_architecture_point.features.forEach(function(marker) {
+	
+								// create a HTML element for each feature
+								var el = document.createElement('div');
+								el.className = 'marker';
+							  
+								// make a marker for each feature and add to the map
+								new mapboxgl.Marker(el)
+								  .setLngLat(marker.geometry.coordinates)
+								  .addTo(map);
+	
+	
+								  
+	
+							  map.flyTo({
+								center: marker.geometry.coordinates,
+							  zoom: 17,
+								essential: true // this animation is considered essential with respect to prefers-reduced-motion
+								});
+							  });
+		
+	
+	
+	
+	
+	
+										var length = turf.length(cse_to_architecture, {units: 'kilometers'});
+							var final=Math.round((length + Number.EPSILON) * 100) / 100
+							alertify.set('notifier','position', 'top-center');
+							alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+								 
+							  
+					
+							responsiveVoice.speak('Distance'+final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left ,then turn right, Turn right and again Turn right,You have arrived at your destination.');
+							// $(".open").on("click", function() {
+							 // $(".popup-overlay, .popup-content").addClass("active");
+							// });
+						//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+							//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+							
+						//	$(".close, .popup-overlay").on("click", function() {
+						//	  $(".popup-overlay, .popup-content").removeClass("active");
+							  //location.reload();
+							// map.removeLayer('line-animation1');
+							  //responsiveVoice.cancel();
+							  
+						//	});
+							
+							  }
+		
+		
+                        //CSE TO CIVIL
+
+							  
+						  else if((obj=="department of cse" || obj=="Department of CSE" || obj=="cse department" || obj=="department of computer science" || obj=="computer science department") &&( obj1=="department of civil engineering" || obj1=="department of civil" || obj1=="department of civilengineering"||obj1=="civil engineering department" ||obj1=="Department of civil engineering"||obj1=="civil engineering"||obj1=="civilengineering")){
+					
+							// add the line which will be modified in the animation
+							map.addLayer({
+							'id': 'line-animation1',
+							'type': 'line',
+							'source': {
+							'type': 'geojson',
+							'data': cse_to_civil
+							},
+							'layout': {
+							'line-cap': 'round',
+							'line-join': 'miter'
+							},
+							'paint': {
+							'line-color': '#228B22',
+							'line-width': 14,
+							'line-opacity': 1
+							},
+							
+							});
+		
+	
+							cse_to_civil_point.features.forEach(function(marker) {
+	
+								// create a HTML element for each feature
+								var el = document.createElement('div');
+								el.className = 'marker';
+							  
+								// make a marker for each feature and add to the map
+								new mapboxgl.Marker(el)
+								  .setLngLat(marker.geometry.coordinates)
+								  .addTo(map);
+	
+	
+								  
+	
+							  map.flyTo({
+								center: marker.geometry.coordinates,
+							  zoom: 17,
+								essential: true // this animation is considered essential with respect to prefers-reduced-motion
+								});
+							  });
+		
+	
+	
+	
+	
+	
+										var length = turf.length(cse_to_civil, {units: 'kilometers'});
+							var final=Math.round((length + Number.EPSILON) * 100) / 100
+							alertify.set('notifier','position', 'top-center');
+							alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+								 
+							  
+					
+							responsiveVoice.speak('Distance'+final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left ,then turn right, Turn right and again Turn right,You have arrived at your destination.');
+							// $(".open").on("click", function() {
+							 // $(".popup-overlay, .popup-content").addClass("active");
+							// });
+						//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+							//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+							
+						//	$(".close, .popup-overlay").on("click", function() {
+						//	  $(".popup-overlay, .popup-content").removeClass("active");
+							  //location.reload();
+							// map.removeLayer('line-animation1');
+							  //responsiveVoice.cancel();
+							  
+						//	});
+							
+							  }
+		
+	
+	
+                        //CSE TO MECHANICAL DEPARTMENT
+
+							  	  
+						  else if((obj=="department of cse" || obj=="Department of CSE" || obj=="cse department" || obj=="department of computer science" || obj=="computer science department") &&( obj1=="department of mechanical engineering" || obj1=="department of mechanical" || obj1=="department of mechanicalengineering"||obj1=="mechanical engineering department" ||obj1=="Department of Mechanical"||obj1=="mechanical engineering"||obj1=="mechanical")){
+					
+							// add the line which will be modified in the animation
+							map.addLayer({
+							'id': 'line-animation1',
+							'type': 'line',
+							'source': {
+							'type': 'geojson',
+							'data': cse_to_mechanical
+							},
+							'layout': {
+							'line-cap': 'round',
+							'line-join': 'miter'
+							},
+							'paint': {
+							'line-color': '#228B22',
+							'line-width': 14,
+							'line-opacity': 1
+							},
+							
+							});
+		
+	
+							cse_to_mech_point.features.forEach(function(marker) {
+	
+								// create a HTML element for each feature
+								var el = document.createElement('div');
+								el.className = 'marker';
+							  
+								// make a marker for each feature and add to the map
+								new mapboxgl.Marker(el)
+								  .setLngLat(marker.geometry.coordinates)
+								  .addTo(map);
+	
+	
+								  
+	
+							  map.flyTo({
+								center: marker.geometry.coordinates,
+							  zoom: 17,
+								essential: true // this animation is considered essential with respect to prefers-reduced-motion
+								});
+							  });
+		
+	
+	
+	
+	
+	
+										var length = turf.length(cse_to_mechanical, {units: 'kilometers'});
+							var final=Math.round((length + Number.EPSILON) * 100) / 100
+							alertify.set('notifier','position', 'top-center');
+							alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+								 
+							  
+					
+							responsiveVoice.speak('Distance'+final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left ,then turn right, Turn right and again Turn right,You have arrived at your destination.');
+							// $(".open").on("click", function() {
+							 // $(".popup-overlay, .popup-content").addClass("active");
+							// });
+						//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+							//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+							
+						//	$(".close, .popup-overlay").on("click", function() {
+						//	  $(".popup-overlay, .popup-content").removeClass("active");
+							  //location.reload();
+							// map.removeLayer('line-animation1');
+							  //responsiveVoice.cancel();
+							  
+						//	});
+							
+							  }
+		
+	
+
+
+
+                        //CSE TO INSTRUMENTATION
+							  
+							  	  
+						  else if((obj=="department of cse" || obj=="Department of CSE" || obj=="cse department" || obj=="department of computer science" || obj=="computer science department") &&( obj1=="department of instrumentation" || obj1=="instrumentation department"|| obj1=="instrumentation" ||obj1=="Department of Instrumentation")){
+					
+							// add the line which will be modified in the animation
+							map.addLayer({
+							'id': 'line-animation1',
+							'type': 'line',
+							'source': {
+							'type': 'geojson',
+							'data': cse_to_instrumentation
+							},
+							'layout': {
+							'line-cap': 'round',
+							'line-join': 'miter'
+							},
+							'paint': {
+							'line-color': '#228B22',
+							'line-width': 14,
+							'line-opacity': 1
+							},
+							
+							});
+		
+	
+							cse_to_instrumentation_point.features.forEach(function(marker) {
+	
+								// create a HTML element for each feature
+								var el = document.createElement('div');
+								el.className = 'marker';
+							  
+								// make a marker for each feature and add to the map
+								new mapboxgl.Marker(el)
+								  .setLngLat(marker.geometry.coordinates)
+								  .addTo(map);
+	
+	
+								  
+	
+							  map.flyTo({
+								center: marker.geometry.coordinates,
+							  zoom: 17,
+								essential: true // this animation is considered essential with respect to prefers-reduced-motion
+								});
+							  });
+		
+	
+	
+	
+	
+	
+										var length = turf.length(cse_to_instrumentation, {units: 'kilometers'});
+							var final=Math.round((length + Number.EPSILON) * 100) / 100
+							alertify.set('notifier','position', 'top-center');
+							alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+								 
+							  
+					
+							responsiveVoice.speak('Distance'+final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left ,then turn right, Turn right and again Turn right,You have arrived at your destination.');
+							// $(".open").on("click", function() {
+							 // $(".popup-overlay, .popup-content").addClass("active");
+							// });
+						//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+							//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+							
+						//	$(".close, .popup-overlay").on("click", function() {
+						//	  $(".popup-overlay, .popup-content").removeClass("active");
+							  //location.reload();
+							// map.removeLayer('line-animation1');
+							  //responsiveVoice.cancel();
+							  
+						//	});
+							
+							  }
+		
+	
+	
+
+	
+                        //CSE TO CHEMICAL
+
+
+							    	  
+						  else if((obj=="department of cse" || obj=="Department of CSE" || obj=="cse department" || obj=="department of computer science" || obj=="computer science department") &&( obj1=="chemical engineering" || obj1=="Department of Chemical Engineering" ||obj1=="chemical department" ||obj1=="department of chemical engineering")){
+					
+							// add the line which will be modified in the animation
+							map.addLayer({
+							'id': 'line-animation1',
+							'type': 'line',
+							'source': {
+							'type': 'geojson',
+							'data': cse_to_chemical
+							},
+							'layout': {
+							'line-cap': 'round',
+							'line-join': 'miter'
+							},
+							'paint': {
+							'line-color': '#228B22',
+							'line-width': 14,
+							'line-opacity': 1
+							},
+							
+							});
+		
+	
+							cse_to_chemical_point.features.forEach(function(marker) {
+	
+								// create a HTML element for each feature
+								var el = document.createElement('div');
+								el.className = 'marker';
+							  
+								// make a marker for each feature and add to the map
+								new mapboxgl.Marker(el)
+								  .setLngLat(marker.geometry.coordinates)
+								  .addTo(map);
+	
+	
+								  
+	
+							  map.flyTo({
+								center: marker.geometry.coordinates,
+							  zoom: 17,
+								essential: true // this animation is considered essential with respect to prefers-reduced-motion
+								});
+							  });
+		
+	
+	
+	
+	
+	
+										var length = turf.length(cse_to_chemical, {units: 'kilometers'});
+							var final=Math.round((length + Number.EPSILON) * 100) / 100
+							alertify.set('notifier','position', 'top-center');
+							alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+								 
+							  
+					
+							responsiveVoice.speak('Distance'+final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left ,then turn right, Turn right and again Turn right,You have arrived at your destination.');
+							// $(".open").on("click", function() {
+							 // $(".popup-overlay, .popup-content").addClass("active");
+							// });
+						//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+							//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+							
+						//	$(".close, .popup-overlay").on("click", function() {
+						//	  $(".popup-overlay, .popup-content").removeClass("active");
+							  //location.reload();
+							// map.removeLayer('line-animation1');
+							  //responsiveVoice.cancel();
+							  
+						//	});
+							
+							  }
+		
+	
+	
+                        //CSE TO MARINE
+
+							  	    	  
+						  else if((obj=="department of cse" || obj=="Department of CSE" || obj=="cse department" || obj=="department of computer science" || obj=="computer science department") &&( obj1=="marine engineering" || obj1=="Department of Marine engineering" ||obj1=="marine department" ||obj1=="department of marine engineering")){
+					
+							// add the line which will be modified in the animation
+							map.addLayer({
+							'id': 'line-animation1',
+							'type': 'line',
+							'source': {
+							'type': 'geojson',
+							'data': cse_to_marine
+							},
+							'layout': {
+							'line-cap': 'round',
+							'line-join': 'miter'
+							},
+							'paint': {
+							'line-color': '#228B22',
+							'line-width': 14,
+							'line-opacity': 1
+							},
+							
+							});
+		
+	
+							cse_to_marine_point.features.forEach(function(marker) {
+	
+								// create a HTML element for each feature
+								var el = document.createElement('div');
+								el.className = 'marker';
+							  
+								// make a marker for each feature and add to the map
+								new mapboxgl.Marker(el)
+								  .setLngLat(marker.geometry.coordinates)
+								  .addTo(map);
+	
+	
+								  
+	
+							  map.flyTo({
+								center: marker.geometry.coordinates,
+							  zoom: 17,
+								essential: true // this animation is considered essential with respect to prefers-reduced-motion
+								});
+							  });
+		
+	
+	
+	
+	
+	
+										var length = turf.length(cse_to_marine, {units: 'kilometers'});
+							var final=Math.round((length + Number.EPSILON) * 100) / 100
+							alertify.set('notifier','position', 'top-center');
+							alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+								 
+							  
+					
+							responsiveVoice.speak('Distance'+final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left ,then turn right, Turn right and again Turn right,You have arrived at your destination.');
+							// $(".open").on("click", function() {
+							 // $(".popup-overlay, .popup-content").addClass("active");
+							// });
+						//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+							//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+							
+						//	$(".close, .popup-overlay").on("click", function() {
+						//	  $(".popup-overlay, .popup-content").removeClass("active");
+							  //location.reload();
+							// map.removeLayer('line-animation1');
+							  //responsiveVoice.cancel();
+							  
+						//	});
+							
+							  }
+		
+	
+
+
+                        //CSE TO ECE
+							  	  	    	  
+						  else if((obj=="department of cse" || obj=="Department of CSE" || obj=="cse department" || obj=="department of computer science" || obj=="computer science department") &&( obj1=="department of electronic and communication engineering"||obj1=="electronic and communication engineering department"||obj1=="electronic and communication engineering"||obj1=="ece department" || obj1=="Department of ECE"|| obj1=="department of ece" ||obj1=="ece")){
+					
+							// add the line which will be modified in the animation
+							map.addLayer({
+							'id': 'line-animation1',
+							'type': 'line',
+							'source': {
+							'type': 'geojson',
+							'data': cse_to_ece
+							},
+							'layout': {
+							'line-cap': 'round',
+							'line-join': 'miter'
+							},
+							'paint': {
+							'line-color': '#228B22',
+							'line-width': 14,
+							'line-opacity': 1
+							},
+							
+							});
+		
+	
+							cse_to_ece_point.features.forEach(function(marker) {
+	
+								// create a HTML element for each feature
+								var el = document.createElement('div');
+								el.className = 'marker';
+							  
+								// make a marker for each feature and add to the map
+								new mapboxgl.Marker(el)
+								  .setLngLat(marker.geometry.coordinates)
+								  .addTo(map);
+	
+	
+								  
+	
+							  map.flyTo({
+								center: marker.geometry.coordinates,
+							  zoom: 17,
+								essential: true // this animation is considered essential with respect to prefers-reduced-motion
+								});
+							  });
+		
+	
+	
+	
+	
+	
+										var length = turf.length(cse_to_ece, {units: 'kilometers'});
+							var final=Math.round((length + Number.EPSILON) * 100) / 100
+							alertify.set('notifier','position', 'top-center');
+							alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+								 
+							  
+					
+							responsiveVoice.speak('Distance'+final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left ,then turn right, Turn right and again Turn right,You have arrived at your destination.');
+							// $(".open").on("click", function() {
+							 // $(".popup-overlay, .popup-content").addClass("active");
+							// });
+						//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+							//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+							
+						//	$(".close, .popup-overlay").on("click", function() {
+						//	  $(".popup-overlay, .popup-content").removeClass("active");
+							  //location.reload();
+							// map.removeLayer('line-animation1');
+							  //responsiveVoice.cancel();
+							  
+						//	});
+							
+							  }
+		
+	
+
+	
+                            //CSE TO EEE
+	  	  	    	  
+							  else if((obj=="department of cse" || obj=="Department of CSE" || obj=="cse department" || obj=="department of computer science" || obj=="computer science department") &&( obj1=="department of electronics and electrical engineering" || obj1=="Department of EEE"|| obj1=="electronics and electrical engineering" ||obj1=="electrical department" || obj1=="eee department"||obj1=="eee"||obj1=="department of eee")){
+					
+								// add the line which will be modified in the animation
+								map.addLayer({
+								'id': 'line-animation1',
+								'type': 'line',
+								'source': {
+								'type': 'geojson',
+								'data': cse_to_eee
+								},
+								'layout': {
+								'line-cap': 'round',
+								'line-join': 'miter'
+								},
+								'paint': {
+								'line-color': '#228B22',
+								'line-width': 14,
+								'line-opacity': 1
+								},
+								
+								});
+			
+		
+								cse_to_eee_point.features.forEach(function(marker) {
+		
+									// create a HTML element for each feature
+									var el = document.createElement('div');
+									el.className = 'marker';
+								  
+									// make a marker for each feature and add to the map
+									new mapboxgl.Marker(el)
+									  .setLngLat(marker.geometry.coordinates)
+									  .addTo(map);
+		
+		
+									  
+		
+								  map.flyTo({
+									center: marker.geometry.coordinates,
+								  zoom: 17,
+									essential: true // this animation is considered essential with respect to prefers-reduced-motion
+									});
+								  });
+			
+		
+		
+		
+		
+		
+											var length = turf.length(cse_to_eee, {units: 'kilometers'});
+								var final=Math.round((length + Number.EPSILON) * 100) / 100
+								alertify.set('notifier','position', 'top-center');
+								alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+									 
+								  
+						
+								responsiveVoice.speak('Distance'+final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left ,then turn right, Turn right and again Turn right,You have arrived at your destination.');
+								// $(".open").on("click", function() {
+								 // $(".popup-overlay, .popup-content").addClass("active");
+								// });
+							//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+								//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+								
+							//	$(".close, .popup-overlay").on("click", function() {
+							//	  $(".popup-overlay, .popup-content").removeClass("active");
+								  //location.reload();
+								// map.removeLayer('line-animation1');
+								  //responsiveVoice.cancel();
+								  
+							//	});
+								
+								  }
+			
+		
+	
+		
+	
+
+
+
+
+                    //GEO TO CSE
+
+						  
+
+
+					  else if((obj=="department of geo engineering" || obj=="Department of Geo engineering" || obj=="geo engineering" || obj=="geoengineering" || obj=="department of cse" )&&( obj1=="department of computer science" || obj1=="Department of CSE" || obj1=="cse")){
+					
+						// add the line which will be modified in the animation
+						map.addLayer({
+						'id': 'line-animation1',
+						'type': 'line',
+						'source': {
+						'type': 'geojson',
+						'data': geo_to_cse 
+						},
+						'layout': {
+						'line-cap': 'round',
+						'line-join': 'miter'
+						},
+						'paint': {
+						'line-color': '#228B22',
+						'line-width': 14,
+						'line-opacity': 1
+						},
+						
+						});
+	
+
+						Geo_to_cse_point.features.forEach(function(marker) {
+
+							// create a HTML element for each feature
+							var el = document.createElement('div');
+							el.className = 'marker';
+						  
+							// make a marker for each feature and add to the map
+							new mapboxgl.Marker(el)
+							  .setLngLat(marker.geometry.coordinates)
+							  .addTo(map);
+
+
+							  
+
+						  map.flyTo({
+							center: marker.geometry.coordinates,
+						  zoom: 17,
+							essential: true // this animation is considered essential with respect to prefers-reduced-motion
+							});
+						  });
+	
+
+
+
+
+
+									var length = turf.length(geo_to_cse, {units: 'kilometers'});
+						var final=Math.round((length + Number.EPSILON) * 100) / 100
+						alertify.set('notifier','position', 'top-center');
+						alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+							 
+						  
+				
+						responsiveVoice.speak('Distance'+final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left ,then turn right, Turn right and again Turn right,You have arrived at your destination.');
+						// $(".open").on("click", function() {
+						 // $(".popup-overlay, .popup-content").addClass("active");
+						// });
+					//	$("p").html("<b>Distance: "+final+" km<br>Head East then turn Left <br> then go straight and turn right<br>Make a sharp left onto Principal Office Road,<br>You have arrived at your destination, on the left</b>");
+						//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+						
+					//	$(".close, .popup-overlay").on("click", function() {
+					//	  $(".popup-overlay, .popup-content").removeClass("active");
+						  //location.reload();
+						// map.removeLayer('line-animation1');
+						  //responsiveVoice.cancel();
+						  
+					//	});
+						
+						  }
+	
+	
+
+
+
+
+
+
+
+
+
+					  else if ((obj=="Principal Block" || obj=="Principal block"||obj=="principal Block" || obj=="AUCE Principal office")  && (obj1=="South Campus Administrative Building" || obj1=="south campus administrative building" ||obj1=="South campus administrative building" ||obj1=="VC office")) {
+					
+					
+						map.addLayer({
+					'id': 'line-animations2',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': Principal_block_to_vc_office
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#000000',
+					'line-width': 6,
+					'line-opacity': 1
+					},
+					
+					});
+					
+					
+					   
+					// $(".open").on("click", function() {
+					  $(".popup-overlay, .popup-content").addClass("active");
+					 
+							var length = turf.length(Principal_block_to_vc_office, {units: 'kilometers'});
+							var final=Math.round((length + Number.EPSILON) * 100) / 100
+
+
+							console.log(final+" km");
+					 
+				
+					// });
+					$("p").html(" <b>Distance: "+final+" km<br>Head west <br>then turn right from paltfrom no 1<br> then go straiht and turn left<br>your destination is on right.</b>");
+					//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+					responsiveVoice.speak(document.getElementById("ed").textContent);
+
+					
+					$(".close, .popup-overlay").on("click", function() {
+					  $(".popup-overlay, .popup-content").removeClass("active");
+					
+					  map.removeLayer('line-animations2');
+					  responsiveVoice.cancel();
+					});
+						
+					  } 
+
+
+
+
+
+
+					//GEO TO CHEMICAL ENGG DEPT
+					
+
+
+
+					  else if ((obj=="department of Geo engineering" || obj=="Geo Engineering"||obj=="Geo engineering")  && (obj1=="chemical engineering" || obj1=="Department of Chemical Engineering" ||obj1=="chemical department" ||obj1=="department of chemical engineering")) {
+					
+					
+						map.addLayer({
+					'id': 'line-animations2',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': Geo_to_Chemical_dprt
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#228B22',
+					'line-width': 14,
+					'line-opacity': 1
+					},
+					
+					});
+					
+					Geo_to_Chemical_point.features.forEach(function(marker) {
+	
+						// create a HTML element for each feature
+						var el = document.createElement('div');
+						el.className = 'marker';
+					  
+						// make a marker for each feature and add to the map
+						new mapboxgl.Marker(el)
+						  .setLngLat(marker.geometry.coordinates)
+						  .addTo(map);
+
+
+						  
+
+					  map.flyTo({
+						center: marker.geometry.coordinates,
+					  zoom: 17,
+						essential: true // this animation is considered essential with respect to prefers-reduced-motion
+						});
+					  });
+
+
+
+
+
+
+								var length = turf.length(Geo_to_Chemical_dprt, {units: 'kilometers'});
+					var final=Math.round((length + Number.EPSILON) * 100) / 100
+					alertify.set('notifier','position', 'top-center');
+					alt=alertify.success('').delay(14).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Go Straight ,Then take Right and then again take right and go straight for few meters.Your destination in on right.' );
+			
+					responsiveVoice.speak('Distance'+final+'Go Straight ,Then take Right and then again take right and go straight for few meters.Your destination in on right.');
+					
+					
+					  } 
+					
+
+
+
+
+
+
+					  
+					//GEO TO METALLURGY
+					
+					  else if ((obj=="department of Geo engineering" || obj=="Geo Engineering"||obj=="Geo engineering")  && (obj1=="Department of Metallurgy" || obj1=="Department Of Metallurgy" ||obj1=="Department of metallurgy")) {
+					
+					
+						map.addLayer({
+					'id': 'line-animations2',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': geo_to_metallurgy
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#228B22',
+					'line-width': 14,
+					'line-opacity': 1
+					},
+					
+					});
+					
+					geo_to_metallurgy_point.features.forEach(function(marker) {
+	
+						// create a HTML element for each feature
+						var el = document.createElement('div');
+						el.className = 'marker';
+					  
+						// make a marker for each feature and add to the map
+						new mapboxgl.Marker(el)
+						  .setLngLat(marker.geometry.coordinates)
+						  .addTo(map);
+
+
+						  
+
+					  map.flyTo({
+						center: marker.geometry.coordinates,
+					  zoom: 17,
+						essential: true // this animation is considered essential with respect to prefers-reduced-motion
+						});
+					  });
+
+
+
+
+
+
+								var length = turf.length(geo_to_metallurgy, {units: 'kilometers'});
+					var final=Math.round((length + Number.EPSILON) * 100) / 100
+					alertify.set('notifier','position', 'top-center');
+					alt=alertify.success('').delay(14).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Go Straight ,Then take Right and then again take right and go straight for few meters.Your destination in on right.' );
+			
+					responsiveVoice.speak('Distance'+final+'Go Straight ,Then take Right and then again take right and go straight for few meters.Your destination in on right.');
+					
+					
+					  } 
+
+
+
+
+
+
+
+                    //GEO_to_NCRC
+
+
+					  else if ((obj=="department of Geo engineering" || obj=="Geo Engineering"||obj=="Geo engineering")  && (obj1=="ncrc" || obj1=="new classroom complex" ||obj1=="New Classroom Complex" || obj1=="NCRC") ) {
+					
+					
+						map.addLayer({
+					'id': 'line-animations2',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': Geo_to_NCRC
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#228B22',
+					'line-width': 14,
+					'line-opacity': 1
+					},
+					
+					});
+					
+					Geo_to_NCRC_point.features.forEach(function(marker) {
+	
+						// create a HTML element for each feature
+						var el = document.createElement('div');
+						el.className = 'marker';
+					  
+						// make a marker for each feature and add to the map
+						new mapboxgl.Marker(el)
+						  .setLngLat(marker.geometry.coordinates)
+						  .addTo(map);
+
+
+						  
+
+					  map.flyTo({
+						center: marker.geometry.coordinates,
+					  zoom: 17,
+						essential: true // this animation is considered essential with respect to prefers-reduced-motion
+						});
+					  });
+
+
+
+
+
+
+								var length = turf.length(Geo_to_NCRC, {units: 'kilometers'});
+					var final=Math.round((length + Number.EPSILON) * 100) / 100
+					alertify.set('notifier','position', 'top-center');
+					alt=alertify.success('').delay(14).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Go Straight ,Then take Right and then again take right and go straight for few meters.Your destination in on right.' );
+			
+					responsiveVoice.speak('Distance'+final+'Go Straight ,Then take Right and then again take right and go straight for few meters.Your destination in on right.');
+					
+					
+					  } 
+
+
+
+
+
+
+
+
+
+
+
+
+                    // GEO ENGINEERING TO ECE
+
+
+					  else if ((obj=="Department of Geo engineering" ||obj=="department of geo engineering"|| obj=="geo engineering" ||obj=="geoengineering" ) && (obj1=="department of electronic and communication engineering"||obj1=="electronic and communication engineering department"||obj1=="electronic and communication engineering"||obj1=="ece department" || obj1=="Department of ECE"|| obj1=="department of ece" ||obj1=="ece") ){
+					
+						map.addLayer({
+					'id': 'line-animations3',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': Geo_to_ECE
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#228B22',
+					'line-width': 14,
+					'line-opacity': 0.9
+					},
+					
+					});
+					
+					Geo_to_ECE_point.features.forEach(function(marker) {
+	
+						// create a HTML element for each feature
+						var el = document.createElement('div');
+						el.className = 'marker';
+					  
+						// make a marker for each feature and add to the map
+						new mapboxgl.Marker(el)
+						  .setLngLat(marker.geometry.coordinates)
+						  .addTo(map);
+
+
+						  
+
+					  map.flyTo({
+						center: marker.geometry.coordinates,
+					  zoom: 17,
+						essential: true // this animation is considered essential with respect to prefers-reduced-motion
+						});
+					  });
+
+
+
+
+
+
+								var length = turf.length(Geo_to_ECE, {units: 'kilometers'});
+					var final=Math.round((length + Number.EPSILON) * 100) / 100
+					alertify.set('notifier','position', 'top-center');
+					alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+			
+					responsiveVoice.speak(final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination');
+					
+					
+						
+					  } 
+
+
+					//GEO TO INSTRUMENTATION DEPT
+					
+
+
+
+					else if ((obj=="department of Geo engineering" || obj=="department of geo engineering"||obj=="Geo Engineering" ||obj=="Geo engineering" ||obj=="geo engineering") && (obj1=="department of instrumentation" || obj1=="instrumentation department"|| obj1=="instrumentation" ||obj1=="Department of Instrumentation") ){
+					
+						map.addLayer({
+					'id': 'line-animations3',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': geo_to_ist
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#228B22',
+					'line-width': 14,
+					'line-opacity': 0.9
+					},
+					
+					});
+					
+					geo_to_ist_point.features.forEach(function(marker) {
+	
+						// create a HTML element for each feature
+						var el = document.createElement('div');
+						el.className = 'marker';
+					  
+						// make a marker for each feature and add to the map
+						new mapboxgl.Marker(el)
+						  .setLngLat(marker.geometry.coordinates)
+						  .addTo(map);
+
+
+						  
+
+					  map.flyTo({
+						center: marker.geometry.coordinates,
+					  zoom: 17,
+						essential: true // this animation is considered essential with respect to prefers-reduced-motion
+						});
+					  });
+
+
+
+
+
+
+								var length = turf.length(geo_to_ist, {units: 'kilometers'});
+					var final=Math.round((length + Number.EPSILON) * 100) / 100
+					alertify.set('notifier','position', 'top-center');
+					alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+			
+					responsiveVoice.speak(final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination');
+					
+					
+						
+					  } 
+
+
+
+
+                    //GEO TO EEE
+					  
+
+					else if ((obj=="Department of Geo engineering" || obj=="department of geo engineering"||obj=="Geo Engineering" ||obj=="geoengineering" ||obj=="geo engineering") && (obj1=="department of electronics and electrical engineering" || obj1=="Department of EEE"|| obj1=="electronics and electrical engineering" ||obj1=="electrical department" || obj1=="eee department"||obj1=="eee"||obj1=="department of eee") ){
+					
+						map.addLayer({
+					'id': 'line-animations3',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': Geo_to_EEE
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#228B22',
+					'line-width': 14,
+					'line-opacity': 0.9
+					},
+					
+					});
+					
+					Geo_to_EEE_point.features.forEach(function(marker) {
+	
+						// create a HTML element for each feature
+						var el = document.createElement('div');
+						el.className = 'marker';
+					  
+						// make a marker for each feature and add to the map
+						new mapboxgl.Marker(el)
+						  .setLngLat(marker.geometry.coordinates)
+						  .addTo(map);
+
+
+						  
+
+					  map.flyTo({
+						center: marker.geometry.coordinates,
+					  zoom: 17,
+						essential: true // this animation is considered essential with respect to prefers-reduced-motion
+						});
+					  });
+
+
+
+
+
+
+								var length = turf.length(Geo_to_EEE, {units: 'kilometers'});
+					var final=Math.round((length + Number.EPSILON) * 100) / 100
+					alertify.set('notifier','position', 'top-center');
+					alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+			
+					responsiveVoice.speak(final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination');
+					
+					
+						
+					  } 
+
+
+
+
+
+
+                    //GEO TO MECHANICAL
+					  
+					else if ((obj=="Department of Geo engineering" || obj=="department of geo engineering"||obj=="Geo Engineering" ||obj=="geoengineering" ||obj=="geo engineering") && (obj1=="department of mechanical engineering" || obj1=="department of mechanical"|| obj1=="mechanical department" ||obj1=="mechanical engineering department" ||obj1=="Department of Mechanical") ){
+					
+						map.addLayer({
+					'id': 'line-animations3',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': Geo_to_Mechanical
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#228B22',
+					'line-width': 14,
+					'line-opacity': 0.9
+					},
+					
+					});
+					
+					Geo_to_Mechanical_point.features.forEach(function(marker) {
+	
+						// create a HTML element for each feature
+						var el = document.createElement('div');
+						el.className = 'marker';
+					  
+						// make a marker for each feature and add to the map
+						new mapboxgl.Marker(el)
+						  .setLngLat(marker.geometry.coordinates)
+						  .addTo(map);
+
+
+						  
+
+					  map.flyTo({
+						center: marker.geometry.coordinates,
+					  zoom: 17,
+						essential: true // this animation is considered essential with respect to prefers-reduced-motion
+						});
+					  });
+
+
+
+
+
+
+								var length = turf.length(Geo_to_Mechanical, {units: 'kilometers'});
+					var final=Math.round((length + Number.EPSILON) * 100) / 100
+					alertify.set('notifier','position', 'top-center');
+					alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+			
+					responsiveVoice.speak(final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination');
+					
+					
+						
+					  } 
+
+
+
+
+                    //GEO TO MARINE
+					  
+					else if ((obj=="Department of Geo engineering" || obj=="department of geo engineering"||obj=="Geo Engineering" ||obj=="geoengineering" ||obj=="geo engineering") && (obj1=="department of marine engineering" || obj1=="marine engineering"|| obj1=="marine department" ||obj1=="Department of Marine engineering") ){
+					
+						map.addLayer({
+					'id': 'line-animations3',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': Geo_to_marine
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#228B22',
+					'line-width': 14,
+					'line-opacity': 0.9
+					},
+					
+					});
+					
+					Geo_to_marine_point.features.forEach(function(marker) {
+	
+						// create a HTML element for each feature
+						var el = document.createElement('div');
+						el.className = 'marker';
+					  
+						// make a marker for each feature and add to the map
+						new mapboxgl.Marker(el)
+						  .setLngLat(marker.geometry.coordinates)
+						  .addTo(map);
+
+
+						  
+
+					  map.flyTo({
+						center: marker.geometry.coordinates,
+					  zoom: 17,
+						essential: true // this animation is considered essential with respect to prefers-reduced-motion
+						});
+					  });
+
+
+
+
+
+
+								var length = turf.length(Geo_to_marine, {units: 'kilometers'});
+					var final=Math.round((length + Number.EPSILON) * 100) / 100
+					alertify.set('notifier','position', 'top-center');
+					alt=alertify.success('').delay(25).setContent('<h4>Directions</h4><h6>Distance :'+final+' km</h6> Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination.' );
+			
+					responsiveVoice.speak(final+'Head southeast on Principal Office Road,Turn right,Make a slight left,Then turn left and again turn left then turn right and again Turn right and Turn right,You have arrived at your destination');
+					
+					
+						
+					  } 
+
+
+
+
+
+
+
+
+					  
+					 
+					  else if((obj=="department of Geo engineering" || obj=="Geo Engineering"||obj=="Geo engineering" ) && (obj1=="AUCE out gate" || obj1=="a u c e outgate" || obj=="a u c e out gate" || obj1=="out gate"|| obj1=="outgate"|| obj1=="out Gate"|| obj1=="Engineering out gate")){
+					
+						map.addLayer({
+					'id': 'line-animations4',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': Geo_to_auce_outgate
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#000000',
+					'line-width': 6,
+					'line-opacity': 1
+					},
+					
+					});
+					
+					   
+					// $(".open").on("click", function() {
+					  $(".popup-overlay, .popup-content").addClass("active");
+					// });
+					$("p").html(" <b>Head west <br>then turn right from paltfrom no 1<br> then go straiht and turn left<br>your destination is on right.</b>");
+					
+					responsiveVoice.speak(document.getElementById("ed").textContent);
+					//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+					$(".close, .popup-overlay").on("click", function() {
+					  $(".popup-overlay, .popup-content").removeClass("active");
+					  map.removeLayer('line-animations4');
+					  responsiveVoice.cancel();
+					   
+					});
+					
+					
+					  }
+
+					  else if((obj=="Department of Architecture" || obj=="department of architecture"||obj=="department of Architecture" || obj=="Department of architecture" || obj=="Architecture Department" || obj=="architecture Department" || obj=="Architecture department") && (obj1=="Department of Instrumentation " || obj1=="department of Instrumentation " || obj=="Department of instrumentation " || obj1=="Department Of Instrumentation "|| obj1=="Instrumentation Department"|| obj1=="instrumentation Department"|| obj1=="Instrumentation department")){
+					
+						map.addLayer({
+					'id': 'line-animations4',
+					'type': 'line',
+					'source': {
+					'type': 'geojson',
+					'data': architecture_to_ist
+					},
+					'layout': {
+					'line-cap': 'round',
+					'line-join': 'miter'
+					},
+					'paint': {
+					'line-color': '#000000',
+					'line-width': 6,
+					'line-opacity': 1
+					},
+					
+					});
+
+					var length = turf.length(architecture_to_ist, {units: 'kilometers'});
+					var final=Math.round((length + Number.EPSILON) * 100) / 100
+					
+					   
+					// $(".open").on("click", function() {
+					  $(".popup-overlay, .popup-content").addClass("active");
+					// });
+					$("p").html(" <b>Distance: "+final+" km <br> Head north Turn left <br>Then turn right,<br>Make a slight right onto Principal Office Road<br> then go straight.<br>your destination is on right.</b>");
+					
+					responsiveVoice.speak(document.getElementById("ed").textContent);
+					//removes the "active" class to .popup and .popup-content when the "Close" button is clicked 
+					$(".close, .popup-overlay").on("click", function() {
+					  $(".popup-overlay, .popup-content").removeClass("active");
+					  map.removeLayer('line-animations4');
+					  responsiveVoice.cancel();
+					   
+					});
+					
+					
+					  }
+					
+					
+					
+					
+					  else{
+						alert("Enter Correct Locations");
+						
+					  }
+					}
+					
+					
+					</script>
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+		
+
+
+<script>
+		// This will let you use the .remove() function later on
+		if (!('remove' in Element.prototype)) {
+		  Element.prototype.remove = function() {
+			if (this.parentNode) {
+				this.parentNode.removeChild(this);
+			}
+		  };
+		}
+  
+		mapboxgl.accessToken = 'pk.eyJ1IjoibmF2am90aGJuIiwiYSI6ImNrNTJhNmNpZTE1bDQzbnFyMWMxZXRkazYifQ.rnHOJ9lVdiKfrVYlZVzqMg';
+		/** 
+		 * Add the map to the page
+		*/
+		var map = new mapboxgl.Map({
+		  container: 'map',
+		  style: 'mapbox://styles/navjothbn/ck8hg1f4f02kz1ioh92ffvpeq',
+		  center: [83.319903, 17.728981],
+		  pitch:80,
+		  bearing:-70, 
+		  zoom: 18,
+		  scrollZoom: true
+		});
+
+
+
+		function rotateCamera(timestamp) {
+			// clamp the rotation between 0 -360 degrees
+			// Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+			map.rotateTo((timestamp / 100) % 360, { duration: 0 });
+			// Request the next frame of the animation.
+			requestAnimationFrame(rotateCamera);
+			}
+
+		var architecture_to_ist = {
+			"type": "FeatureCollection",
+			"features": [
+	
+		{ "type": "Feature", "properties": { "id": 3, "name": "Architecture deprt to instrumentation dept" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.320180158052821, 17.726389107599648 ], [ 83.320192294240087, 17.726422342531766 ], [ 83.320202913403932, 17.726475807409642 ], [ 83.320210498520964, 17.726542277235566 ], [ 83.320218143011999, 17.726562085483462 ], [ 83.320243408803435, 17.726601126175325 ], [ 83.320280465297543, 17.72664230607397 ], [ 83.320334927114644, 17.726695251644038 ], [ 83.320371422146721, 17.726723596235725 ], [ 83.320509625006025, 17.726850060229044 ], [ 83.32062142956633, 17.726952118825263 ], [ 83.320692860257623, 17.727023116075312 ], [ 83.320696046550466, 17.727026151076537 ], [ 83.320695692517944, 17.727030085337319 ], [ 83.320693096279285, 17.727034019598019 ], [ 83.320683065357258, 17.72703986478518 ], [ 83.320669140077271, 17.727047620898613 ], [ 83.320593141091521, 17.727087806553445 ], [ 83.320491769773554, 17.727137322012247 ], [ 83.320378834215333, 17.72719222909744 ], [ 83.320372832218624, 17.727195516374906 ], [ 83.320369531120448, 17.727199947053141 ], [ 83.320369831220304, 17.727209665959855 ], [ 83.320374632817632, 17.727220099491475 ], [ 83.320402518560613, 17.727262726638266 ], [ 83.320421858672645, 17.727289930892471 ], [ 83.320476955503466, 17.727368651841033 ], [ 83.320543289707203, 17.727468739488735 ], [ 83.320580991726089, 17.727535978519128 ], [ 83.320588612346924, 17.727553552352457 ], [ 83.320592405783486, 17.727566801139954 ], [ 83.320607579529621, 17.727641476105742 ], [ 83.320618959839223, 17.727696880092513 ], [ 83.320644670909104, 17.72777697495615 ], [ 83.320675018401388, 17.727856467567381 ], [ 83.320691456626392, 17.727921105472742 ], [ 83.320712952766755, 17.72799618176834 ], [ 83.320768168343037, 17.728149345343393 ], [ 83.320815375553281, 17.72827821944276 ], [ 83.320823152077097, 17.728294776772795 ], [ 83.320829327551934, 17.728304144735166 ], [ 83.320838476403537, 17.728311334101303 ], [ 83.320868210171255, 17.728325277113594 ], [ 83.320894970562208, 17.728339437984339 ], [ 83.321172408477508, 17.728454814873103 ], [ 83.321359499175443, 17.728525640253174 ], [ 83.321660258935964, 17.728635095931672 ], [ 83.322295826731761, 17.728854007088106 ], [ 83.32306333159228, 17.729141834312802 ], [ 83.323412326408743, 17.729249938315341 ], [ 83.323500284451896, 17.729271559108025 ], [ 83.32353727980562, 17.729288122116127 ], [ 83.323540701134704, 17.729286048311195 ], [ 83.323543189374035, 17.729280715669823 ], [ 83.323551587181854, 17.729266199034171 ], [ 83.323667400033557, 17.729003696084163 ] ] ] } }
+	]
+		  };
+
+
+
+		  var geo_to_ist = {
+			"type": "FeatureCollection",
+			"features": [
+	{ "type": "Feature", "properties": { "id": 7, "Name": "geo_to_ist" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321013223332557, 17.726822207358207 ], [ 83.321033384709551, 17.726830472411827 ], [ 83.321047676318543, 17.726841168362999 ], [ 83.321060181476426, 17.726854052121517 ], [ 83.321072431426998, 17.726870825315189 ], [ 83.321082639719137, 17.726883709071572 ], [ 83.321087233450598, 17.726894891199009 ], [ 83.321088254279815, 17.726904857877226 ], [ 83.321083915755651, 17.726910205850675 ], [ 83.321072686634281, 17.726914581465191 ], [ 83.320859510110836, 17.726983742664419 ], [ 83.320760075423721, 17.727013723865646 ], [ 83.32069068574998, 17.727036209763277 ], [ 83.320606273569553, 17.727077093206283 ], [ 83.320399535263235, 17.727178620382759 ], [ 83.320367344177484, 17.727194292357893 ], [ 83.320363006879347, 17.727197451625948 ], [ 83.320361731203405, 17.727203284120648 ], [ 83.320363006879347, 17.72720911661516 ], [ 83.320380611207256, 17.727233175653023 ], [ 83.320402297698124, 17.727267198529333 ], [ 83.320564403172298, 17.727509252661562 ], [ 83.320575847218507, 17.727537109825469 ], [ 83.320583476582613, 17.727557699900363 ], [ 83.320591105946761, 17.727601302404079 ], [ 83.320605093114324, 17.727653383158511 ], [ 83.320635610570847, 17.727754516673311 ], [ 83.320661041784604, 17.727818709174048 ], [ 83.320692830801818, 17.727942249393802 ], [ 83.320751322593452, 17.728105758377247 ], [ 83.320779296928606, 17.728185696048197 ], [ 83.32080599970304, 17.728259577803279 ], [ 83.320818715309926, 17.72829349072984 ], [ 83.320836517159577, 17.728306813663519 ], [ 83.320859405251966, 17.728318925420545 ], [ 83.320915353922246, 17.728345571283132 ], [ 83.321004363170417, 17.728384328894371 ], [ 83.321183653227436, 17.728459421742283 ], [ 83.32136675796653, 17.728535725732936 ], [ 83.321528246173898, 17.728593256498062 ], [ 83.321800360161163, 17.728681672164257 ], [ 83.321944046518922, 17.728741019641753 ], [ 83.322204716459979, 17.728830040821151 ], [ 83.322457757036915, 17.728917245198915 ], [ 83.32270189668904, 17.72901232214576 ], [ 83.322874828942616, 17.729076514196002 ], [ 83.323079550213393, 17.729147367658722 ], [ 83.323335133911712, 17.729223671356479 ], [ 83.323443150039708, 17.729257276008958 ], [ 83.323510580024518, 17.729280869772747 ], [ 83.32352984573447, 17.729288734359987 ], [ 83.323536726345182, 17.729284684702957 ], [ 83.323542723695539, 17.729275163849426 ], [ 83.323661992160041, 17.729003905281935 ] ] ] } }
+		]
+		  };
+
+
+		  
+
+
+		  var geo_to_ist_point = {
+			"type": "FeatureCollection",
+		"name": "PointsGeoJson",
+		"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+		"features": [
+		{ "type": "Feature", "properties": { "id": 2, "Name": "Instrumentation Dept" }, "geometry": { "type": "Point", "coordinates": [ 83.323661992726102, 17.729003904600837 ] } },
+{ "type": "Feature", "properties": { "id": 1, "Name": "Geo Engineering" }, "geometry": { "type": "Point", "coordinates": [ 83.32101311037141, 17.72682219302288 ] } }	
+		]
+		};
+		  
+		
+
+
+
+
+
+
+		  
+var cse_to_architecture = {
+	"type": "FeatureCollection",
+	"features": [
+	{ "type": "Feature", "properties": { "id": 12, "Name": "cse_to_architecture" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.31822351419396, 17.729899381718838 ], [ 83.318398640824384, 17.729520949897363 ], [ 83.318416937636528, 17.729491073666896 ], [ 83.318437848278961, 17.729474890706644 ], [ 83.318465293497155, 17.729462442274691 ], [ 83.318525411594166, 17.729463687117928 ], [ 83.318632578636667, 17.729468666490778 ], [ 83.318696617479119, 17.729473645863489 ], [ 83.318741052594319, 17.729474890706644 ], [ 83.318756852577422, 17.72947464623088 ], [ 83.318760353407441, 17.729471978584513 ], [ 83.318764904486471, 17.729457306528811 ], [ 83.318769455565501, 17.72944030028092 ], [ 83.318834215724223, 17.729200002163402 ], [ 83.318922460336225, 17.728906831245169 ], [ 83.318981527294255, 17.728702119706934 ], [ 83.319017821449194, 17.728637045791498 ], [ 83.31913168546464, 17.728439790340968 ], [ 83.319301404197887, 17.728209570645468 ], [ 83.31957568179368, 17.727918006719538 ], [ 83.319951487560274, 17.727528291820448 ], [ 83.320053015731091, 17.727420037531427 ], [ 83.320175758743559, 17.727327660486424 ], [ 83.320336385401873, 17.727207858935284 ], [ 83.320465189797687, 17.7271400194672 ], [ 83.320587932810156, 17.727088057304062 ], [ 83.320671276830964, 17.727043312095962 ], [ 83.320687491509119, 17.727027867324569 ], [ 83.320690025052571, 17.72701724904347 ], [ 83.320678877461361, 17.727005182814185 ], [ 83.320659115822394, 17.726984911547156 ], [ 83.320497475749846, 17.726838186117455 ], [ 83.32035205035541, 17.726704009468047 ], [ 83.320294970389554, 17.726653658128523 ], [ 83.320223481598049, 17.726564562499359 ], [ 83.320210787326673, 17.72653528821154 ], [ 83.320201433653025, 17.72647546682591 ], [ 83.320184730664366, 17.726395280681938 ] ] ] } }
+] };
+
+
+
+var cse_to_architecture_point = {
+	"type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Department of Architecture", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Architecture_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:14:19.000", "Lon": 83.3202, "Lat": 17.7266, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.320154972222198, 17.726556972222198, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Department of Computer Science", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth/North_Campus/CSE_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:32:19.000", "Lon": 83.3182, "Lat": 17.73, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/cse" }, "geometry": { "type": "Point", "coordinates": [ 83.318145734871607, 17.729875362874001, 0.0 ] } },
+
+	]
+};
+  
+
+
+
+var cse_to_civil = {
+	"type": "FeatureCollection",
+	"features": [
+	{ "type": "Feature", "properties": { "id": 11, "Name": "cse_to_civil" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.318218423597287, 17.729911398050017 ], [ 83.318312217192386, 17.729718823531762 ], [ 83.318403926485388, 17.72950838103807 ], [ 83.318416274770456, 17.729492586619642 ], [ 83.318431445520659, 17.729479144560315 ], [ 83.318455083666322, 17.729464022242365 ], [ 83.318492834137743, 17.72946099777862 ], [ 83.318556692411846, 17.729463014087784 ], [ 83.318618786645203, 17.729465366448455 ], [ 83.318689271908511, 17.729468223366123 ], [ 83.318735762188552, 17.729471080283748 ], [ 83.318746981020752, 17.729470529459341 ], [ 83.31875669629818, 17.729468105831927 ], [ 83.318761322620759, 17.729458962146389 ], [ 83.318772657111097, 17.729423323801317 ], [ 83.318777167775622, 17.729407570218395 ], [ 83.318840648540046, 17.729174060828754 ], [ 83.318951411451977, 17.728803413859378 ], [ 83.318995133654099, 17.728676394215981 ], [ 83.319149618768122, 17.728415413682576 ], [ 83.319280785374403, 17.728225230820456 ], [ 83.319465876029895, 17.728029494963305 ], [ 83.319728209242413, 17.727761572486042 ], [ 83.319876864729522, 17.727610258578395 ], [ 83.320031349843561, 17.727450615326333 ], [ 83.32004398527998, 17.727438579874299 ], [ 83.320047144139082, 17.727426878739607 ], [ 83.320046793154731, 17.727414174649642 ], [ 83.320035561655729, 17.727383417375478 ], [ 83.320026787047141, 17.727356671915395 ], [ 83.320024330156741, 17.727337950090966 ], [ 83.320026085078453, 17.727324577358029 ], [ 83.320032051812291, 17.727305186893499 ], [ 83.320043634295629, 17.727277104148051 ], [ 83.320058375638069, 17.727260053907589 ], [ 83.320092070135075, 17.727226120581076 ], [ 83.320110113183986, 17.72721340271195 ], [ 83.320119495569415, 17.727206528187718 ] ] ] } }
+]
+  };
+
+  
+
+var cse_to_civil_point = {
+	"type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Name": "Civil department" }, "geometry": { "type": "Point", "coordinates": [ 83.320097366729271, 17.727222753427462 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "Computer Science department" }, "geometry": { "type": "Point", "coordinates": [ 83.31823050781658, 17.729882130701139 ] } }
+	]
+};
+
+
+
+
+var cse_to_mechanical = {
+	"type": "FeatureCollection",
+	"features": [	
+{ "type": "Feature", "properties": { "id": 10, "Name": "cse_to_mechanical" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3182092730097, 17.729922626981288 ], [ 83.31832031656198, 17.729692782076285 ], [ 83.318373702885182, 17.729580910555693 ], [ 83.318416411943744, 17.72949141328894 ], [ 83.318444172831818, 17.729467004935703 ], [ 83.318495423702075, 17.729460902846874 ], [ 83.318576570913351, 17.729464970906118 ], [ 83.318685479012714, 17.729469038965266 ], [ 83.318738865335916, 17.729471072994809 ], [ 83.318754303614412, 17.729470579181825 ], [ 83.318763316648784, 17.729463801581645 ], [ 83.318763316648784, 17.729463801581645 ], [ 83.318770906572482, 17.729433076457589 ], [ 83.318791778862632, 17.729358974666148 ], [ 83.318810279301616, 17.729290746770111 ], [ 83.318841587736827, 17.729169653486682 ], [ 83.318902307126351, 17.728967002790153 ], [ 83.318965920928861, 17.728760987717781 ], [ 83.318991366449879, 17.728674138155522 ], [ 83.319131316815387, 17.728431767061494 ], [ 83.319283989941439, 17.728229790899423 ], [ 83.319294194454685, 17.728215938871237 ], [ 83.319290336350747, 17.728206384159744 ], [ 83.319271431641312, 17.728190949624711 ], [ 83.3192197330482, 17.728146850945866 ], [ 83.319169446764576, 17.728105279227321 ], [ 83.319157547532143, 17.728094310680774 ], [ 83.319145264453496, 17.728082245278806 ], [ 83.319144496761069, 17.728070911112578 ], [ 83.319148335223147, 17.728057383235821 ], [ 83.319171749841814, 17.728028499387435 ], [ 83.319205528308075, 17.727992851593445 ] ] ] } }
+	]
+  };
+
+
+
+  
+
+var cse_to_mech_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Name": "Department of computer science" }, "geometry": { "type": "Point", "coordinates": [ 83.31822161758997, 17.729901257984192 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "Department of mechanical " }, "geometry": { "type": "Point", "coordinates": [ 83.319199487263333, 17.728004640005985 ] } }
+]
+};
+
+
+
+
+var cse_to_instrumentation = {
+	"type": "FeatureCollection",
+	"features": [	
+{ "type": "Feature", "properties": { "id": 9, "Name": "cse_to_ist" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.318215277538386, 17.729909918147762 ], [ 83.318331792665205, 17.729668242329293 ], [ 83.318390816775491, 17.729537912485274 ], [ 83.318405381166329, 17.729503595927948 ], [ 83.318420712104057, 17.729486072576993 ], [ 83.318439875776249, 17.729470739643499 ], [ 83.318457506354633, 17.729461247826872 ], [ 83.318525729027584, 17.729460517687109 ], [ 83.318634578685533, 17.729466358805119 ], [ 83.318721965030647, 17.729472199922938 ], [ 83.318745727984137, 17.729475120481776 ], [ 83.318758102389708, 17.729478687681151 ], [ 83.318760905743559, 17.72948753274612 ], [ 83.318760204905104, 17.729498547354716 ], [ 83.318759328857013, 17.729511731506541 ], [ 83.318759504066634, 17.729532842836246 ], [ 83.318759679276255, 17.729548196529013 ], [ 83.318760380114711, 17.729559044245935 ], [ 83.318765285983929, 17.729573396608849 ], [ 83.318775973770485, 17.729586914531012 ], [ 83.318787187185848, 17.729593756935671 ], [ 83.31884658324546, 17.729612949044895 ], [ 83.318905628885844, 17.729626466964078 ], [ 83.319111419625187, 17.729659953118524 ], [ 83.319192020998088, 17.729673837619753 ], [ 83.319324927517272, 17.729688538855179 ], [ 83.319490417570165, 17.729693439266718 ], [ 83.319621609166489, 17.729695072737204 ], [ 83.319655344395457, 17.729693770050716 ], [ 83.319712785460865, 17.729688559304705 ], [ 83.319742417756515, 17.729675532439011 ], [ 83.319767491237442, 17.72965946597002 ], [ 83.319839520509916, 17.729593897392455 ], [ 83.319858667531719, 17.729573922854126 ], [ 83.319880093960862, 17.72954309258407 ], [ 83.319899240982664, 17.729498801200908 ], [ 83.319911093900942, 17.729444522530137 ], [ 83.319917932123005, 17.729388941154237 ], [ 83.319930696804207, 17.729298621381638 ], [ 83.319940270315101, 17.729259540696688 ], [ 83.319969446729274, 17.72915402280476 ], [ 83.319989505514016, 17.72909279634516 ], [ 83.320072475941814, 17.728947546256268 ], [ 83.320103020000403, 17.728903688956667 ], [ 83.320241957626791, 17.7287307822948 ], [ 83.320305894270277, 17.72865130232606 ], [ 83.320323233021057, 17.72863117427644 ], [ 83.320556764320571, 17.728517631390059 ], [ 83.320642374402553, 17.728477375258525 ], [ 83.320732861008167, 17.728450279780283 ], [ 83.320820638433972, 17.72840537869304 ], [ 83.320920336250936, 17.728368735268681 ], [ 83.32094146785343, 17.728365122536292 ], [ 83.320990233090001, 17.728380605674573 ], [ 83.321031412623086, 17.728398153229673 ], [ 83.321304243853675, 17.728505836067111 ], [ 83.321571045664854, 17.728604904220411 ], [ 83.321975016768775, 17.728742738081731 ], [ 83.322439282067322, 17.728912876608113 ], [ 83.322672922071447, 17.728999022635829 ], [ 83.323090459369155, 17.729148342319107 ], [ 83.323239687500831, 17.729194286812003 ], [ 83.323381378858159, 17.729240231293129 ], [ 83.323461268666023, 17.729266075058586 ], [ 83.323509064659888, 17.729279529184293 ], [ 83.323539252306063, 17.729292536906712 ], [ 83.323546439840868, 17.729289113821959 ], [ 83.323670784192927, 17.728998835996858 ] ] ] } }
+]
+  };
+
+
+
+
+  var cse_to_instrumentation_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Name": "Department of computer science" }, "geometry": { "type": "Point", "coordinates": [ 83.31822161758997, 17.729901257984192 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "Instrumentation Dept" }, "geometry": { "type": "Point", "coordinates": [ 83.323661992726102, 17.729003904600837 ] } },
+]
+};
+		
+
+
+
+
+
+var cse_to_chemical = {
+	"type": "FeatureCollection",
+	"features": [	
+
+	{ "type": "Feature", "properties": { "id": 9, "Name": "cse_to_ist" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.318215277538386, 17.729909918147762 ], [ 83.318331792665205, 17.729668242329293 ], [ 83.318390816775491, 17.729537912485274 ], [ 83.318405381166329, 17.729503595927948 ], [ 83.318420712104057, 17.729486072576993 ], [ 83.318439875776249, 17.729470739643499 ], [ 83.318457506354633, 17.729461247826872 ], [ 83.318525729027584, 17.729460517687109 ], [ 83.318634578685533, 17.729466358805119 ], [ 83.318721965030647, 17.729472199922938 ], [ 83.318745727984137, 17.729475120481776 ], [ 83.318758102389708, 17.729478687681151 ], [ 83.318760905743559, 17.72948753274612 ], [ 83.318760204905104, 17.729498547354716 ], [ 83.318759328857013, 17.729511731506541 ], [ 83.318759504066634, 17.729532842836246 ], [ 83.318759679276255, 17.729548196529013 ], [ 83.318760380114711, 17.729559044245935 ], [ 83.318765285983929, 17.729573396608849 ], [ 83.318775973770485, 17.729586914531012 ], [ 83.318787187185848, 17.729593756935671 ], [ 83.31884658324546, 17.729612949044895 ], [ 83.318905628885844, 17.729626466964078 ], [ 83.319111419625187, 17.729659953118524 ], [ 83.319192020998088, 17.729673837619753 ], [ 83.319324927517272, 17.729688538855179 ], [ 83.319490417570165, 17.729693439266718 ], [ 83.319621609166489, 17.729695072737204 ], [ 83.319655344395457, 17.729693770050716 ], [ 83.319712785460865, 17.729688559304705 ], [ 83.319742417756515, 17.729675532439011 ], [ 83.319767491237442, 17.72965946597002 ], [ 83.319839520509916, 17.729593897392455 ], [ 83.319858667531719, 17.729573922854126 ], [ 83.319880093960862, 17.72954309258407 ], [ 83.319899240982664, 17.729498801200908 ], [ 83.319911093900942, 17.729444522530137 ], [ 83.319917932123005, 17.729388941154237 ], [ 83.319930696804207, 17.729298621381638 ], [ 83.319940270315101, 17.729259540696688 ], [ 83.319969446729274, 17.72915402280476 ], [ 83.319989505514016, 17.72909279634516 ], [ 83.320072475941814, 17.728947546256268 ], [ 83.320103020000403, 17.728903688956667 ], [ 83.320241957626791, 17.7287307822948 ], [ 83.320305894270277, 17.72865130232606 ], [ 83.320323233021057, 17.72863117427644 ], [ 83.320556764320571, 17.728517631390059 ], [ 83.320642374402553, 17.728477375258525 ], [ 83.320732861008167, 17.728450279780283 ], [ 83.320820638433972, 17.72840537869304 ], [ 83.320920336250936, 17.728368735268681 ], [ 83.32094146785343, 17.728365122536292 ], [ 83.320990233090001, 17.728380605674573 ], [ 83.321031412623086, 17.728398153229673 ], [ 83.321304243853675, 17.728505836067111 ], [ 83.321571045664854, 17.728604904220411 ], [ 83.32170171187758, 17.728649487183077 ] ] ] } }
+]
+  };
+
+  
+
+var cse_to_chemical_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Name": "Department of computer science" }, "geometry": { "type": "Point", "coordinates": [ 83.31822161758997, 17.729901257984192 ] } },
+{ "type": "Feature", "properties": { "Name": "Department Of Chemical Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Chemical_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:53:57.000", "Lon": 83.3216, "Lat": 17.7287, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/chemicalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.321689180991001, 17.7286017161444, 0.0 ] } },
+	]
+};
+  
+
+
+
+var cse_to_marine = {
+	"type": "FeatureCollection",
+	"features": [	
+	{ "type": "Feature", "properties": { "id": 8, "Name": "cse_to_marine" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.318215175335524, 17.72991073126305 ], [ 83.318259421376027, 17.729823808272403 ], [ 83.31832717312551, 17.729684204593131 ], [ 83.318341920385592, 17.729673813895392 ], [ 83.318350399740638, 17.729679871359302 ], [ 83.318369478289483, 17.729706793418661 ], [ 83.318424594097237, 17.729792270930307 ], [ 83.318438019742729, 17.729813808564607 ], [ 83.318465577646592, 17.72984140365477 ], [ 83.318486069421283, 17.729862268232321 ], [ 83.318500908292606, 17.729873037045589 ], [ 83.318540478616129, 17.729878421451978 ], [ 83.318652424638529, 17.729888006071988 ], [ 83.318755565917627, 17.729901184923662 ], [ 83.318882605785802, 17.729927542624104 ], [ 83.318999583090147, 17.729957494551716 ], [ 83.319101466548759, 17.729961088782694 ], [ 83.319468750127967, 17.72995929166721 ], [ 83.319810877297684, 17.729961687821181 ], [ 83.319898924731049, 17.729961687821181 ], [ 83.319965430284725, 17.729963539848772 ], [ 83.319987847830376, 17.729990586682383 ], [ 83.319993825842545, 17.730057491990102 ], [ 83.319984858824284, 17.730124397272839 ], [ 83.319959452272528, 17.730211943509339 ], [ 83.319957957769503, 17.730263190066953 ], [ 83.319965430284725, 17.730318707154499 ], [ 83.320008770873002, 17.730384188825393 ], [ 83.320071540000825, 17.730465329123525 ], [ 83.320141293145426, 17.730564347070576 ], [ 83.320185129972828, 17.730624522722888 ], [ 83.320185129972828, 17.730624522722888 ] ] ] } }
+	]
+  };
+
+
+
+
+  
+
+var cse_to_marine_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Name": "cse" }, "geometry": { "type": "Point", "coordinates": [ 83.318215175335794, 17.729910731262958 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "marine" }, "geometry": { "type": "Point", "coordinates": [ 83.320185131749881, 17.730624518183379 ] } }
+]
+};
+
+
+
+
+var cse_to_ece = {
+	"type": "FeatureCollection",
+	"features": [	
+	{ "type": "Feature", "properties": { "id": 13, "Name": "CSE_TO_ECE" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.3182332029115, 17.729878146625083 ], [ 83.318317190439046, 17.729698457920595 ], [ 83.318331892649255, 17.729679786038908 ], [ 83.318349317490984, 17.729682379355921 ], [ 83.318358574438165, 17.72969430861372 ], [ 83.318407037279243, 17.729765884143831 ], [ 83.318426095699891, 17.729795966604474 ], [ 83.318438075278578, 17.729814119811042 ], [ 83.318475647593544, 17.729854575521919 ], [ 83.318493127609784, 17.729866600353013 ], [ 83.318516434298061, 17.729873075261732 ], [ 83.318572758794716, 17.72988047515712 ], [ 83.31866015887573, 17.729890650012784 ], [ 83.318740761172663, 17.72989712492063 ], [ 83.318778634541118, 17.729901749854665 ], [ 83.318862150174084, 17.729923024549684 ], [ 83.318972856943375, 17.729950774148087 ], [ 83.319011701423833, 17.729959099026772 ], [ 83.319139888209321, 17.729960948999761 ], [ 83.319375868428082, 17.729959099026772 ], [ 83.319530275237881, 17.72995817404027 ], [ 83.319596310854649, 17.729962798972728 ] ] ] } }	
+	]
+  };
+
+
+
+  
+
+var cse_to_ece_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Name": "CSE" }, "geometry": { "type": "Point", "coordinates": [ 83.318233181839332, 17.729878163116059 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "ECE" }, "geometry": { "type": "Point", "coordinates": [ 83.319596615276041, 17.729962680237165 ] } }
+]
+};
+
+
+
+
+
+var cse_to_eee = {
+	"type": "FeatureCollection",
+	"features": [	
+	{ "type": "Feature", "properties": { "id": 14, "Name": "cse_to_eee" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.31821225796439, 17.729915777446166 ], [ 83.318290698612159, 17.729763358941504 ], [ 83.318376983324711, 17.729573582779015 ], [ 83.318402084332007, 17.729518293623009 ], [ 83.3184130660227, 17.729489901887622 ], [ 83.318446011094764, 17.729467487356509 ], [ 83.318493075483403, 17.729460015845515 ], [ 83.318554259188673, 17.729461510147733 ], [ 83.318678195412147, 17.72946599305433 ], [ 83.318740947930365, 17.729467487356509 ], [ 83.318754846644723, 17.729460868058982 ], [ 83.318759016259023, 17.729452262971851 ], [ 83.31876666055193, 17.729423799988378 ], [ 83.318770135230523, 17.729404604020228 ], [ 83.318761101066187, 17.729386069980066 ], [ 83.318718013374919, 17.729325174745931 ], [ 83.318693997341498, 17.729285264451988 ], [ 83.318668448369777, 17.729236593349789 ], [ 83.318657206822209, 17.729206903970955 ], [ 83.318655162904477, 17.729183541833333 ], [ 83.31865465192503, 17.729164560094272 ], [ 83.318674728432754, 17.729128704454236 ], [ 83.318691458855866, 17.729096035975942 ], [ 83.318709862321285, 17.729066554661156 ], [ 83.318715717969368, 17.729045838058678 ], [ 83.318723246659772, 17.729021137491049 ], [ 83.318710698842423, 17.728990062578553 ] ] ] } }
+	]
+  };
+
+
+
+  
+
+var cse_to_eee_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Name": "Cse" }, "geometry": { "type": "Point", "coordinates": [ 83.318211929533305, 17.729915786098179 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "EEE" }, "geometry": { "type": "Point", "coordinates": [ 83.31871074997612, 17.728989782608821 ] } }
+]
+};
+
+
+
+var geo_to_metallurgy = {
+	"type": "FeatureCollection",
+	"features": [
+{ "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Metallurgy" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321039144955648, 17.726825425926531 ], [ 83.321064748409981, 17.726853426705937 ], [ 83.321094144968654, 17.726889556737412 ], [ 83.321094144968654, 17.726903105497335 ], [ 83.321063800133885, 17.726916654256236 ], [ 83.320975495094245, 17.726945869534372 ], [ 83.320907481748236, 17.726967687966145 ], [ 83.320756829923781, 17.727013899378896 ], [ 83.320712145060597, 17.727028492454131 ], [ 83.320661076645521, 17.727049165975345 ], [ 83.320555109684236, 17.72710024172342 ], [ 83.320459356405962, 17.727145237013232 ], [ 83.320376370231472, 17.727182935760869 ], [ 83.320358496286175, 17.727195096645509 ], [ 83.320313611223128, 17.727222951384423 ], [ 83.320107236776437, 17.727381325627245 ], [ 83.320035381705921, 17.727438626826352 ], [ 83.31985073088515, 17.727628834842061 ], [ 83.319646863010618, 17.727845703567667 ], [ 83.319375317685967, 17.728130219020734 ], [ 83.319290094230226, 17.728218557992601 ], [ 83.319128002559495, 17.728444578226895 ], [ 83.319067009301961, 17.728554802780014 ], [ 83.318992647659215, 17.728680944152924 ], [ 83.318918286016455, 17.728920493140382 ], [ 83.318861470379304, 17.729106720371206 ], [ 83.31879295740508, 17.729347860472327 ], [ 83.318762878538337, 17.729467634560358 ], [ 83.318760839123613, 17.729471519665836 ], [ 83.318757100196478, 17.729474109736106 ], [ 83.318746223317632, 17.729476376047568 ], [ 83.318725489267266, 17.729476052288788 ], [ 83.318680622141912, 17.729474109736106 ], [ 83.318492102063701, 17.729465092213843 ], [ 83.318463948534955, 17.729464636528309 ], [ 83.318444638490192, 17.729470267012182 ], [ 83.318426510693087, 17.729481527979395 ], [ 83.318416264546883, 17.729494665773583 ], [ 83.318402471657777, 17.72952094135907 ], [ 83.318370945054085, 17.729592260785971 ], [ 83.31830552735147, 17.729732459681905 ], [ 83.318254690703014, 17.729838500273317 ], [ 83.318191637495659, 17.729971191686044 ], [ 83.318016348815576, 17.730386372216199 ], [ 83.317945019524913, 17.730535497235721 ], [ 83.317931720843603, 17.730560831203537 ], [ 83.317915399734744, 17.730567164694932 ] ] ] } }	 
+] };
+
+
+
+
+var geo_to_metallurgy_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "Name": "Metallurgy_Dept" }, "geometry": { "type": "Point", "coordinates": [ 83.317915399734289, 17.730567164695128 ] } },
+{ "type": "Feature", "properties": { "id": 2, "Name": "Geo_Engg_dept" }, "geometry": { "type": "Point", "coordinates": [ 83.321039144955648, 17.726825425926673 ] } }
+	]
+};
+  
+
+
+
+var geo_to_metallurgy = {
+	"type": "FeatureCollection",
+	"features": [
+{ "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Metallurgy" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321039144955648, 17.726825425926531 ], [ 83.321064748409981, 17.726853426705937 ], [ 83.321094144968654, 17.726889556737412 ], [ 83.321094144968654, 17.726903105497335 ], [ 83.321063800133885, 17.726916654256236 ], [ 83.320975495094245, 17.726945869534372 ], [ 83.320907481748236, 17.726967687966145 ], [ 83.320756829923781, 17.727013899378896 ], [ 83.320712145060597, 17.727028492454131 ], [ 83.320661076645521, 17.727049165975345 ], [ 83.320555109684236, 17.72710024172342 ], [ 83.320459356405962, 17.727145237013232 ], [ 83.320376370231472, 17.727182935760869 ], [ 83.320358496286175, 17.727195096645509 ], [ 83.320313611223128, 17.727222951384423 ], [ 83.320107236776437, 17.727381325627245 ], [ 83.320035381705921, 17.727438626826352 ], [ 83.31985073088515, 17.727628834842061 ], [ 83.319646863010618, 17.727845703567667 ], [ 83.319375317685967, 17.728130219020734 ], [ 83.319290094230226, 17.728218557992601 ], [ 83.319128002559495, 17.728444578226895 ], [ 83.319067009301961, 17.728554802780014 ], [ 83.318992647659215, 17.728680944152924 ], [ 83.318918286016455, 17.728920493140382 ], [ 83.318861470379304, 17.729106720371206 ], [ 83.31879295740508, 17.729347860472327 ], [ 83.318762878538337, 17.729467634560358 ], [ 83.318760839123613, 17.729471519665836 ], [ 83.318757100196478, 17.729474109736106 ], [ 83.318746223317632, 17.729476376047568 ], [ 83.318725489267266, 17.729476052288788 ], [ 83.318680622141912, 17.729474109736106 ], [ 83.318492102063701, 17.729465092213843 ], [ 83.318463948534955, 17.729464636528309 ], [ 83.318444638490192, 17.729470267012182 ], [ 83.318426510693087, 17.729481527979395 ], [ 83.318416264546883, 17.729494665773583 ], [ 83.318402471657777, 17.72952094135907 ], [ 83.318370945054085, 17.729592260785971 ], [ 83.31830552735147, 17.729732459681905 ], [ 83.318254690703014, 17.729838500273317 ], [ 83.318191637495659, 17.729971191686044 ], [ 83.318016348815576, 17.730386372216199 ], [ 83.317945019524913, 17.730535497235721 ], [ 83.317931720843603, 17.730560831203537 ], [ 83.317915399734744, 17.730567164694932 ] ] ] } }	 
+] };
+
+
+
+		  var Principal_block_to_vc_office = {
+			"type": "FeatureCollection",
+			"features": [
+	
+{"type": "Feature", "properties": { "id": 11, "name": "principal_to_south_adm" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.320127515000266, 17.7288725981761 ], [ 83.32025616820016, 17.7286995958974 ], [ 83.3203204948001, 17.728634719999839 ], [ 83.320415092741186, 17.728587865170315 ], [ 83.320505906764666, 17.728551822985434 ], [ 83.3206988865645, 17.728465321712143 ], [ 83.320884298529037, 17.728378820397094 ], [ 83.320911577254606, 17.728365380769009 ], [ 83.320906874026079, 17.728353733090515 ], [ 83.320895586277572, 17.728342085411263 ], [ 83.320868307552061, 17.728327749804993 ], [ 83.320828800432366, 17.728308934320026 ], [ 83.320811868809628, 17.728264135538346 ], [ 83.32072935025225, 17.728043073280478 ], [ 83.320672618744027, 17.727871135780301 ], [ 83.320618847418302, 17.727698401560247 ], [ 83.32059089979694, 17.727570903275346 ], [ 83.320585284182826, 17.72754335244144 ], [ 83.320503311582272, 17.727417692157111 ], [ 83.320449517063153, 17.727333511917362 ], [ 83.320385475968976, 17.727235911589901 ], [ 83.320377872611999, 17.727222227876855 ], [ 83.320369744243493, 17.727212082651555 ], [ 83.320368903377769, 17.72720247138496 ], [ 83.320371425974912, 17.727192593138195 ], [ 83.320377592323425, 17.727186452606148 ], [ 83.320392727906182, 17.727176841338174 ], [ 83.320489712119155, 17.727131971470651 ], [ 83.320661512725025, 17.727046190810302 ], [ 83.320712775809028, 17.727021116455674 ], [ 83.320956356199716, 17.726947958651067 ], [ 83.321068271514349, 17.726910334625643 ], [ 83.321123131962693, 17.726891522609971 ], [ 83.321186770082775, 17.726866439919338 ], [ 83.321236422626598, 17.72684886170239 ], [ 83.321262201372804, 17.726836269525968 ], [ 83.321305165949838, 17.72680604829895 ], [ 83.321338215624479, 17.726779604721134 ], [ 83.321354079468293, 17.726764494103488 ], [ 83.32137919722102, 17.726736161691957 ], [ 83.321405636960748, 17.726695237089629 ], [ 83.32142348378504, 17.726648016383017 ], [ 83.321436703654882, 17.726610239808778 ], [ 83.321442652596318, 17.726556093371808 ], [ 83.32144926253126, 17.726503835748534 ], [ 83.321450584518246, 17.726419467987228 ], [ 83.32145388948571, 17.726321248752406 ], [ 83.32145851644016, 17.726210437243378 ], [ 83.321466448362074, 17.72604988635592 ], [ 83.321477024257945, 17.725864780448379 ], [ 83.321483634192859, 17.725645045636536 ], [ 83.321486939160337, 17.725505586296737 ], [ 83.321488261147323, 17.725441365706491 ], [ 83.321490905121294, 17.725401070422429 ], [ 83.321494210088758, 17.725382811618854 ], [ 83.321498176049715, 17.72537462663734 ], [ 83.321517254344144, 17.725326923593709 ], [ 83.321568527260496, 17.72531329415034 ], [ 83.321634108897698, 17.725334874101861 ], [ 83.321877357151976, 17.725439366461956 ], [ 83.322433735573128, 17.725741670261563 ], [ 83.323201694520677, 17.726182062538758 ], [ 83.323797254520798, 17.726503025720167 ], [ 83.324087198205063, 17.726663507095338 ], [ 83.324115009634752, 17.726677812202357 ], [ 83.324132808949756, 17.726679931477371 ], [ 83.324148383350376, 17.726679401658618 ], [ 83.324162845293813, 17.726674103471016 ], [ 83.32417841969442, 17.726662977276533 ], [ 83.324195662780838, 17.72663860561002 ], [ 83.324218468153177, 17.726602577923014 ], [ 83.324292658983282, 17.726463260431292 ], [ 83.324394406407407, 17.726245198052933 ], [ 83.324544907805588, 17.725934256795334 ], [ 83.324552822684524, 17.72592008326744 ], [ 83.324552506089361, 17.725913448849745 ], [ 83.324546807376535, 17.725910131640802 ], [ 83.324527811667124, 17.725905608173971 ], [ 83.324483171750003, 17.725897164368906 ], [ 83.324428696767583, 17.725889751693575 ], [ 83.324304182522013, 17.725869984557875 ], [ 83.324212093861206, 17.7258465110814 ], [ 83.324175777206264, 17.725839098403984 ], [ 83.324156321855384, 17.725851452866181 ], [ 83.324142054598056, 17.725871220003924 ], [ 83.324127787340785, 17.725888516247657 ], [ 83.324104440919726, 17.725900870706447 ], [ 83.324082391522069, 17.725903341598102 ], [ 83.324059045101038, 17.725900870706447 ], [ 83.324046074867113, 17.725894693477159 ] ] ] } }
+		 ] };
+
+
+
+
+ var principal_block_to_vc_office_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+    { "type": "Feature", "properties": { "id": 1, "name": "principal block" }, "geometry": { "type": "Point", "coordinates": [ 83.320127797715131, 17.728872337566713 ] } },
+    { "type": "Feature", "properties": { "id": 2, "name": "south_adm" }, "geometry": { "type": "Point", "coordinates": [ 83.324046373717792, 17.725894715102029 ] } }
+]
+};
+  
+		
+  
+		var Geo_to_EEE = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		  { "type": "Feature", "properties": { "id": 6, "Name": "Geo_to_EEE_Dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321044811220091, 17.726827724589349 ], [ 83.321053130143525, 17.726841487208929 ], [ 83.321072832856927, 17.726864216381379 ], [ 83.321085092323059, 17.726887362599911 ], [ 83.321092973408426, 17.726901750788301 ], [ 83.321033865268205, 17.726923228806495 ], [ 83.320934585484537, 17.726955341566772 ], [ 83.32081472731133, 17.726993710052021 ], [ 83.320702531304434, 17.727028950664398 ], [ 83.320664877229916, 17.727046675230131 ], [ 83.32055005419457, 17.727100891537958 ], [ 83.320433206158157, 17.727156984546877 ], [ 83.320358609495997, 17.727192225127141 ], [ 83.320272957422461, 17.727256659069603 ], [ 83.320169135068767, 17.72733506409455 ], [ 83.320058252576089, 17.727421601515779 ], [ 83.319914258578962, 17.727567568155713 ], [ 83.319871143422773, 17.727611051742322 ], [ 83.319643732108574, 17.727847795528813 ], [ 83.319411671120662, 17.728090175748157 ], [ 83.31929458388268, 17.728214989354512 ], [ 83.319188064084955, 17.728357518334182 ], [ 83.319171790226946, 17.72838087052908 ], [ 83.319103313214129, 17.728485552744701 ], [ 83.319050898710472, 17.728582182427921 ], [ 83.319001020392491, 17.728667538604764 ], [ 83.318989184859404, 17.728686059279283 ], [ 83.318976503931111, 17.728730347841012 ], [ 83.318917326265719, 17.728920385908918 ], [ 83.318856457809858, 17.729113644754371 ], [ 83.31881080646798, 17.729281135585186 ], [ 83.318775647669455, 17.729411010883972 ], [ 83.318775647669483, 17.729416632548155 ], [ 83.318761384558513, 17.729393208946266 ], [ 83.318730891010944, 17.729342613955733 ], [ 83.318692036329381, 17.729281244086938 ], [ 83.318670887578662, 17.72923955004195 ], [ 83.318661050950411, 17.72922221655972 ], [ 83.318651214322159, 17.729172558466207 ], [ 83.318666461095944, 17.729143044687127 ], [ 83.318704332114692, 17.729075584602413 ], [ 83.31872548086541, 17.729034827455592 ], [ 83.318711217754469, 17.728991727933927 ], [ 83.31867826504984, 17.728971115115552 ] ] ] } },
+  { "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Chemical_dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } }
+		  ]
+		};
+  
+  
+  
+
+		var Geo_to_EEE_point = {
+			"type": "FeatureCollection",
+		"name": "PointsGeoJson",
+		"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+		"features": [
+		{ "type": "Feature", "properties": { "id": 2, "Name": "Geo_Engg_dept" }, "geometry": { "type": "Point", "coordinates": [ 83.321039144955648, 17.726825425926673 ] } },
+		{ "type": "Feature", "properties": { "Name": "Electrical and Electronics Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/EEE_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:26:31.000", "Lon": 83.3187, "Lat": 17.729, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/electricalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.318676438913101, 17.728971286440999, 0.0 ] } },
+		
+			]
+		};
+  
+		
+
+  
+  
+  
+  
+		var Geo_to_Mechanical = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		  { "type": "Feature", "properties": { "id": 4, "Name": "Geo_to_Mechanical" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321045065737394, 17.72682854134122 ], [ 83.321065475069403, 17.726852517681024 ], [ 83.321079761601823, 17.726871309945111 ], [ 83.321092007201031, 17.726898526324099 ], [ 83.321032139827096, 17.726924446681192 ], [ 83.320945060010501, 17.726952959069667 ], [ 83.32080355530853, 17.726996375652497 ], [ 83.320719026658438, 17.727023754014617 ], [ 83.320699977948564, 17.727029586091213 ], [ 83.320625824042239, 17.727064578546816 ], [ 83.320465610785902, 17.727142501536839 ], [ 83.320357441326237, 17.727193694168811 ], [ 83.320100623898355, 17.727389068446318 ], [ 83.320048239946189, 17.727429892895316 ], [ 83.319879182645991, 17.727605178717475 ], [ 83.31981863496101, 17.727665443304346 ], [ 83.319462637633933, 17.728038972164725 ], [ 83.319455758059703, 17.728044214469453 ], [ 83.31942951477528, 17.728017528312407 ], [ 83.31937568514121, 17.727975270002599 ], [ 83.319315348628322, 17.727929631016817 ], [ 83.319289676357371, 17.727907240155474 ], [ 83.319287738449418, 17.727906624861131 ], [ 83.319283378156584, 17.727910931921507 ], [ 83.319269005339507, 17.727925698984869 ], [ 83.319250554841162, 17.727944619283022 ], [ 83.319227710658225, 17.727967116271014 ], [ 83.319198234111425, 17.727998601169283 ], [ 83.319198234111425, 17.727998601169283 ], [ 83.319198234111425, 17.727998601169283 ] ] ] } }
+  
+  ]
+		};
+
+
+
+
+		
+
+
+		var Geo_to_Mechanical_point = {
+			"type": "FeatureCollection",
+		"name": "PointsGeoJson",
+		"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+		"features": [
+		{ "type": "Feature", "properties": { "id": 2, "Name": "Geo_Engg_dept" }, "geometry": { "type": "Point", "coordinates": [ 83.321039144955648, 17.726825425926673 ] } },
+		{ "type": "Feature", "properties": { "Name": "Departent Of Mechanical Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Mech_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:19:32.000", "Lon": 83.3193, "Lat": 17.728, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/mechengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319201549840898, 17.728000778983699, 0.0 ] } },
+		
+			]
+		};
+		  
+  
+		var Geo_to_NCRC = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		 { "type": "Feature", "properties": { "id": 3, "Name": "Geo_to_NCRC" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.32104474464353, 17.72682746826224 ], [ 83.321057350294438, 17.726845596661573 ], [ 83.321072921980843, 17.726864195926517 ], [ 83.321079595560747, 17.726873377841414 ], [ 83.321091954042032, 17.726899981848579 ], [ 83.321062046517341, 17.726912695266538 ], [ 83.321038071063654, 17.726921170878015 ], [ 83.320862512239998, 17.726980536513729 ], [ 83.320703305995693, 17.72702638322885 ], [ 83.320377488565498, 17.72718273219478 ], [ 83.320241731302914, 17.727279127729869 ], [ 83.320048585742995, 17.727431068147908 ], [ 83.319922701735862, 17.72756155459367 ], [ 83.319670316643169, 17.727820763873058 ], [ 83.319458967268488, 17.728042061294534 ], [ 83.319329380790577, 17.72817960059011 ], [ 83.31927723766016, 17.728240141357706 ], [ 83.319185910047153, 17.72836004728364 ], [ 83.319124202200513, 17.728456442185539 ], [ 83.319094273894919, 17.7285014068629 ], [ 83.319018990322022, 17.72864012135204 ], [ 83.318990604712567, 17.728688318734154 ], [ 83.318956048318469, 17.728802346635348 ], [ 83.318900511256516, 17.728980441614233 ], [ 83.318835100939083, 17.729201443718193 ], [ 83.318784500504847, 17.729385122121155 ], [ 83.318775621678171, 17.729415070076882 ], [ 83.318775178161459, 17.729415817491947 ], [ 83.318775099905864, 17.72941590036627 ], [ 83.318765995618833, 17.729400551478189 ], [ 83.318755781755087, 17.729384948749495 ], [ 83.318741713603146, 17.729361819996228 ], [ 83.318709249536766, 17.729309546739941 ], [ 83.318700372538174, 17.729294459149116 ], [ 83.318693905134197, 17.729284602764057 ], [ 83.318692721422224, 17.729283300954393 ], [ 83.318677090248286, 17.729274758207858 ], [ 83.318566674536569, 17.729214277820414 ], [ 83.31831269030404, 17.729114725987799 ], [ 83.318044096359031, 17.729010892297008 ], [ 83.317897437322102, 17.728956299301434 ], [ 83.317849112888481, 17.728937031181374 ], [ 83.317798540806805, 17.728937031181374 ], [ 83.317760330789511, 17.728944524339422 ], [ 83.317717625476092, 17.728964862909681 ], [ 83.317694025171306, 17.72898199012495 ], [ 83.317671548690541, 17.729000187789381 ], [ 83.317656938978061, 17.729017315001276 ], [ 83.317650196033838, 17.729034442211532 ], [ 83.317643453089602, 17.729052639870641 ], [ 83.31763558632133, 17.72906762617675 ] ] ] } }
+  ]
+		};
+
+
+
+
+
+
+
+
+
+		var Geo_to_NCRC_point = {
+			"type": "FeatureCollection",
+		"name": "PointsGeoJson",
+		"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+		"features": [
+		{ "type": "Feature", "properties": { "id": 2, "Name": "Geo_Engg_dept" }, "geometry": { "type": "Point", "coordinates": [ 83.321039144955648, 17.726825425926673 ] } },
+		{ "type": "Feature", "properties": { "Name": "New Classroom Complex", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/NCRC_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:30:00.000", "Lon": 83.3177, "Lat": 17.7291, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-home" }, "geometry": { "type": "Point", "coordinates": [ 83.317634143244405, 17.729070248307899, 0.0 ] } },
+		
+			]
+		};
+		  
+				
+
+
+
+
+
+
+
+  
+  
+		var Geo_to_auce_library = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		  { "type": "Feature", "properties": { "id": 8, "Name": "Geo_to_auce-library" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321044744309546, 17.72682773804927 ], [ 83.321059356598525, 17.726847815096729 ], [ 83.32107836445411, 17.726871099719812 ], [ 83.321092501546687, 17.726900502496413 ], [ 83.321092613741484, 17.726900734243095 ], [ 83.32109262483047, 17.726900989289824 ], [ 83.321092569385527, 17.726901122357681 ], [ 83.321092369783742, 17.726901233247563 ], [ 83.321091072372127, 17.726901721163042 ], [ 83.321088843485498, 17.726902552837156 ], [ 83.321078651716974, 17.726906247191778 ], [ 83.321061755857386, 17.726912705853699 ], [ 83.320930226139694, 17.726957510657211 ], [ 83.320878669927453, 17.726973223026661 ], [ 83.320703930164086, 17.727027579966503 ], [ 83.320576639148385, 17.72708909313582 ], [ 83.320497777310052, 17.727127053749523 ], [ 83.320359018756733, 17.727191581239872 ], [ 83.320231666765835, 17.727287606003063 ], [ 83.320074179343948, 17.727408488240407 ], [ 83.320016802845387, 17.727461267808827 ], [ 83.319760736810224, 17.727725846677618 ], [ 83.319473003034005, 17.728024817394218 ], [ 83.319296593738343, 17.72821167680765 ], [ 83.319100691491883, 17.728482532957091 ], [ 83.318988260637397, 17.728692063185903 ], [ 83.318949080188105, 17.728813011529365 ], [ 83.318863479423896, 17.729088978172193 ], [ 83.318808967494448, 17.729286583916441 ], [ 83.318769787045156, 17.729436491722421 ], [ 83.318762041813784, 17.729466642801825 ], [ 83.318756509505647, 17.729495134188785 ], [ 83.318754296582384, 17.729533030499592 ], [ 83.318754573197793, 17.729544371731297 ], [ 83.318755403044008, 17.729552116962704 ], [ 83.318756786121043, 17.729559585578702 ], [ 83.318759275659716, 17.729565394502256 ], [ 83.318761211967569, 17.729569820348775 ], [ 83.318766191044901, 17.729578672041811 ], [ 83.318771723353052, 17.729585587426996 ], [ 83.318784240200245, 17.729592641119883 ], [ 83.31879087897002, 17.729595407273958 ], [ 83.318803326663343, 17.729600109735884 ], [ 83.318839286666304, 17.729610344505954 ], [ 83.318985201293685, 17.729637314508174 ], [ 83.31906127053071, 17.729650038816914 ], [ 83.319138791998625, 17.729662348202542 ], [ 83.319145430768401, 17.72966373127958 ], [ 83.319145430768401, 17.729669263587727 ], [ 83.319144877537582, 17.729674795895875 ], [ 83.319142387998923, 17.729691669435724 ], [ 83.319142111383513, 17.729706606667722 ], [ 83.319131323382621, 17.729827072677633 ], [ 83.319130493536406, 17.729844637756003 ], [ 83.319128280613143, 17.729848786987112 ], [ 83.31912357815122, 17.729857362064742 ], [ 83.319118875689284, 17.729865660526961 ], [ 83.319099512610777, 17.729871746065925 ], [ 83.319091490763952, 17.729874788835406 ], [ 83.319080702763074, 17.72988281068222 ], [ 83.31905691383804, 17.729897747914219 ], [ 83.319045572606342, 17.729908259299698 ], [ 83.319015698142337, 17.729942282994806 ], [ 83.319005739987674, 17.729956390380583 ], [ 83.318963348676505, 17.72994850684147 ], [ 83.318865162352523, 17.72992349711744 ], [ 83.318852194347471, 17.729921644545293 ], [ 83.318848458975893, 17.729923959491934 ], [ 83.318848458975893, 17.729926111262714 ], [ 83.318848324490219, 17.72992880097619 ], [ 83.318848593461567, 17.729933776946115 ], [ 83.318847517576174, 17.729940097772779 ], [ 83.318851124043604, 17.729957729391284 ], [ 83.318853929073825, 17.729966945919145 ], [ 83.31885633338544, 17.729974559572593 ], [ 83.318860340571462, 17.729983375381849 ] ] ] } },
+  { "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Chemical_dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 6, "Name": "Geo_to_EEE_Dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 7, "Name": "Geo_to_ECE" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 7, "Name": "geo_to_placement" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } }
+  ]
+		};
+  
+  
+		var geo_to_placement = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		 { "type": "Feature", "properties": { "id": 7, "Name": "geo_to_placement" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.32104502158802, 17.726827862468603 ], [ 83.321060778229523, 17.726850416092727 ], [ 83.321077461732301, 17.726871115994321 ], [ 83.321092600466301, 17.72690201136983 ], [ 83.32104502158802, 17.726918694872609 ], [ 83.320909188058451, 17.726965046105157 ], [ 83.320704609635087, 17.727026141923901 ], [ 83.32053219908596, 17.727107140168449 ], [ 83.320359094266195, 17.727190452648557 ], [ 83.320357845295845, 17.727192170869785 ], [ 83.320359353360232, 17.727193867442217 ], [ 83.320363312029244, 17.727199334175616 ], [ 83.320375376544334, 17.727218373488483 ], [ 83.320424577144905, 17.72729453073995 ], [ 83.320552747041731, 17.727494324990904 ], [ 83.320572514569989, 17.727525581338945 ], [ 83.320586199781829, 17.72754737630596 ], [ 83.320592113144968, 17.727577787887842 ], [ 83.320600391853375, 17.727619857242775 ], [ 83.320632346281016, 17.727741827084238 ], [ 83.320682470873379, 17.727896377910728 ], [ 83.320698343660965, 17.72794733791298 ], [ 83.320762670221185, 17.728136975954133 ], [ 83.320787105959965, 17.728198796284726 ], [ 83.320803814157429, 17.728249756286974 ], [ 83.320832218093102, 17.72830572874846 ], [ 83.3209466692457, 17.728360865800074 ], [ 83.321052766299559, 17.728405142523339 ], [ 83.321274776473288, 17.728497455314297 ], [ 83.321423479430678, 17.728557604825149 ], [ 83.3216843361635, 17.728645740566741 ], [ 83.321891517811991, 17.728718003520751 ], [ 83.322230276515469, 17.728837049427643 ], [ 83.322401535539413, 17.728898034348369 ], [ 83.322594674629599, 17.728969463108285 ], [ 83.322683503535657, 17.729004274436331 ], [ 83.322705325310608, 17.72900959405689 ], [ 83.322716463559061, 17.729013997550467 ], [ 83.322718244695892, 17.729014338578374 ], [ 83.322719149948611, 17.729013772795433 ], [ 83.32271982888814, 17.729012867542725 ], [ 83.322721413080373, 17.729010943880724 ], [ 83.322722657802842, 17.72900777549625 ], [ 83.322737028689559, 17.728977902156927 ], [ 83.322787648347713, 17.728850252584053 ], [ 83.32274473168097, 17.728837047455826 ] ] ] } },
+  { "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Chemical_dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 6, "Name": "Geo_to_EEE_Dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 7, "Name": "Geo_to_ECE" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } }
+  ]
+		};
+  
+  
+		var geo_to_auce_canteen = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		  { "type": "Feature", "properties": { "id": 8, "Name": "Geo_to_auce-library" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 9, "Name": "geo_to_auce_canteen" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321044821177168, 17.726827671407474 ], [ 83.321056544348551, 17.726844921216802 ], [ 83.321073961631754, 17.726866022925297 ], [ 83.321079320795818, 17.726872386932619 ], [ 83.32108735954192, 17.726885784842775 ], [ 83.321093556075368, 17.726901276176395 ], [ 83.321091043967201, 17.726902615967411 ], [ 83.321082000377857, 17.726905128075565 ], [ 83.320995541988893, 17.726936361953616 ], [ 83.320909251073786, 17.726963325247805 ], [ 83.320706599204158, 17.727028687078995 ], [ 83.320702379520924, 17.727029924340538 ], [ 83.320693929271727, 17.727034057614599 ], [ 83.320597376000549, 17.727079471735244 ], [ 83.320359735017888, 17.727192364353723 ], [ 83.320210663346998, 17.727302843866163 ], [ 83.320048538446045, 17.727427322494904 ], [ 83.319863712275392, 17.727621796705154 ], [ 83.319606998750785, 17.727885131433435 ], [ 83.319445630558803, 17.728056147665018 ], [ 83.319376580863519, 17.728123873119564 ], [ 83.319297883128641, 17.7282131647803 ], [ 83.319199510960033, 17.728344453789948 ], [ 83.319154108420662, 17.72840801734505 ], [ 83.319094328410515, 17.728498822423767 ], [ 83.319020738461305, 17.728634273332851 ], [ 83.318988199974754, 17.728687242962103 ], [ 83.318937500472472, 17.728847286913343 ], [ 83.318899665023011, 17.728983872885912 ], [ 83.318849722229714, 17.729134079620291 ], [ 83.318807346526313, 17.729295258635016 ], [ 83.318776132280504, 17.729414818655325 ], [ 83.318759484682744, 17.72947686879245 ], [ 83.318756457846789, 17.729504867025053 ], [ 83.318753431010819, 17.729523028040798 ], [ 83.318754944428804, 17.729541945765529 ], [ 83.318757214555774, 17.729557079945316 ], [ 83.318760998100714, 17.729571457416114 ], [ 83.318771592026565, 17.729585078177919 ], [ 83.318779915825445, 17.729590375140845 ], [ 83.318799590259175, 17.729599455648717 ], [ 83.31885728931961, 17.729614968183 ], [ 83.318940527308428, 17.729630102362783 ], [ 83.31902149517029, 17.72964523654257 ], [ 83.319146352153524, 17.729661884140334 ], [ 83.319215212671551, 17.729672478066185 ], [ 83.319525841711666, 17.729692152499908 ], [ 83.319553352493813, 17.729683540873069 ] ] ] } },
+  { "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Chemical_dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 6, "Name": "Geo_to_EEE_Dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 7, "Name": "Geo_to_ECE" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 7, "Name": "geo_to_placement" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } }
+  ]
+		};
+  
+  
+  
+  
+		var Geo_to_yvs = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		  { "type": "Feature", "properties": { "id": 11, "Name": "Geo_to_yvs" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321045147225334, 17.726826966438143 ], [ 83.321052870211105, 17.726839442030542 ], [ 83.321068019144732, 17.726857264305398 ], [ 83.321079603623389, 17.726874492504425 ], [ 83.321091782177874, 17.726901225916709 ], [ 83.321091814313746, 17.726901359410373 ], [ 83.321091808538213, 17.726901417165671 ], [ 83.32109177099727, 17.726901446043318 ], [ 83.321091724793035, 17.726901495135323 ], [ 83.321091617945726, 17.726901529788499 ], [ 83.321091314730424, 17.72690164529909 ], [ 83.321090638993454, 17.726901896534631 ], [ 83.321087417804904, 17.726903070478887 ], [ 83.321085642572129, 17.726903711853311 ], [ 83.321082925320667, 17.726904776992978 ], [ 83.321082112149526, 17.726905132039537 ], [ 83.321076883802661, 17.726906998897231 ], [ 83.32106022079779, 17.726913061977143 ], [ 83.321018175094778, 17.726928754389547 ], [ 83.320787859448814, 17.727002383013215 ], [ 83.320701546401324, 17.727028276927459 ], [ 83.320625935534011, 17.727064887249547 ], [ 83.320530714788788, 17.727110861982624 ], [ 83.320360491164976, 17.727191031992124 ], [ 83.32018189912695, 17.727325519209099 ], [ 83.320075034796972, 17.727408700092973 ], [ 83.32004947400452, 17.727428628846397 ], [ 83.319931634419035, 17.727549934302047 ], [ 83.319851774994063, 17.727631093428325 ], [ 83.319734368642358, 17.72775442064157 ], [ 83.319588657684321, 17.727905763638613 ], [ 83.319504899155419, 17.727992410392648 ], [ 83.319433704405867, 17.728067215423629 ], [ 83.319359765842435, 17.728142886922154 ], [ 83.319284527577665, 17.728227800741106 ], [ 83.319204812563953, 17.728334665071081 ], [ 83.319147481295033, 17.728415535374847 ], [ 83.319091449727424, 17.728502759773907 ], [ 83.318988484501389, 17.72868818382754 ], [ 83.31893360822383, 17.728869564365986 ], [ 83.31887627695491, 17.729053255484537 ], [ 83.318827754772656, 17.729219617252284 ], [ 83.318762999910334, 17.729476613112269 ], [ 83.318757505968122, 17.729507665829221 ], [ 83.318755595031689, 17.729519609181896 ], [ 83.318757505968122, 17.729547795494209 ], [ 83.318758939170436, 17.729560216580989 ], [ 83.318764671979721, 17.729571682199555 ], [ 83.318772554592485, 17.729585058754552 ], [ 83.318784259078114, 17.729591508164997 ], [ 83.318799546569537, 17.729597360407809 ], [ 83.31881985026908, 17.729602615482985 ], [ 83.318868579147988, 17.729616708639142 ], [ 83.318923518570301, 17.729626741055387 ], [ 83.3190570986567, 17.7296504622025 ], [ 83.319200320676998, 17.729671945505544 ], [ 83.319220312494934, 17.729675202537283 ], [ 83.319277212671182, 17.729677779149039 ], [ 83.319488740331664, 17.729690587466642 ], [ 83.319597450507885, 17.729693118553399 ], [ 83.319647059808332, 17.729691599901344 ], [ 83.319701915151114, 17.729692875606993 ], [ 83.319729342822498, 17.729733698187665 ], [ 83.319779733195517, 17.729798121322787 ], [ 83.319867756885102, 17.729915167315816 ], [ 83.320033092865089, 17.730128856271136 ], [ 83.320413677573853, 17.730624864211247 ], [ 83.320560296273129, 17.73083387384639 ], [ 83.320973610817973, 17.731389270039632 ], [ 83.320507618380589, 17.731672917610211 ] ] ] } },
+  { "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Chemical_dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 6, "Name": "Geo_to_EEE_Dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 7, "Name": "Geo_to_ECE" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 7, "Name": "geo_to_placement" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 8, "Name": "Geo_to_auce-library" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 9, "Name": "geo_to_auce_canteen" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } }
+		  ]
+		};
+  
+  
+		var geo_to_cse = {
+		  "type": "FeatureCollection",
+		  "features": [
+		  { "type": "Feature", "properties": { "id": 11, "Name": "Geo_to_yvs" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+		  { "type": "Feature", "properties": { "id": 13, "Name": "Geo_to_yvs_murthy" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+		  { "type": "Feature", "properties": { "id": 14, "Name": "Geo_to_instrumentation" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+		  { "type": "Feature", "properties": { "id": 16, "Name": "geo_to_cse" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321044898954625, 17.726827476714607 ], [ 83.321057966691001, 17.726846168540053 ], [ 83.321077320173984, 17.726869988211416 ], [ 83.3210834405062, 17.726882228875866 ], [ 83.321090760092716, 17.726896702634502 ], [ 83.32109241423656, 17.726900341750962 ], [ 83.321092652067719, 17.726901002393102 ], [ 83.321092361385169, 17.72690131950133 ], [ 83.321091145803649, 17.726901742312297 ], [ 83.321088873194697, 17.726902535082861 ], [ 83.320971710614913, 17.726943852789461 ], [ 83.32088869484015, 17.726969831969456 ], [ 83.320704616685461, 17.727027860109285 ], [ 83.320623377289706, 17.727066545535841 ], [ 83.32049423308645, 17.72712836151117 ], [ 83.320361151559936, 17.727190571218834 ], [ 83.320186013245191, 17.727328098485494 ], [ 83.320046206521056, 17.727428394613671 ], [ 83.3198862645894, 17.727597834284754 ], [ 83.319647301465835, 17.727843255871129 ], [ 83.319452407853149, 17.728047647223242 ], [ 83.319372010577482, 17.728129288083775 ], [ 83.319295333897244, 17.72821373604917 ], [ 83.319244043415196, 17.728282123358571 ], [ 83.319160113535474, 17.728396102207572 ], [ 83.319102994589542, 17.728487803372452 ], [ 83.31904496899368, 17.728589348165201 ], [ 83.318989533826212, 17.728687266358207 ], [ 83.318857726525124, 17.729110750947392 ], [ 83.318812639058109, 17.729276041420075 ], [ 83.318771242820816, 17.729419585856149 ], [ 83.318745709516094, 17.729372550821154 ], [ 83.318698674481098, 17.729295950907012 ], [ 83.318662390311246, 17.729262354453439 ], [ 83.318542786936533, 17.729209943985872 ], [ 83.318517253631825, 17.729211287844013 ], [ 83.318510534341101, 17.729230101858015 ], [ 83.318483657178248, 17.729320140353583 ], [ 83.318403025689676, 17.729521719075006 ], [ 83.318197144844149, 17.729917039056943 ] ] ] } },
+		  { "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Chemical_dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+		  { "type": "Feature", "properties": { "id": 6, "Name": "Geo_to_EEE_Dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+		  { "type": "Feature", "properties": { "id": 7, "Name": "Geo_to_ECE" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+		  { "type": "Feature", "properties": { "id": 7, "Name": "geo_to_placement" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+		  { "type": "Feature", "properties": { "id": 8, "Name": "Geo_to_auce-library" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+		  { "type": "Feature", "properties": { "id": 9, "Name": "geo_to_auce_canteen" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } }
+		  ]
+		};
+  
+  
+  
+
+
+		
+
+		var Geo_to_cse_point = {
+			"type": "FeatureCollection",
+		"name": "PointsGeoJson",
+		"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+		"features": [
+		{ "type": "Feature", "properties": { "id": 2, "Name": "Geo_Engg_dept" }, "geometry": { "type": "Point", "coordinates": [ 83.321039144955648, 17.726825425926673 ] } },
+		{ "type": "Feature", "properties": { "Name": "Department of Computer Science", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth/North_Campus/CSE_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:32:19.000", "Lon": 83.3182, "Lat": 17.73, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/cse" }, "geometry": { "type": "Point", "coordinates": [ 83.318145734871607, 17.729875362874001, 0.0 ] } },
+		
+			]
+		};
+		  
+
+
+
+
+
+
+
+
+  
+  
+		var Geo_to_marine = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		  { "type": "Feature", "properties": { "id": 11, "Name": "geo_to_principal_gallery" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": null, "Name": "Geo_to_marine dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321045449672795, 17.726828620361164 ], [ 83.321059474289726, 17.726848658431472 ], [ 83.321077589419914, 17.726867583273592 ], [ 83.321091991557907, 17.726899488567831 ], [ 83.321092099824895, 17.726899849509952 ], [ 83.321092262225378, 17.726900468267871 ], [ 83.321092208091869, 17.726900880773147 ], [ 83.321091829157425, 17.726901190152102 ], [ 83.32109069235409, 17.726901757346859 ], [ 83.321088635281399, 17.726902376104775 ], [ 83.321082626463777, 17.726904696446926 ], [ 83.321015408175128, 17.726929700088657 ], [ 83.320941058375027, 17.726953113900294 ], [ 83.320908890706392, 17.72696352003782 ], [ 83.320855707839172, 17.726979562831986 ], [ 83.320716567498991, 17.727024656083575 ], [ 83.320702911413264, 17.727028124794767 ], [ 83.320636375928899, 17.727060354899709 ], [ 83.320481151754393, 17.727133920453841 ], [ 83.320363467922078, 17.727190017223418 ], [ 83.320360078064255, 17.727191631672174 ], [ 83.320358558763772, 17.727192364143736 ], [ 83.32035850893412, 17.727192393346694 ], [ 83.320358497923394, 17.72719239771666 ], [ 83.32035850342875, 17.727192409078555 ], [ 83.320358555729712, 17.727192478997924 ], [ 83.320358947562198, 17.727193089306414 ], [ 83.320359292571908, 17.727193630759583 ], [ 83.32035967454695, 17.727194181602115 ], [ 83.320359894696011, 17.72719452274891 ], [ 83.320361649735844, 17.727197172821743 ], [ 83.320364286649991, 17.727201201665078 ], [ 83.320375328018855, 17.727218077645297 ], [ 83.320382284719471, 17.72722865552835 ], [ 83.320391066756187, 17.727242078496278 ], [ 83.320399555207402, 17.727255233976557 ], [ 83.320406294910015, 17.727265836174382 ], [ 83.320435194964219, 17.727308745600968 ], [ 83.320475868848064, 17.727371749241449 ], [ 83.320582258635824, 17.727533884849755 ], [ 83.320586108123749, 17.727549773865132 ], [ 83.320598939750184, 17.727620663301192 ], [ 83.320635189094844, 17.727743497516251 ], [ 83.320659569185068, 17.727827831406206 ], [ 83.320722764945216, 17.728017888070717 ], [ 83.320801272188774, 17.728226201285075 ], [ 83.320827441269955, 17.728299199875554 ], [ 83.320846429834816, 17.728346154724079 ], [ 83.320846429834816, 17.728364057744077 ], [ 83.320845037567665, 17.728379971538132 ], [ 83.320840860766239, 17.728386602285237 ], [ 83.320833203296971, 17.728395222256108 ], [ 83.320808142488431, 17.728407157599708 ], [ 83.320787258481317, 17.728417103718765 ], [ 83.320774728077055, 17.728425723688169 ], [ 83.320732154042446, 17.728449882453592 ], [ 83.320621038831518, 17.7284901470554 ], [ 83.320395185087577, 17.728595985394158 ], [ 83.320320303097589, 17.728629347466246 ], [ 83.320200431524924, 17.728776025468122 ], [ 83.320137627275273, 17.728857704930853 ], [ 83.320066518349364, 17.728955483195509 ], [ 83.319995944077007, 17.729079742996529 ], [ 83.31994034010485, 17.729252891755912 ], [ 83.319910399504451, 17.729470855250483 ], [ 83.319867627218187, 17.729560485021796 ], [ 83.319786359874271, 17.729641966593185 ], [ 83.319700815301701, 17.729686781441661 ], [ 83.319704021850299, 17.729707391338085 ], [ 83.319737926041057, 17.729753525428762 ], [ 83.319871121076162, 17.729919608056885 ], [ 83.319999984282632, 17.730099387771578 ], [ 83.319976744788562, 17.730183503244696 ], [ 83.319948857395659, 17.73029860856499 ], [ 83.32003716747316, 17.730426995181176 ], [ 83.320074350663688, 17.730506683379438 ], [ 83.320088825116713, 17.730513576833683 ] ] ] } },
+  { "type": "Feature", "properties": { "id": 11, "Name": "Geo_to_yvs" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 13, "Name": "Geo_to_yvs_murthy" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 14, "Name": "Geo_to_instrumentation" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 16, "Name": "geo_to_cse" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Chemical_dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 6, "Name": "Geo_to_EEE_Dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 7, "Name": "Geo_to_ECE" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 7, "Name": "geo_to_placement" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 8, "Name": "Geo_to_auce-library" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 9, "Name": "geo_to_auce_canteen" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } }
+		  ]
+		};
+  
+  
+  
+  
+  
+  
+  
+		var Geo_to_marine_point = {
+			"type": "FeatureCollection",
+		"name": "PointsGeoJson",
+		"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+		"features": [
+		{ "type": "Feature", "properties": { "id": 2, "Name": "Geo_Engg_dept" }, "geometry": { "type": "Point", "coordinates": [ 83.321039144955648, 17.726825425926673 ] } },
+		{ "type": "Feature", "properties": { "Name": "Department of Marine Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Marine_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:40:32.000", "Lon": 83.3201, "Lat": 17.7305, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/marineengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320148, 17.730454972222201, 0.0 ] } },
+		
+			]
+		};
+		  
+  
+  
+  
+  
+  
+  
+  
+  
+		
+  
+  
+  
+		var Geo_to_ECE = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		  { "type": "Feature", "properties": { "id": 7, "Name": "Geo_to_ECE" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321044941748056, 17.726827746236381 ], [ 83.321070532222024, 17.726861585042037 ], [ 83.321077757767611, 17.726870188127208 ], [ 83.321092208858801, 17.726901159230387 ], [ 83.321019351274089, 17.726928402325981 ], [ 83.320928279293142, 17.726957366033599 ], [ 83.320865958962401, 17.726976866348963 ], [ 83.320707862297212, 17.727026820329591 ], [ 83.32069790762479, 17.727032370771031 ], [ 83.320496871801552, 17.727127653322157 ], [ 83.320359404220156, 17.727191532776899 ], [ 83.320358352881755, 17.727192578410747 ], [ 83.320377430339889, 17.727221350115915 ], [ 83.320393572804477, 17.727246394308963 ], [ 83.320411457921466, 17.727273418736605 ], [ 83.320428578717241, 17.727299511283562 ], [ 83.320438117446315, 17.727314071854988 ], [ 83.320447809039635, 17.727329564301691 ], [ 83.320463737494279, 17.727353327149672 ], [ 83.32047339851475, 17.727368470139382 ], [ 83.320548028697004, 17.727485700392911 ], [ 83.320573840639753, 17.727527746483396 ], [ 83.320586559568085, 17.727548413202221 ], [ 83.320592919032237, 17.727581194889265 ], [ 83.320609004735687, 17.72765352837316 ], [ 83.320619479147254, 17.727689873265376 ], [ 83.320693957359182, 17.727933951654407 ], [ 83.320738831622208, 17.728074393953509 ], [ 83.320781569015551, 17.728190411421931 ], [ 83.320799616401359, 17.728238175804059 ], [ 83.320802860374627, 17.72824783180986 ], [ 83.320814619777806, 17.728272551182325 ], [ 83.320824351697667, 17.728289545748922 ], [ 83.320827190174299, 17.728297656791501 ], [ 83.320833175503523, 17.728305731462918 ], [ 83.32084757167226, 17.728313608862933 ], [ 83.320888762885602, 17.728334079342886 ], [ 83.320910253953414, 17.728356255693537 ], [ 83.320906672108777, 17.728369049740738 ], [ 83.32089324019141, 17.728374167359362 ], [ 83.320844885288807, 17.728392079023401 ], [ 83.320810857764755, 17.728403167195481 ], [ 83.320723998032335, 17.728450078685142 ], [ 83.320640720144539, 17.728481637316737 ], [ 83.320422899217604, 17.728581430790879 ], [ 83.320354844169515, 17.728612136464054 ], [ 83.32031701093554, 17.728632606909912 ], [ 83.320229255741936, 17.728745194320343 ], [ 83.32014150054836, 17.728854369923521 ], [ 83.320072550039114, 17.728943927985846 ], [ 83.320031358825787, 17.729016427336855 ], [ 83.319994421053011, 17.729082956127268 ], [ 83.319938902461146, 17.729268042504007 ], [ 83.319912934087526, 17.729427540749061 ], [ 83.319907561320576, 17.729480422488816 ], [ 83.319869056490717, 17.729559745069185 ], [ 83.319782196758297, 17.729640773475246 ], [ 83.319759586364043, 17.729663802594498 ], [ 83.319696904082903, 17.729694508082222 ], [ 83.319724663378835, 17.729731184074559 ], [ 83.319755109058264, 17.729769565918964 ], [ 83.319846645703763, 17.729891254320481 ], [ 83.319868897543572, 17.729928657148928 ], [ 83.319875442202331, 17.729952345602907 ], [ 83.319874133270574, 17.729963566448433 ], [ 83.31984795463552, 17.729959826166667 ], [ 83.319748475822237, 17.729959826166667 ], [ 83.319646379145453, 17.729958579406063 ], [ 83.319596639738833, 17.729959826166667 ], [ 83.319565225376721, 17.729961072927264 ] ] ] } },
+  { "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Chemical_dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } },
+  { "type": "Feature", "properties": { "id": 6, "Name": "Geo_to_EEE_Dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ ] } }
+  
+		  ]
+		};
+  
+  
+
+
+			
+
+ var Geo_to_ECE_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Department Of Geo-Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Geo-Engineering_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:07:03.000", "Lon": 83.3211, "Lat": 17.7269, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/geoengg" }, "geometry": { "type": "Point", "coordinates": [ 83.321044614782494, 17.7268276392657, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Electronics and Communication Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/ECE_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:37:38.000", "Lon": 83.3196, "Lat": 17.7299, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/ece" }, "geometry": { "type": "Point", "coordinates": [ 83.319614389196403, 17.729998056366199, 0.0 ] } },
+]
+};
+  
+  
+  
+  
+		var Geo_to_Chemical_dprt = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		  { "type": "Feature", "properties": { "id": 5, "Name": "Geo_to_Chemical_dprt" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.32104433348654, 17.726828038542408 ], [ 83.321054797429881, 17.726841452916346 ], [ 83.321058809919435, 17.726848272513891 ], [ 83.321063599387713, 17.726854132039307 ], [ 83.321076605650347, 17.726870036464479 ], [ 83.321079242054921, 17.726873887009308 ], [ 83.321089304332418, 17.72689464646696 ], [ 83.321092468017937, 17.726900673405826 ], [ 83.321092631947806, 17.726901154258279 ], [ 83.321088844652351, 17.726902641548314 ], [ 83.321079841520159, 17.72690593257304 ], [ 83.321037909467861, 17.72692160121931 ], [ 83.321018375446997, 17.726928596150238 ], [ 83.320984998708312, 17.726939368343334 ], [ 83.320744514771093, 17.727015877086124 ], [ 83.320700966372002, 17.727029703963868 ], [ 83.320462901790279, 17.727142162529901 ], [ 83.320365159827873, 17.727187330294761 ], [ 83.320358246719522, 17.727192309069373 ], [ 83.320363649250837, 17.727200737867786 ], [ 83.320390311334734, 17.727240142471427 ], [ 83.32047608544076, 17.727370647564772 ], [ 83.320513374404982, 17.727430296675518 ], [ 83.320560140760193, 17.727500297036602 ], [ 83.320589536754895, 17.727549933639715 ], [ 83.320625613657484, 17.727717934348252 ], [ 83.320669707649543, 17.727840116582822 ], [ 83.320719146367921, 17.728015753399095 ], [ 83.320773929812589, 17.728159571823383 ], [ 83.320797981081, 17.728244844639921 ], [ 83.320827711121098, 17.728298299220643 ], [ 83.320887839292084, 17.72833139014358 ], [ 83.321014776541958, 17.728388662880377 ], [ 83.321212865460822, 17.728470117407849 ], [ 83.321386569065922, 17.728541390089017 ], [ 83.321660486289318, 17.728635571802808 ] ] ] } }
+  
+  
+  
+		  ]
+		};
+  
+  
+
+
+
+					
+
+ var Geo_to_Chemical_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Department Of Geo-Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Geo-Engineering_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:07:03.000", "Lon": 83.3211, "Lat": 17.7269, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/geoengg" }, "geometry": { "type": "Point", "coordinates": [ 83.321044614782494, 17.7268276392657, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Department Of Chemical Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Chemical_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:53:57.000", "Lon": 83.3216, "Lat": 17.7287, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/chemicalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.321689180991001, 17.7286017161444, 0.0 ] } },
+]
+};
+  
+  
+
+
+
+
+		var Geo_to_principal_block = {
+		  "type": "FeatureCollection",
+		  "features": [
+  
+		{ "type": "Feature", "properties": { "id": 2, "Name": "Geo Engineering to Principal Block" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321017668507025, 17.726823740337178 ], [ 83.321040446916228, 17.726830473847954 ], [ 83.321069509024497, 17.726861148727153 ], [ 83.321087574659373, 17.726886586427884 ], [ 83.321088360121763, 17.726893319936298 ], [ 83.321077363648357, 17.726906038784829 ], [ 83.321056941626338, 17.72691426862751 ], [ 83.321006672033633, 17.72693297281403 ], [ 83.320974468075818, 17.726942698990246 ], [ 83.320811091899586, 17.726994696615694 ], [ 83.320709767251827, 17.727026867800859 ], [ 83.320672065057309, 17.727042205224318 ], [ 83.320396367759884, 17.727179119726756 ], [ 83.32037506359741, 17.727191047776593 ], [ 83.320367612056586, 17.727197807509757 ], [ 83.320366192715468, 17.727207609122399 ], [ 83.320371160409351, 17.727218762680952 ], [ 83.320386773161559, 17.727239717849699 ], [ 83.320574613658238, 17.727529440575051 ], [ 83.32058511957942, 17.727549089600174 ], [ 83.320593971580337, 17.727589287069645 ], [ 83.320595206743249, 17.727606738651144 ], [ 83.320604882186075, 17.727663015087774 ], [ 83.32064337809696, 17.727779293522818 ], [ 83.32072996318611, 17.728048913106424 ], [ 83.320812590794006, 17.728273450368114 ], [ 83.320812424187594, 17.728279401411051 ], [ 83.320812109175378, 17.728290503361997 ], [ 83.320814263775773, 17.728302315745811 ], [ 83.320826315052841, 17.728310142320289 ], [ 83.320840557471186, 17.728315360036419 ], [ 83.320893692647289, 17.728341448614795 ], [ 83.320901909427107, 17.728348753416057 ], [ 83.32090790488067, 17.728363694979826 ], [ 83.320904863467774, 17.728373834405346 ], [ 83.320891177109758, 17.728381559681548 ], [ 83.320844035209859, 17.728399907211191 ], [ 83.320794865701359, 17.72841970322791 ], [ 83.320746709997181, 17.72844432753833 ], [ 83.320716295868209, 17.728460260913863 ], [ 83.32059768076526, 17.728501784249499 ], [ 83.32047348973866, 17.728558516698342 ], [ 83.320396947514098, 17.728592314744432 ], [ 83.32033865376691, 17.728617904689379 ], [ 83.320307732735799, 17.728640114827311 ], [ 83.32028894704267, 17.72865999654735 ], [ 83.320228415364866, 17.728735547063398 ], [ 83.320169970986285, 17.728813085717803 ], [ 83.32013239960007, 17.728850860947542 ] ] ] } }
+		  ]
+		};
+		
+
+
+
+
+		
+
+ var Geo_to_principal_block_point = {
+    "type": "FeatureCollection",
+"name": "PointsGeoJson",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 2, "Name": "Principal Block AUCE" }, "geometry": { "type": "Point", "coordinates": [ 83.320132432430825, 17.728850788510648 ] } },
+{ "type": "Feature", "properties": { "id": 1, "Name": "Geo Engineering Department" }, "geometry": { "type": "Point", "coordinates": [ 83.32101770066761, 17.726823695009713 ] } }
+	]
+};
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		var Geo_to_auce_outgate = {
+		  "type": "FeatureCollection",
+		  "features": [
+  { "type": "Feature", "properties": { "id": 2, "Name": "Geo_to_auce_outgate" }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 83.321044653324634, 17.726827649760715 ], [ 83.321052204540209, 17.726837648548322 ], [ 83.321054270119362, 17.72684055142204 ], [ 83.321060120589308, 17.72684968429401 ], [ 83.321067410781879, 17.726858081745057 ], [ 83.321077328834548, 17.726870435686742 ], [ 83.321078261301054, 17.726871566112735 ], [ 83.321083093172845, 17.72688133622281 ], [ 83.321089111820214, 17.726893972769357 ], [ 83.321092417837775, 17.726901078303122 ], [ 83.321091532192071, 17.726901592765007 ], [ 83.321082909901676, 17.726904732988459 ], [ 83.321049904422594, 17.726916934578838 ], [ 83.321042254801085, 17.726919761201977 ], [ 83.321018020008736, 17.726928774988785 ], [ 83.3209745128907, 17.726941747985009 ], [ 83.320876534669324, 17.726974310345646 ], [ 83.320774588482578, 17.727005709759226 ], [ 83.320701333737603, 17.727027805639562 ], [ 83.320610833604761, 17.727072724229998 ], [ 83.320489810661542, 17.727131452726084 ], [ 83.320376539360993, 17.727183762203705 ], [ 83.320358798451096, 17.727192422695268 ], [ 83.320352145609874, 17.727197069788126 ], [ 83.320270453796681, 17.72725924184984 ], [ 83.320203403564719, 17.727309292298944 ], [ 83.320048488835212, 17.727428529895477 ], [ 83.319861947260009, 17.727622989829769 ], [ 83.319767256105067, 17.72772040010716 ], [ 83.319547383243304, 17.727946788602882 ], [ 83.319427693623467, 17.728073060946386 ], [ 83.3193593266096, 17.728142510697392 ], [ 83.319291148978053, 17.728221881808452 ], [ 83.319204411880108, 17.728337871800708 ], [ 83.319140779423989, 17.728428066144051 ], [ 83.319086994847993, 17.72851465267096 ], [ 83.31904457321059, 17.728594745171101 ], [ 83.319004234778575, 17.728661308505476 ], [ 83.318989084193788, 17.728685841327088 ], [ 83.318973176079751, 17.728740679386782 ], [ 83.318950450202578, 17.728813736644181 ], [ 83.318928481854627, 17.728884448825454 ], [ 83.31885935731151, 17.729113541670102 ], [ 83.31880102756007, 17.729323152346989 ], [ 83.318782846858326, 17.729385205718945 ], [ 83.318776029095176, 17.729416412784502 ], [ 83.318760120981139, 17.729469085969541 ], [ 83.318758605922653, 17.729488748216152 ], [ 83.318756333334946, 17.729508230073048 ], [ 83.318756333334946, 17.729528433477967 ], [ 83.318756333334989, 17.729536266888079 ], [ 83.318757704003744, 17.729548017002596 ], [ 83.318758149179786, 17.729556957014577 ], [ 83.318758594355813, 17.729558653143282 ], [ 83.318761858980025, 17.729564448249569 ], [ 83.318764678428224, 17.729569536635427 ], [ 83.318768239836459, 17.729575049053267 ], [ 83.318770910892638, 17.729580137438823 ], [ 83.318772986575155, 17.729583694986701 ], [ 83.318773530474701, 17.729584615994177 ], [ 83.318776793872061, 17.729586227757252 ], [ 83.318781688968087, 17.729588645401833 ], [ 83.31879153959342, 17.72959359581683 ], [ 83.318802357151299, 17.729599064298352 ], [ 83.318803444950419, 17.72959946723909 ], [ 83.318807493980458, 17.729600503372406 ], [ 83.318821605152323, 17.729604374481564 ], [ 83.318837499106081, 17.729608749266536 ], [ 83.318849903037673, 17.729612087918149 ], [ 83.318866310674352, 17.729616491484403 ], [ 83.318867700639885, 17.729616779299189 ], [ 83.31888673712443, 17.729620636017255 ], [ 83.318904655593201, 17.729624032231605 ], [ 83.318913418419427, 17.729625643994321 ], [ 83.318959695206829, 17.729633933059503 ], [ 83.31900054810697, 17.72964023620256 ], [ 83.319016442060729, 17.729642711409362 ], [ 83.319087284978195, 17.729653878621026 ], [ 83.319196557518225, 17.729670228987622 ], [ 83.319219133123866, 17.729673391245345 ], [ 83.319342634966603, 17.729681613115165 ], [ 83.319476760623729, 17.729690467436082 ], [ 83.319540835504498, 17.729692364790509 ], [ 83.319641761741565, 17.729692364790509 ], [ 83.319696872778891, 17.72969299724198 ], [ 83.319702805529545, 17.729700650396069 ], [ 83.319735856601937, 17.729744266899477 ], [ 83.319826414925302, 17.729865446948953 ], [ 83.319875716916201, 17.729929673793642 ], [ 83.31992375129542, 17.729987025970967 ], [ 83.320000200377848, 17.730093997398725 ], [ 83.320116274906809, 17.730246352420544 ], [ 83.320270626023117, 17.730450282675029 ], [ 83.320878738516839, 17.731271398289206 ], [ 83.321317254406125, 17.731862952773689 ], [ 83.321497582265934, 17.732103372238289 ], [ 83.321614448129935, 17.732262131024797 ], [ 83.321630732717537, 17.732286765996299 ], [ 83.321630732717537, 17.732286765996299 ] ] ] } }
+  
+  
+		  ]
+		};
+		
+		
+  
+  
+		var locations = {
+		  "type": "FeatureCollection",
+		  "features": [
+		  { "type": "Feature", "properties": { "Name": "Volleyball Court", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth/North_Campus/Volleyball.jpg\">", "Date": "2020\/02\/20", "Time": "12:06:28.000", "Lon": 83.3204, "Lat": 17.7296, "website_link": "https:\/\/www.andhrauniversity.edu.in\/sports\/sports" }, "geometry": { "type": "Point", "coordinates": [ 83.320449972222207, 17.729576972222201, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "EEE Department Workshop", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth/North_Campus/EEE_Workshop_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:27:34.000", "Lon": 83.3191, "Lat": 17.7292, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/electricalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319163583154804, 17.729172233073999, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Department of Computer Science", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth/North_Campus/CSE_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:32:19.000", "Lon": 83.3182, "Lat": 17.73, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/cse" }, "geometry": { "type": "Point", "coordinates": [ 83.318145734871607, 17.729875362874001, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Department of Metallurgy", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth/North_Campus/Metallurgy_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:33:22.000", "Lon": 83.318, "Lat": 17.7305, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/metallurgyengg" }, "geometry": { "type": "Point", "coordinates": [ 83.317852288061104, 17.730541940089999, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Architecture Department Workshop", "descriptio": "<img style=\"max-width:300px;\"Navjoth/North_Campus/Architecture_Workshop_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:10:03.000", "Lon": 83.321, "Lat": 17.7272, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.3208925318567, 17.7272618807994, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Centre for Nanotechnology, & Centre of Excellence", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth/North_Campus/Nano_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:35:23.000", "Lon": 83.3188, "Lat": 17.73, "website_link": "https:\/\/www.andhrauniversity.edu.in\/academics\/research-centres\/nanotechnology-centre" }, "geometry": { "type": "Point", "coordinates": [ 83.318789323767803, 17.729978522682998, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "AUCE Canteen", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth/North_Campus/AUCE_Canteen.jpg\">", "Date": "2020\/02\/20", "Time": "12:10:44.000", "Lon": 83.3196, "Lat": 17.7297, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.319551, 17.729666, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "National Service Scheme Block", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth/North_Campus/NSS_Block.jpg\">", "Date": "2020\/02\/20", "Time": "11:12:57.000", "Lon": 83.3208, "Lat": 17.727, "website_link": "https:\/\/www.andhrauniversity.edu.in\/central-facilities\/nss" }, "geometry": { "type": "Point", "coordinates": [ 83.320767, 17.726994, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Civil Gallery", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Civil_Gallery_6.jpg\">", "Date": "2020\/02\/20", "Time": "12:12:11.000", "Lon": 83.3202, "Lat": 17.7274, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320391302382504, 17.727389303361701, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "AUCE Canteen", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/AUCE_Canteen_2.jpg\">", "Date": "2020\/02\/20", "Time": "12:09:21.000", "Lon": 83.3203, "Lat": 17.7301, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.320313972222195, 17.730063, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Architecture Department Gallery", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Architecture_Venustar_4.jpg\">", "Date": "2020\/02\/20", "Time": "11:10:54.000", "Lon": 83.3211, "Lat": 17.7272, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.3211665509086, 17.7272271410706, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "EEE Department Workshop", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/EEE_Workshop_6.jpg\">", "Date": "2020\/02\/20", "Time": "11:36:23.000", "Lon": 83.3191, "Lat": 17.7297, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/electricalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319151080745002, 17.729585217500102, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Civil department Workshop", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Civil_Workshop_7.jpg\">", "Date": "2020\/02\/20", "Time": "12:13:16.000", "Lon": 83.3206, "Lat": 17.7278, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320608727198405, 17.727855980541101, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Mechanical Department Workshop", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Mech_Workshop_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:22:18.000", "Lon": 83.3197, "Lat": 17.7283, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/mechengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319757952425803, 17.728288089335699, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "NCRC Canteen", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Canteen_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:28:53.000", "Lon": 83.3184, "Lat": 17.7292, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.318449, 17.729196972222201, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Andhra University Pump House", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/AU_Pump_House.jpg\">", "Date": "2020\/02\/20", "Time": "11:48:01.000", "Lon": 83.3217, "Lat": 17.7321, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.321709972222195, 17.732086972222199, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Department of Marine Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Marine_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:40:32.000", "Lon": 83.3201, "Lat": 17.7305, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/marineengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320148, 17.730454972222201, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Institute of Electronics and Telecommunication Engineers", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/IETE_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:39:50.000", "Lon": 83.3198, "Lat": 17.7303, "website_link": "http:\/\/www.iete.org\/" }, "geometry": { "type": "Point", "coordinates": [ 83.319800972222197, 17.730315972222201, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Department of Architecture", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Architecture_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:14:19.000", "Lon": 83.3202, "Lat": 17.7266, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.320154972222198, 17.726556972222198, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Indian Institute Of Petroleum and Energy", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/IIPE.jpg\">", "Date": "2020\/02\/20", "Time": "11:57:10.000", "Lon": 83.3201, "Lat": 17.7286, "website_link": "http:\/\/www.iipe.ac.in\/" }, "geometry": { "type": "Point", "coordinates": [ 83.320098972222198, 17.728615, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Examination Block", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Examination_Block_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:25:26.000", "Lon": 83.3189, "Lat": 17.7285, "website_link": "http:\/\/www.aucoe.info\/" }, "geometry": { "type": "Point", "coordinates": [ 83.318887, 17.728515972222201, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "AUCE Andhra Bank", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Andhra_Bank.jpg\">", "Date": "2020\/02\/20", "Time": "11:55:35.000", "Lon": 83.3208, "Lat": 17.7282, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.320851817231897, 17.728120167024599, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Architecture Department Building", "descriptio": "<img style=\"max-width:300px;\" src=\"file:\/\/\/Users\/navjoth\/Desktop\/Navjoth\/North_Campus\/Architecture_Venustar_4.jpg\">", "Date": "2020\/02\/20", "Time": "11:14:41.000", "Lon": 83.3203, "Lat": 17.7266, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.320267972222197, 17.726556972222198, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Old SBI Building", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/SBI_Bank.jpg\">", "Date": "2020\/02\/20", "Time": "11:18:38.000", "Lon": 83.3194, "Lat": 17.7278, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.319434972222197, 17.727820972222201, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "AUCE GYM", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/GYM.jpg\">", "Date": "2020\/02\/20", "Time": "12:05:29.000", "Lon": 83.3201, "Lat": 17.7296, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.320183000159901, 17.729572609117699, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Telugu Acadamy Building", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Telugu Acadamy_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:12:09.000", "Lon": 83.3212, "Lat": 17.7269, "website_link": "https:\/\/onlinecareerguidence.com\/publisher_products.php?pub_id=12" }, "geometry": { "type": "Point", "coordinates": [ 83.321211, 17.726905972222202, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Architecture Entrance", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Architecture_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:13:28.000", "Lon": 83.3206, "Lat": 17.727, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.320633, 17.726980972222201, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Department Of Geo-Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Geo-Engineering_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:07:03.000", "Lon": 83.3211, "Lat": 17.7269, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/geoengg" }, "geometry": { "type": "Point", "coordinates": [ 83.321044614782494, 17.7268276392657, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "AUCE Health Center", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Architecture_Workshop_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:09:44.000", "Lon": 83.321, "Lat": 17.7273, "website_link": "https:\/\/www.andhrauniversity.edu.in\/central-facilities\/health-services" }, "geometry": { "type": "Point", "coordinates": [ 83.321025550908601, 17.727262433766299, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Department Of Mathematics", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Physics.jpg\">", "Date": "2020\/02\/20", "Time": "12:00:05.000", "Lon": 83.3197, "Lat": 17.7292, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/enggmathematics" }, "geometry": { "type": "Point", "coordinates": [ 83.319681, 17.7292239722223, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "AUCE Maintenance House", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/AU_Maintenance.jpg\">", "Date": "2020\/02\/20", "Time": "11:48:45.000", "Lon": 83.3219, "Lat": 17.7319, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.321854972222198, 17.731853972222201, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "AUCE Physical Department", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/PD_Office.jpg\">", "Date": "2020\/02\/20", "Time": "12:07:54.000", "Lon": 83.3202, "Lat": 17.7298, "website_link": "https:\/\/www.andhrauniversity.edu.in\/sports\/sports" }, "geometry": { "type": "Point", "coordinates": [ 83.320209, 17.729811, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "EEE Shuttle Court", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Shuttle_Court.jpg\">", "Date": "2020\/02\/20", "Time": "11:27:55.000", "Lon": 83.3189, "Lat": 17.7291, "website_link": "https:\/\/www.andhrauniversity.edu.in\/sports\/sports" }, "geometry": { "type": "Point", "coordinates": [ 83.318943861934699, 17.7290432696498, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Open Auditorium AUCE", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Open_Auditorium_1.jpg\">", "Date": "2020\/02\/20", "Time": "12:01:56.000", "Lon": 83.3203, "Lat": 17.729, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.320390721786794, 17.729022677614498, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Departent Of Mechanical Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Mech_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:19:32.000", "Lon": 83.3193, "Lat": 17.728, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/mechengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319201549840898, 17.728000778983699, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "SIEMENS LAB", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/SIEMENS_LAB.jpg\">", "Date": "2020\/02\/20", "Time": "11:23:49.000", "Lon": 83.319, "Lat": 17.7286, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.319089063378996, 17.728624701830999, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Electrical and Electronics Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/EEE_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:26:31.000", "Lon": 83.3187, "Lat": 17.729, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/electricalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.318676438913101, 17.728971286440999, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "EEE Department Building", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/EEE_4.jpg\">", "Date": "2020\/02\/20", "Time": "11:27:14.000", "Lon": 83.3191, "Lat": 17.7292, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/electricalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319030219509003, 17.729119633301998, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "New Building", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/New_block.jpg\">", "Date": "2020\/02\/20", "Time": "11:46:08.000", "Lon": 83.3213, "Lat": 17.7321, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-home" }, "geometry": { "type": "Point", "coordinates": [ 83.321282972222207, 17.732092972222201, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Department Of Instrumentation", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Instrumentation.jpg\">", "Date": "2020\/02\/20", "Time": "11:51:17.000", "Lon": 83.3236, "Lat": 17.7291, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/instrumenttechnology" }, "geometry": { "type": "Point", "coordinates": [ 83.323652668360296, 17.729016958009801, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Placement Office", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Placement_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:52:34.000", "Lon": 83.3227, "Lat": 17.7288, "website_link": "https:\/\/www.andhrauniversity.edu.in\/central-facilities\/training-and-placement" }, "geometry": { "type": "Point", "coordinates": [ 83.322749, 17.728815972222201, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Marine Engineering Workshop", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Marine_Workshop_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:41:54.000", "Lon": 83.3206, "Lat": 17.7311, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/marineengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320428254331105, 17.731175476916199, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Basketball Court", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Basketball.jpg\">", "Date": "2020\/02\/20", "Time": "12:06:11.000", "Lon": 83.3205, "Lat": 17.7297, "website_link": "https:\/\/www.andhrauniversity.edu.in\/sports\/sports" }, "geometry": { "type": "Point", "coordinates": [ 83.320524, 17.729665, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Dr.B.R. Ambedkar Hall", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Dr.B.R. Ambedkar_Hall.jpg\">", "Date": "2020\/02\/20", "Time": "11:20:36.000", "Lon": 83.3193, "Lat": 17.7282, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.319367684845005, 17.728286440812202, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Department Of Physics", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Physics.jpg\">", "Date": "2020\/02\/20", "Time": "12:00:23.000", "Lon": 83.3196, "Lat": 17.7294, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/" }, "geometry": { "type": "Point", "coordinates": [ 83.319649972222194, 17.729352972222198, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Principal Block AUCE", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Prncipal_Block_4.jpg\">", "Date": "2020\/02\/20", "Time": "11:58:44.000", "Lon": 83.32, "Lat": 17.7288, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-principal" }, "geometry": { "type": "Point", "coordinates": [ 83.319976972222193, 17.728756, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Civil Engineering Workshop", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Civil_Workshop_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:17:37.000", "Lon": 83.3197, "Lat": 17.7277, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319698, 17.727709, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "AUCE Out Gate", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/AUCE_Entrance_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:47:26.000", "Lon": 83.3216, "Lat": 17.7323, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-home" }, "geometry": { "type": "Point", "coordinates": [ 83.321622, 17.732323, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Electronics and Communication Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/ECE_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:37:38.000", "Lon": 83.3196, "Lat": 17.7299, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/ece" }, "geometry": { "type": "Point", "coordinates": [ 83.319614389196403, 17.729998056366199, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Civil Engineering Workshop", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Civil_Workshop_8.jpg\">", "Date": "2020\/02\/20", "Time": "12:12:57.000", "Lon": 83.3206, "Lat": 17.7276, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320560813952, 17.72768536261, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Civil Department Workshop", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Civil_Workshop_4.jpg\">", "Date": "2020\/02\/20", "Time": "11:16:48.000", "Lon": 83.3198, "Lat": 17.7276, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319811938184301, 17.727576117558399, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Department Of Chemical Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Chemical_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:53:57.000", "Lon": 83.3216, "Lat": 17.7287, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/chemicalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.321689180991001, 17.7286017161444, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Mineral Water Plant CSE department", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Mineral_Water_Plant.jpg\">", "Date": "2020\/02\/20", "Time": "11:31:29.000", "Lon": 83.3184, "Lat": 17.7294, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.318432972222197, 17.729395, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Chemical Department PG Block", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Chemical_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:52:14.000", "Lon": 83.3229, "Lat": 17.7289, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/chemicalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.323003569317706, 17.728811793360101, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Civil Department New Building", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Civil_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:17:52.000", "Lon": 83.3197, "Lat": 17.7278, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319912347631401, 17.727657936487699, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "AU Teacher mutually Aided Co-Operative Society", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/AUTMACS_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:45:32.000", "Lon": 83.3213, "Lat": 17.7318, "website_link": "https:\/\/www.andhrauniversity.edu.in\/administration-wing\/academic-affairs" }, "geometry": { "type": "Point", "coordinates": [ 83.321274, 17.731787, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "AUCE LIbrary", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Library_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:34:49.000", "Lon": 83.3188, "Lat": 17.73, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-arts-and-commerce\/departments\/library-and-information-science" }, "geometry": { "type": "Point", "coordinates": [ 83.318862779824599, 17.729984987536898, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "New Classroom Complex", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/NCRC_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:30:00.000", "Lon": 83.3177, "Lat": 17.7291, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-home" }, "geometry": { "type": "Point", "coordinates": [ 83.317634143244405, 17.729070248307899, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Y V S Murthy Auditorium", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/YVS_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:43:39.000", "Lon": 83.3205, "Lat": 17.7317, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-home" }, "geometry": { "type": "Point", "coordinates": [ 83.320505972222193, 17.731674, 0.0 ] } },
+  { "type": "Feature", "properties": { "Name": "Department of Civil Engineering", "descriptio": "<img style=\"max-width:300px;\" src=\"Navjoth\/North_Campus\/Civil_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:16:16.000", "Lon": 83.3202, "Lat": 17.7273, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320160972222197, 17.727306972222198, 0.0 ] } }
+  ]
+  
+		};
+  
+		// var dc={
+		//   type:'Feature',
+		//   properties:{},
+		//   geometry:{
+		//     type:'MultiLineString',
+		//     coordinates:
+			  
+		//     [ [ [ 83.2917721, 17.7169393 ], [ 83.2916798, 17.7171998 ], [ 83.291483, 17.717663 ], [ 83.2913586, 17.7179676 ], [ 83.2907631, 17.7194758 ] ] ]
+  
+		//   }
+  
+		// };
+		
+		// var length = turf.length(dc, { units: 'miles' });
+  
+	   
+  
+  //       map.on('load', function() {
+  // // add the line which will be modified in the animation
+  // map.addLayer({
+  // 'id': 'line-animation',
+  // 'type': 'line',
+  // 'source': {
+  // 'type': 'geojson',
+  // 'data': stores
+  // },
+  // 'layout': {
+  // 'line-cap': 'round',
+  // 'line-join': 'miter'
+  // },
+  // 'paint': {
+  // 'line-color': '#000000',
+  // 'line-width': 6,
+  // 'line-opacity': 1
+  // },
+  
+  // });
+  
+  //     });
+		
+		/**
+		 * Assign a unique id to each store. You'll use this `id`
+		 * later to associate each point on the map with a listing
+		 * in the sidebar.
+		*/
+		locations.features.forEach(function(store, i){
+		  store.properties.id = i;
+		});
+  
+		/**
+		 * Wait until the map loads to make changes to the map.
+		*/
+		map.on('load', function (e) {
+		  /** 
+		   * This is where your '.addLayer()' used to be, instead
+		   * add only the source without styling a layer
+		  */
+		  map.addSource("places", {
+			"type": "geojson",
+			"data": locations
+		  });
+  
+  map.addSource('veh-incidents-2', {
+			  type: 'geojson',
+			  data: 'https://codebeautify.org/jsonviewer/cba54b24',
+			 
+			  maxzoom: 12
+		  });
+  
+  //         map.addSource('some id', {
+  //   type: 'geojson',
+  //   data: 'https://mydomain.mydata.geojson'
+  // });
+  
+		  
+  
+		  /**
+		   * Add all the things to the page:
+		   * - The location listings on the side of the page
+		   * - The markers onto the map
+		  */
+		  buildLocationList(locations);
+		  addMarkers();
+		});
+  
+		/**
+		 * Add a marker to the map for every store listing.
+		**/
+		function addMarkers() {
+		  /* For each feature in the GeoJSON object above: */
+		  locations.features.forEach(function(marker) {
+			/* Create a div element for the marker. */
+			var el = document.createElement('div');
+			/* Assign a unique `id` to the marker. */
+		   // el.id = "marker-" + marker.properties.id;
+			/* Assign the `marker` class to each marker for styling. */
+			el.className = 'marker';
+			
+			/**
+			 * Create a marker using the div element
+			 * defined above and add it to the map.
+			**/
+			new mapboxgl.Marker(el, { offset: [0, -23] })
+			  .setLngLat(marker.geometry.coordinates)
+			  .addTo(map);
+  
+			/**
+			 * Listen to the element and when it is clicked, do three things:
+			 * 1. Fly to the point
+			 * 2. Close all other popups and display popup for clicked store
+			 * 3. Highlight listing in sidebar (and remove highlight for all other listings)
+			**/
+			el.addEventListener('click', function(e){
+			  /* Fly to the point */
+			  flyToStore(marker);
+			  /* Close all other popups and display popup for clicked store */
+			  createPopUp(marker);
+			  /* Highlight listing in sidebar */
+			  var activeItem = document.getElementsByClassName('active');
+			  e.stopPropagation();
+			  if (activeItem[0]) {
+				activeItem[0].classList.remove('active');
+			  }
+			  var listing = document.getElementById('listing-' + marker.properties.id);
+			  listing.classList.add('active');
+			});
+		  });
+		}
+  
+		/**
+		 * Add a listing for each store to the sidebar.
+		**/
+		function buildLocationList(data) {
+		  data.features.forEach(function(store, i){
+			/**
+			 * Create a shortcut for `store.properties`,
+			 * which will be used several times below.
+			**/
+			var prop = store.properties;
+  
+			/* Add a new listing section to the sidebar. */
+			var listings = document.getElementById('listings');
+			var listing = listings.appendChild(document.createElement('div'));
+			/* Assign a unique `id` to the listing. */
+			listing.id = "listing-" + prop.id;
+			/* Assign the `item` class to each listing for styling. */
+			listing.className = 'item';
+  
+			/* Add the link to the individual listing created above. */
+			var link = listing.appendChild(document.createElement('a'));
+			link.href = '#';
+			link.className = 'title';
+			link.id = "link-" + prop.id;
+			link.innerHTML = prop.Name;
+  
+			/* Add details to the individual listing. */
+			// var details = listing.appendChild(document.createElement('div'));
+			// details.innerHTML = prop.id;
+		  //   if (prop.phone) {
+		  //     details.innerHTML += ' · ' + prop.phoneFormatted;
+		  //   }
+  
+			/**
+			 * Listen to the element and when it is clicked, do four things:
+			 * 1. Update the `currentFeature` to the store associated with the clicked link
+			 * 2. Fly to the point
+			 * 3. Close all other popups and display popup for clicked store
+			 * 4. Highlight listing in sidebar (and remove highlight for all other listings)
+			**/
+			link.addEventListener('click', function(e){
+			  for (var i=0; i < data.features.length; i++) {
+				if (this.id === "link-" + data.features[i].properties.id) {
+				  var clickedListing = data.features[i];
+				  flyToStore(clickedListing);
+				  createPopUp(clickedListing);
+  
+				  
+				}
+			  }
+			  var activeItem = document.getElementsByClassName('active');
+			  if (activeItem[0]) {
+				activeItem[0].classList.remove('active');
+			  }
+			  this.parentNode.classList.add('active');
+			});
+		  });
+		}
+  
+		/**
+		 * Use Mapbox GL JS's `flyTo` to move the camera smoothly
+		 * a given center point.
+		**/
+		function flyToStore(currentFeature) {
+		  map.flyTo({
+			center: currentFeature.geometry.coordinates,
+			zoom: 19
+		  });
+		}
+  
+		/**
+		 * Create a Mapbox GL JS `Popup`.
+		**/
+		function createPopUp(currentFeature) {
+		  var popUps = document.getElementsByClassName('mapboxgl-popup');
+		  if (popUps[0]) popUps[0].remove();
+		  var popup = new mapboxgl.Popup({closeOnClick: true})
+			.setLngLat(currentFeature.geometry.coordinates)
+			.setHTML('<h3><center>Location</center></h3>' +
+			  '<h4 class="pop" id="pop"><center><b>' + currentFeature.properties.Name + '</b></center><center align="right">'+currentFeature.properties.descriptio+'</center></h4></b><button><a id="para" href='+currentFeature.properties.website_link+'>Click Here For More Info</a></button>')
+			.addTo(map);
+  // myfunctionpop();
+			responsiveVoice.speak(document.getElementById("pop").textContent);
+  
+		   
+  }
+	  //User current location function
+		
+  var geolocate = new mapboxgl.GeolocateControl();
+
+  map.addControl(geolocate);
+  
+  geolocate.on('geolocate', function(e) {
+		var lon = e.coords.longitude;
+		var lat = e.coords.latitude
+		var position = [lon, lat];
+		console.log(lat);
+		console.log(lon);
+  });
+  
+  
+  
+  // map.addControl(
+  // new MapboxDirections({
+  // accessToken: mapboxgl.accessToken
+  // }),
+  // 'top-left'
+  // );
+  
+  // var line = turf.lineString([[-74, 40], [-78, 42], [-82, 35]]);
+  // var bbox = turf.bbox(line);
+  // var bboxPolygon = turf.bboxPolygon(bbox);
+  
+	  </script>
+
+	 
+		
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+			<script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+ 
+  <script src="js/main.js"></script>
+    
+
+	</body>
+</html>

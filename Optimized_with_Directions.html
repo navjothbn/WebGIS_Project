@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8' />
+  <title>AUSIS</title>
+  <link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <!-- Import Mapbox GL JS  -->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+  <!-- Import jQuery -->
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <!-- Import Mapbox GL Draw -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.js'></script>
+  <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css' type='text/css' />
+
+  
+
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/animate.css">
+  
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <link rel="stylesheet" href="css/flaticon.css">
+<link rel="stylesheet" href="css/style.css">
+<script src="alertifyjs/alertify.js" type="text/javascript"></script>
+
+<link href="alertifyjs/css/alertify.css" rel="stylesheet">
+<link href="alertifyjs/css/themes/default.css" rel="stylesheet">
+
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+        position: absolute;
+        top: 16%;
+        bottom: 0;
+        width: 100%;
+      }
+
+    .info-box {
+      position: absolute;
+      margin: 20px;
+      width: 25%;
+      top: 18%;
+      bottom: 40%;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      overflow-y: scroll;
+      font-family: sans-serif;
+      font-size: 0.8em;
+      line-height: 2em;
+    }
+
+    #info {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body style="background-image: url('images/bg_1.jpg')">
+ 
+      <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container1">
+            
+            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Smiley face" height="32" width="32">  <span> AUSIS</span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="fa fa-bars"></span> Menu
+          </button>
+          <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="https://www.andhrauniversity.edu.in/about/au-profile" class="nav-link">AU Profile</a></li>
+              <li class="nav-item"><a href="Department_locations.html" class="nav-link">Department Locations</a></li>
+              <li class="nav-item"><a href="getdirections.html" class="nav-link">Get Directions</a></li>
+              <li class="nav-item"><a href="Optimized_with_Directions.html" class="nav-link">Optimized Routes</a></li>
+                  <li class="nav-item"><a href="getnearbylocations.html" class="nav-link">NearBy Places</a></li>
+              
+              <li class="nav-item"><a href="attendance_map.html" class="nav-link">Attendance Map</a></li>
+              <li class="nav-item"><a href="https://forms.gle/7nCk3rDwbfpa4Bgt5" class="nav-link">Swachh AU</a></li>
+              <li class="nav-item"><a href="buildingrecognition.html" class="nav-link">Building Recognition</a></li>
+      
+          </ul>
+          </div>
+        </div>
+        </nav>
+    
+  <div id='map'></div>
+
+  <div class="info-box">
+    <div id="info">
+      <p>Draw your route using the draw tools on the right. To get the most accurate route match, draw points at regular intervals.</p>
+    </div>
+    <div id="directions"></div>
+  </div>
+
+  <script>
+    // Add your Mapbox access token
+    mapboxgl.accessToken = 'pk.eyJ1IjoibmF2am90aGJuIiwiYSI6ImNrNTJhNmNpZTE1bDQzbnFyMWMxZXRkazYifQ.rnHOJ9lVdiKfrVYlZVzqMg';
+    var map = new mapboxgl.Map({
+     container: 'map',
+     style: 'mapbox://styles/navjothbn/ck8hg1f4f02kz1ioh92ffvpeq',
+     center: [83.319903, 17.728981],
+     pitch:80,
+     bearing:-70, 
+     zoom: 17,
+     scrollZoom: true,
+ 
+    // maxBounds: bounds 
+   });
+ 
+
+    var draw = new MapboxDraw({
+      // Instead of showing all the draw tools, show only the line string and delete tools
+      displayControlsDefault: false,
+      controls: {
+        line_string: true,
+        trash: true
+      },
+      styles: [
+        // Set the line style for the user-input coordinates
+        {
+          "id": "gl-draw-line",
+          "type": "line",
+          "filter": ["all", ["==", "$type", "LineString"],
+            ["!=", "mode", "static"]
+          ],
+          "layout": {
+            "line-cap": "round",
+            "line-join": "round"
+          },
+          "paint": {
+            "line-color": "#438EE4",
+            "line-dasharray": [0.2, 2],
+            "line-width": 4,
+            "line-opacity": 0.7
+          }
+        },
+        // Style the vertex point halos
+        {
+          "id": "gl-draw-polygon-and-line-vertex-halo-active",
+          "type": "circle",
+          "filter": ["all", ["==", "meta", "vertex"],
+            ["==", "$type", "Point"],
+            ["!=", "mode", "static"]
+          ],
+          "paint": {
+            "circle-radius": 12,
+            "circle-color": "#FFF"
+          }
+        },
+        // Style the vertex points
+        {
+          "id": "gl-draw-polygon-and-line-vertex-active",
+          "type": "circle",
+          "filter": ["all", ["==", "meta", "vertex"],
+            ["==", "$type", "Point"],
+            ["!=", "mode", "static"]
+          ],
+          "paint": {
+            "circle-radius": 8,
+            "circle-color": "#438EE4",
+          }
+        },
+      ]
+    });
+
+    // Add the draw tool to the map
+    map.addControl(draw);
+
+    function updateRoute() {
+      // Set the profile
+      var profile = "driving";
+      // Get the coordinates that were drawn on the map
+      var data = draw.getAll();
+      var lastFeature = data.features.length - 1;
+      var coords = data.features[lastFeature].geometry.coordinates;
+      // Format the coordinates
+      var newCoords = coords.join(';')
+      // Set the radius for each coordinate pair to 25 meters
+      var radius = [];
+      coords.forEach(element => {
+        radius.push(25);
+      });
+      getMatch(newCoords, radius, profile);
+    }
+
+    // Make a Map Matching request
+    function getMatch(coordinates, radius, profile) {
+      // Separate the radiuses with semicolons
+      var radiuses = radius.join(';')
+      // Create the query
+      var query = 'https://api.mapbox.com/matching/v5/mapbox/' + profile + '/' + coordinates + '?geometries=geojson&radiuses=' + radiuses + '&steps=true&access_token=' + mapboxgl.accessToken;
+
+      $.ajax({
+        method: 'GET',
+        url: query
+      }).done(function(data) {
+        // Get the coordinates from the response
+        var coords = data.matchings[0].geometry;
+        // Draw the route on the map
+        addRoute(coords);
+        getInstructions(data.matchings[0]);
+      });
+    }
+
+    // Draw the Map Matching route as a new layer on the map
+    function addRoute(coords) {
+      // If a route is already loaded, remove it
+      if (map.getSource('route')) {
+        map.removeLayer('route')
+        map.removeSource('route')
+      } else {
+        map.addLayer({
+          "id": "route",
+          "type": "line",
+          "source": {
+            "type": "geojson",
+            "data": {
+              "type": "Feature",
+              "properties": {},
+              "geometry": coords
+            }
+          },
+          "layout": {
+            "line-join": "round",
+            "line-cap": "round"
+          },
+          "paint": {
+            "line-color": "#03AA46",
+            "line-width": 8,
+            "line-opacity": 0.8
+          }
+        });
+      };
+    }
+
+    function getInstructions(data) {
+      // Target the sidebar to add the instructions
+      var directions = document.getElementById('directions');
+
+      var legs = data.legs;
+      var tripDirections = [];
+      // Output the instructions for each step of each leg in the response object
+      for (var i = 0; i < legs.length; i++) {
+        var steps = legs[i].steps;
+        for (var j = 0; j < steps.length; j++) {
+          tripDirections.push('<br><li>' + steps[j].maneuver.instruction) + '</li>';
+        }
+      }
+      directions.innerHTML = '<br><h2>Trip duration: ' + Math.floor(data.duration / 60) + ' min.</h2>' + tripDirections;
+    }
+
+    // If the user clicks the delete draw button, remove the layer if it exists
+    function removeRoute() {
+      if (map.getSource('route')) {
+        map.removeLayer('route');
+        map.removeSource('route');
+      } else {
+        return;
+      }
+    }
+
+    map.on('draw.create', updateRoute);
+    map.on('draw.update', updateRoute);
+    map.on('draw.delete', removeRoute);
+  </script>
+
+
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+   
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

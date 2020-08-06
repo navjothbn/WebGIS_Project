@@ -1,0 +1,704 @@
+<!DOCTYPE HTML>
+<!--
+	Hielo by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>AUSIS</title>
+		<link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+
+
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+
+
+
+
+
+		<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+
+
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=vQA98UAN"></script>
+
+
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/animate.css">
+  
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="alertifyjs/alertify.js" type="text/javascript"></script>
+
+  <link href="alertifyjs/css/alertify.css" rel="stylesheet">
+  <link href="alertifyjs/css/themes/default.css" rel="stylesheet">
+
+
+
+<style>
+
+       
+        .box {
+            background: linear-gradient(to right, rgb(7, 224, 240), rgb(12, 94, 218));
+            color: white;
+            --width: auto;
+            --height: calc(var(--width) / 2);
+            width: var(--width);
+            height: var(--height);
+            text-align: center;
+            line-height: var(--height);
+            font-size: calc(var(--height) / 2.5);
+            font-family: sans-serif;
+            letter-spacing: 0.2em;
+            border: 1px solid darkgoldenrod;
+            border-radius: 2em;
+            transform: perspective(500px) rotateY(-0deg);
+            text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 2px 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .box:hover {
+            transform: perspective(500px) rotateY(15deg);
+            text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .box::before {
+            content: '';
+            position: absolute;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, white, transparent);
+            left: -50%;
+            transition: 0.5s;
+        }
+        
+        .box:hover::before {
+            left: 100%;
+		}
+		
+
+
+
+
+
+		* {
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+		  }
+		
+
+
+		  .sidebar {
+			background-color: #eee;
+		  position: absolute;
+		  width:auto;
+		  height:100%;
+		  top:25%;left:0;
+		  overflow:hidden;
+		  border-right:1px solid rgba(0,0,0,0.25);
+		  display: none;
+		  z-index: 1;
+		}
+
+		  .pad2 {
+			padding: 20px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		  }
+
+
+
+
+
+		  h1 {
+			font-size:22px;
+			margin:0;
+			font-weight:400;
+			line-height: 20px;
+			padding: 20px 2px;
+		  }
+	
+		  a {
+			color:#404040;
+			text-decoration:none;
+		  }
+	
+		  a:hover {
+			color:#101010;
+		  }
+	
+		  .heading {
+			background:#fff;
+			border-bottom:1px solid #eee;
+			min-height:60px;
+			line-height:60px;
+			padding:0 10px;
+			background-color: #007bff;
+			color: #fff;
+		  }
+	
+		  .listings {
+			height:100%;
+			overflow:auto;
+			padding-bottom:60px;
+		  }
+	
+		  .listings .item {
+			display:block;
+			border-bottom:1px solid #eee;
+			padding:10px;
+			text-decoration:none;
+		  }
+	
+		  .listings .item:last-child { border-bottom:none; }
+		  .listings .item .title {
+			display:block;
+			color:#007bff;
+			font-weight:700;
+		  }
+	
+		  .listings .item .title small { font-weight:400; }
+		  .listings .item.active .title,
+		  .listings .item .title:hover { color:#ee2011; }
+		  .listings .item.active {
+			background-color:#f8f8f8;
+		  }
+		  ::-webkit-scrollbar {
+			width:3px;
+			height:3px;
+			border-left:0;
+			background:rgba(0,0,0,0.1);
+		  }
+		  ::-webkit-scrollbar-track {
+			background:none;
+		  }
+		  ::-webkit-scrollbar-thumb {
+			background:#003585;
+			border-radius:0;
+		  }
+	
+		  .marker {
+			background-image: url('images/building_icon.png');
+			background-size: cover;
+			width: 30px;
+			height: 30px;
+			border-radius: 60%;
+			cursor: pointer;
+		  }
+	
+		  .clearfix { display:block; }
+		  .clearfix:after {
+			content:'.';
+			display:block;
+			height:0;
+			clear:both;
+			visibility:hidden;
+		  }
+	
+		  /* Marker tweaks */
+		  .mapboxgl-popup {
+			padding-bottom: 50px;
+		  }
+	
+		  .mapboxgl-popup-close-button {
+			display:none;
+		  }
+		  .mapboxgl-popup-content {
+			font:400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+			padding:0;
+			width:280px;
+		  }
+
+		  
+		  .mapboxgl-popup-content-wrapper {
+			padding:1%;
+		  }
+		  .mapboxgl-popup-content h3 {
+			background:#007bff;
+			color:#fff;
+			margin:0;
+			display:block;
+			padding:10px;
+			border-radius:3px 3px 0 0;
+			font-weight:500;
+			font-size: 20px;
+			margin-top:-15px;
+		  }
+	
+		  .mapboxgl-popup-content h4 {
+			margin:0;
+			display:block;
+			padding: 10px 10px 10px 10px;
+			font-weight:300;
+			font-size:15px;
+		  }
+	
+		  .mapboxgl-popup-content div {
+			padding:10px;
+		  }
+	
+		  .mapboxgl-container .leaflet-marker-icon {
+			cursor:pointer;
+		  }
+	
+		  .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+			margin-top: 15px;
+		  }
+	
+		  .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
+			border-bottom-color: #91c949;
+		  }
+
+
+
+</style>
+
+
+<script>
+		"use strict";
+		
+		!function() {
+		  var t = window.driftt = window.drift = window.driftt || [];
+		  if (!t.init) {
+			if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+			t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+			t.factory = function(e) {
+			  return function() {
+				var n = Array.prototype.slice.call(arguments);
+				return n.unshift(e), t.push(n), t;
+			  };
+			}, t.methods.forEach(function(e) {
+			  t[e] = t.factory(e);
+			}), t.load = function(t) {
+			  var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+			  o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+			  var i = document.getElementsByTagName("script")[0];
+			  i.parentNode.insertBefore(o, i);
+			};
+		  }
+		}();
+		drift.SNIPPET_VERSION = '0.3.1';
+		drift.load('5ti6ahfc4hry');
+		</script>
+  
+
+	</head>
+	<body class="subpage"   >
+
+
+		
+		<!-- Header -->
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+			<div class="container1">
+					
+					<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Smiley face" height="32" width="32">  <span> AUSIS</span></a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-bars"></span> Menu
+			  </button>
+			  <div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+						<li class="nav-item"><a href="https://www.andhrauniversity.edu.in/about/au-profile" class="nav-link">AU Profile</a></li>
+						<li class="nav-item"><a href="Department_locations.html" class="nav-link">Department Locations</a></li>
+						<li class="nav-item"><a href="getdirections.html" class="nav-link">Get Directions</a></li>
+						<li class="nav-item"><a href="Optimized_with_Directions.html" class="nav-link">Optimized Routes</a></li>
+						<li class="nav-item"><a href="getnearbylocations.html" class="nav-link">NearBy Places</a></li>
+						
+						<li class="nav-item"><a href="attendance_map.html" class="nav-link">Attendance Map</a></li>
+						<li class="nav-item"><a href="https://forms.gle/7nCk3rDwbfpa4Bgt5" class="nav-link">Swachh AU</a></li>
+						<li class="nav-item"><a href="buildingrecognition.html" class="nav-link">Building Recognition</a></li>
+		
+				</ul>
+			  </div>
+			</div>
+		  </nav>
+	
+
+		<!-- One -->
+			<div id="One" class="wrapper style3">
+
+
+
+
+					
+			
+				<div class="inner">
+
+
+
+
+						<div class="box" onclick="myFunction()">Click Here For Department Locations</div>
+
+
+
+					
+
+						<div id='sidebar' class='sidebar' style="height: 360px">
+								<div class='heading'>
+								  <h1>Department locations</h1>
+								  
+								</div>
+								<div id='listings' class='listings'></div>
+							  </div>
+				
+
+
+
+					
+					<div class="align-center">
+						<p>Or Else Click On the markers</p>
+						
+						
+
+						
+                       
+
+
+                       
+                        
+
+
+
+
+                       
+				
+					</div>
+				</div>
+			</div>
+
+
+           
+		<!-- Main -->
+
+		<div  class="wrapper style2" >
+		<div id="map" class="inner"   onclick="document.getElementById('sidebar').style.display='none'">
+			
+			</div>
+		</div>
+	</div>
+			
+	<script>
+            function myFunction() {
+               // document.getElementById("sidebar").style.display = "block";
+                var x = document.getElementById("sidebar");
+                if (x.style.display === "none") {
+                  x.style.display = "block";
+                } else {
+                  x.style.display = "none";
+                }
+             }
+    </script>
+			
+
+			   <script>
+
+
+
+					if (!('remove' in Element.prototype)) {
+						Element.prototype.remove = function() {
+						  if (this.parentNode) {
+							  this.parentNode.removeChild(this);
+						  }
+						};
+					  }
+				
+
+					mapboxgl.accessToken = 'pk.eyJ1IjoibmF2am90aGJuIiwiYSI6ImNrNTJhNmNpZTE1bDQzbnFyMWMxZXRkazYifQ.rnHOJ9lVdiKfrVYlZVzqMg';
+					/** 
+					 * Add the map to the page
+					*/
+					var map = new mapboxgl.Map({
+					  container: 'map',
+					  style: 'mapbox://styles/navjothbn/ck8hg1f4f02kz1ioh92ffvpeq',
+					  center: [83.319903, 17.728981],
+					  pitch:80,
+					  bearing:-70, 
+					  zoom: 17,
+					  scrollZoom: true
+					});
+			  
+
+
+					var stores = {
+						"type": "FeatureCollection",
+						"features": [
+				{ "type": "Feature", "properties": { "Name": "EEE Department Workshop", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth/North_Campus/EEE_Workshop_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:27:34.000", "Lon": 83.3191, "Lat": 17.7292, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/electricalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319163583154804, 17.729172233073999, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Department of Computer Science", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth/North_Campus/CSE_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:32:19.000", "Lon": 83.3182, "Lat": 17.73, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/cse" }, "geometry": { "type": "Point", "coordinates": [ 83.318145734871607, 17.729875362874001, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Department of Metallurgy", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth/North_Campus/Metallurgy_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:33:22.000", "Lon": 83.318, "Lat": 17.7305, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/metallurgyengg" }, "geometry": { "type": "Point", "coordinates": [ 83.317852288061104, 17.730541940089999, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Architecture Department Workshop", "descriptio": "<img style=\"max-width:250px;\"Navjoth/North_Campus/Architecture_Workshop_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:10:03.000", "Lon": 83.321, "Lat": 17.7272, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.3208925318567, 17.7272618807994, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Centre for Nanotechnology, & Centre of Excellence", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth/North_Campus/Nano_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:35:23.000", "Lon": 83.3188, "Lat": 17.73, "website_link": "https:\/\/www.andhrauniversity.edu.in\/academics\/research-centres\/nanotechnology-centre" }, "geometry": { "type": "Point", "coordinates": [ 83.318789323767803, 17.729978522682998, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "National Service Scheme Block", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth/North_Campus/NSS_Block.jpg\">", "Date": "2020\/02\/20", "Time": "11:12:57.000", "Lon": 83.3208, "Lat": 17.727, "website_link": "https:\/\/www.andhrauniversity.edu.in\/central-facilities\/nss" }, "geometry": { "type": "Point", "coordinates": [ 83.320767, 17.726994, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Civil Gallery", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Civil_Gallery_6.jpg\">", "Date": "2020\/02\/20", "Time": "12:12:11.000", "Lon": 83.3202, "Lat": 17.7274, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320391302382504, 17.727389303361701, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "AUCE Canteen", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/AUCE_Canteen_2.jpg\">", "Date": "2020\/02\/20", "Time": "12:09:21.000", "Lon": 83.3203, "Lat": 17.7301, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.320313972222195, 17.730063, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Architecture Department Gallery", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Architecture_Venustar_4.jpg\">", "Date": "2020\/02\/20", "Time": "11:10:54.000", "Lon": 83.3211, "Lat": 17.7272, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.3211665509086, 17.7272271410706, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "EEE Department Workshop", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/EEE_Workshop_6.jpg\">", "Date": "2020\/02\/20", "Time": "11:36:23.000", "Lon": 83.3191, "Lat": 17.7297, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/electricalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319151080745002, 17.729585217500102, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Civil department Workshop", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Civil_Workshop_7.jpg\">", "Date": "2020\/02\/20", "Time": "12:13:16.000", "Lon": 83.3206, "Lat": 17.7278, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320608727198405, 17.727855980541101, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Mechanical Department Workshop", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Mech_Workshop_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:22:18.000", "Lon": 83.3197, "Lat": 17.7283, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/mechengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319757952425803, 17.728288089335699, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Andhra University Pump House", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/AU_Pump_House.jpg\">", "Date": "2020\/02\/20", "Time": "11:48:01.000", "Lon": 83.3217, "Lat": 17.7321, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.321709972222195, 17.732086972222199, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Department of Marine Engineering", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Marine_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:40:32.000", "Lon": 83.3201, "Lat": 17.7305, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/marineengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320148, 17.730454972222201, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Institute of Electronics and Telecommunication Engineers", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/IETE_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:39:50.000", "Lon": 83.3198, "Lat": 17.7303, "website_link": "http:\/\/www.iete.org\/" }, "geometry": { "type": "Point", "coordinates": [ 83.319800972222197, 17.730315972222201, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Department of Architecture", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Architecture_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:14:19.000", "Lon": 83.3202, "Lat": 17.7266, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.320154972222198, 17.726556972222198, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Indian Institute Of Petroleum and Energy", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/IIPE.jpg\">", "Date": "2020\/02\/20", "Time": "11:57:10.000", "Lon": 83.3201, "Lat": 17.7286, "website_link": "http:\/\/www.iipe.ac.in\/" }, "geometry": { "type": "Point", "coordinates": [ 83.320098972222198, 17.728615, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "AUCE Andhra Bank", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Andhra_Bank.jpg\">", "Date": "2020\/02\/20", "Time": "11:55:35.000", "Lon": 83.3208, "Lat": 17.7282, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.320851817231897, 17.728120167024599, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Architecture Department Building", "descriptio": "<img style=\"max-width:250px;\" src=\"file:\/\/\/Users\/navjoth\/Desktop\/Navjoth\/North_Campus\/Architecture_Venustar_4.jpg\">", "Date": "2020\/02\/20", "Time": "11:14:41.000", "Lon": 83.3203, "Lat": 17.7266, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.320267972222197, 17.726556972222198, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Old SBI Building", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/SBI_Bank.jpg\">", "Date": "2020\/02\/20", "Time": "11:18:38.000", "Lon": 83.3194, "Lat": 17.7278, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.319434972222197, 17.727820972222201, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Telugu Acadamy Building", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Telugu Acadamy_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:12:09.000", "Lon": 83.3212, "Lat": 17.7269, "website_link": "https:\/\/onlinecareerguidence.com\/publisher_products.php?pub_id=12" }, "geometry": { "type": "Point", "coordinates": [ 83.321211, 17.726905972222202, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Architecture Entrance", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Architecture_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:13:28.000", "Lon": 83.3206, "Lat": 17.727, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/architecture" }, "geometry": { "type": "Point", "coordinates": [ 83.320633, 17.726980972222201, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Department Of Geo-Engineering", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Geo-Engineering_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:07:03.000", "Lon": 83.3211, "Lat": 17.7269, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/geoengg" }, "geometry": { "type": "Point", "coordinates": [ 83.321044614782494, 17.7268276392657, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "AUCE Health Center", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Architecture_Workshop_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:09:44.000", "Lon": 83.321, "Lat": 17.7273, "website_link": "https:\/\/www.andhrauniversity.edu.in\/central-facilities\/health-services" }, "geometry": { "type": "Point", "coordinates": [ 83.321025550908601, 17.727262433766299, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Department Of Mathematics", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Physics.jpg\">", "Date": "2020\/02\/20", "Time": "12:00:05.000", "Lon": 83.3197, "Lat": 17.7292, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/enggmathematics" }, "geometry": { "type": "Point", "coordinates": [ 83.319681, 17.7292239722223, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "AUCE Maintenance House", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/AU_Maintenance.jpg\">", "Date": "2020\/02\/20", "Time": "11:48:45.000", "Lon": 83.3219, "Lat": 17.7319, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.321854972222198, 17.731853972222201, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "AUCE Physical Department", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/PD_Office.jpg\">", "Date": "2020\/02\/20", "Time": "12:07:54.000", "Lon": 83.3202, "Lat": 17.7298, "website_link": "https:\/\/www.andhrauniversity.edu.in\/sports\/sports" }, "geometry": { "type": "Point", "coordinates": [ 83.320209, 17.729811, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "EEE Shuttle Court", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Shuttle_Court.jpg\">", "Date": "2020\/02\/20", "Time": "11:27:55.000", "Lon": 83.3189, "Lat": 17.7291, "website_link": "https:\/\/www.andhrauniversity.edu.in\/sports\/sports" }, "geometry": { "type": "Point", "coordinates": [ 83.318943861934699, 17.7290432696498, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Open Auditorium AUCE", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Open_Auditorium_1.jpg\">", "Date": "2020\/02\/20", "Time": "12:01:56.000", "Lon": 83.3203, "Lat": 17.729, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.320390721786794, 17.729022677614498, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Departent Of Mechanical Engineering", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Mech_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:19:32.000", "Lon": 83.3193, "Lat": 17.728, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/mechengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319201549840898, 17.728000778983699, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "SIEMENS LAB", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/SIEMENS_LAB.jpg\">", "Date": "2020\/02\/20", "Time": "11:23:49.000", "Lon": 83.319, "Lat": 17.7286, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.319089063378996, 17.728624701830999, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Electrical and Electronics Engineering", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/EEE_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:26:31.000", "Lon": 83.3187, "Lat": 17.729, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/electricalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.318676438913101, 17.728971286440999, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "EEE Department Building", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/EEE_4.jpg\">", "Date": "2020\/02\/20", "Time": "11:27:14.000", "Lon": 83.3191, "Lat": 17.7292, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/electricalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319030219509003, 17.729119633301998, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "New Building", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/New_block.jpg\">", "Date": "2020\/02\/20", "Time": "11:46:08.000", "Lon": 83.3213, "Lat": 17.7321, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-home" }, "geometry": { "type": "Point", "coordinates": [ 83.321282972222207, 17.732092972222201, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Department Of Instrumentation", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Instrumentation.jpg\">", "Date": "2020\/02\/20", "Time": "11:51:17.000", "Lon": 83.3236, "Lat": 17.7291, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/instrumenttechnology" }, "geometry": { "type": "Point", "coordinates": [ 83.323652668360296, 17.729016958009801, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Placement Office", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Placement_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:52:34.000", "Lon": 83.3227, "Lat": 17.7288, "website_link": "https:\/\/www.andhrauniversity.edu.in\/central-facilities\/training-and-placement" }, "geometry": { "type": "Point", "coordinates": [ 83.322749, 17.728815972222201, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Marine Engineering Workshop", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Marine_Workshop_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:41:54.000", "Lon": 83.3206, "Lat": 17.7311, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/marineengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320428254331105, 17.731175476916199, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Basketball Court", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Basketball.jpg\">", "Date": "2020\/02\/20", "Time": "12:06:11.000", "Lon": 83.3205, "Lat": 17.7297, "website_link": "https:\/\/www.andhrauniversity.edu.in\/sports\/sports" }, "geometry": { "type": "Point", "coordinates": [ 83.320524, 17.729665, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Dr.B.R. Ambedkar Hall", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Dr.B.R. Ambedkar_Hall.jpg\">", "Date": "2020\/02\/20", "Time": "11:20:36.000", "Lon": 83.3193, "Lat": 17.7282, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-facilities" }, "geometry": { "type": "Point", "coordinates": [ 83.319367684845005, 17.728286440812202, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Department Of Physics", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Physics.jpg\">", "Date": "2020\/02\/20", "Time": "12:00:23.000", "Lon": 83.3196, "Lat": 17.7294, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/" }, "geometry": { "type": "Point", "coordinates": [ 83.319649972222194, 17.729352972222198, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Principal Block AUCE", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Prncipal_Block_4.jpg\">", "Date": "2020\/02\/20", "Time": "11:58:44.000", "Lon": 83.32, "Lat": 17.7288, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-principal" }, "geometry": { "type": "Point", "coordinates": [ 83.319976972222193, 17.728756, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Civil Engineering Workshop", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Civil_Workshop_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:17:37.000", "Lon": 83.3197, "Lat": 17.7277, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319698, 17.727709, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "AUCE Out Gate", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/AUCE_Entrance_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:47:26.000", "Lon": 83.3216, "Lat": 17.7323, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-home" }, "geometry": { "type": "Point", "coordinates": [ 83.321622, 17.732323, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Electronics and Communication Engineering", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/ECE_3.jpg\">", "Date": "2020\/02\/20", "Time": "11:37:38.000", "Lon": 83.3196, "Lat": 17.7299, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/ece" }, "geometry": { "type": "Point", "coordinates": [ 83.319614389196403, 17.729998056366199, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Civil Engineering Workshop", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Civil_Workshop_8.jpg\">", "Date": "2020\/02\/20", "Time": "12:12:57.000", "Lon": 83.3206, "Lat": 17.7276, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320560813952, 17.72768536261, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Civil Department Workshop", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Civil_Workshop_4.jpg\">", "Date": "2020\/02\/20", "Time": "11:16:48.000", "Lon": 83.3198, "Lat": 17.7276, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319811938184301, 17.727576117558399, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Department Of Chemical Engineering", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Chemical_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:53:57.000", "Lon": 83.3216, "Lat": 17.7287, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/chemicalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.321689180991001, 17.7286017161444, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Chemical Department PG Block", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Chemical_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:52:14.000", "Lon": 83.3229, "Lat": 17.7289, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/chemicalengg" }, "geometry": { "type": "Point", "coordinates": [ 83.323003569317706, 17.728811793360101, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Civil Department New Building", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Civil_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:17:52.000", "Lon": 83.3197, "Lat": 17.7278, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.319912347631401, 17.727657936487699, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "AU Teacher mutually Aided Co-Operative Society", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/AUTMACS_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:45:32.000", "Lon": 83.3213, "Lat": 17.7318, "website_link": "https:\/\/www.andhrauniversity.edu.in\/administration-wing\/academic-affairs" }, "geometry": { "type": "Point", "coordinates": [ 83.321274, 17.731787, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "AUCE LIbrary", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Library_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:34:49.000", "Lon": 83.3188, "Lat": 17.73, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-arts-and-commerce\/departments\/library-and-information-science" }, "geometry": { "type": "Point", "coordinates": [ 83.318862779824599, 17.729984987536898, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "New Classroom Complex", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/NCRC_2.jpg\">", "Date": "2020\/02\/20", "Time": "11:30:00.000", "Lon": 83.3177, "Lat": 17.7291, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-home" }, "geometry": { "type": "Point", "coordinates": [ 83.317634143244405, 17.729070248307899, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Y V S Murthy Auditorium", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/YVS_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:43:39.000", "Lon": 83.3205, "Lat": 17.7317, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-home" }, "geometry": { "type": "Point", "coordinates": [ 83.320505972222193, 17.731674, 0.0 ] } },
+				{ "type": "Feature", "properties": { "Name": "Department of Civil Engineering", "descriptio": "<img style=\"max-width:250px;\" src=\"Navjoth\/North_Campus\/Civil_1.jpg\">", "Date": "2020\/02\/20", "Time": "11:16:16.000", "Lon": 83.3202, "Lat": 17.7273, "website_link": "https:\/\/www.andhrauniversity.edu.in\/college\/college-of-engineering\/engineering-departments\/civilengg" }, "geometry": { "type": "Point", "coordinates": [ 83.320160972222197, 17.727306972222198, 0.0 ] } }
+				]
+				
+					  };
+
+
+
+
+					  stores.features.forEach(function(store, i){
+						store.properties.id = i;
+					  });
+				
+					  /**
+					   * Wait until the map loads to make changes to the map.
+					  */
+					  map.on('load', function (e) {
+						/** 
+						 * This is where your '.addLayer()' used to be, instead
+						 * add only the source without styling a layer
+						*/
+						map.addSource("places", {
+						  "type": "geojson",
+						  "data": stores
+						});
+				
+						/**
+						 * Add all the things to the page:
+						 * - The location listings on the side of the page
+						 * - The markers onto the map
+						*/
+						buildLocationList(stores);
+						addMarkers();
+					  });
+				
+					  /**
+					   * Add a marker to the map for every store listing.
+					  **/
+					  function addMarkers() {
+						/* For each feature in the GeoJSON object above: */
+						stores.features.forEach(function(marker) {
+						  /* Create a div element for the marker. */
+						  var el = document.createElement('div');
+						  /* Assign a unique `id` to the marker. */
+						  el.id = "marker-" + marker.properties.id;
+						  /* Assign the `marker` class to each marker for styling. */
+						  el.className = 'marker';
+						  
+						  /**
+						   * Create a marker using the div element
+						   * defined above and add it to the map.
+						  **/
+						  new mapboxgl.Marker(el, { offset: [0, -23] })
+							.setLngLat(marker.geometry.coordinates)
+							.addTo(map);
+				
+						  /**
+						   * Listen to the element and when it is clicked, do three things:
+						   * 1. Fly to the point
+						   * 2. Close all other popups and display popup for clicked store
+						   * 3. Highlight listing in sidebar (and remove highlight for all other listings)
+						  **/
+						  el.addEventListener('click', function(e){
+							/* Fly to the point */
+							flyToStore(marker);
+							/* Close all other popups and display popup for clicked store */
+							createPopUp(marker);
+							/* Highlight listing in sidebar */
+							var activeItem = document.getElementsByClassName('active');
+							e.stopPropagation();
+							if (activeItem[0]) {
+							  activeItem[0].classList.remove('active');
+							}
+							var listing = document.getElementById('listing-' + marker.properties.id);
+							listing.classList.add('active');
+						  });
+						});
+					  }
+				
+					  /**
+					   * Add a listing for each store to the sidebar.
+					  **/
+					  function buildLocationList(data) {
+						data.features.forEach(function(store, i){
+						  /**
+						   * Create a shortcut for `store.properties`,
+						   * which will be used several times below.
+						  **/
+						  var prop = store.properties;
+				
+						  /* Add a new listing section to the sidebar. */
+						  var listings = document.getElementById('listings');
+						  var listing = listings.appendChild(document.createElement('div'));
+						  /* Assign a unique `id` to the listing. */
+						  listing.id = "listing-" + prop.id;
+						  /* Assign the `item` class to each listing for styling. */
+						  listing.className = 'item';
+				
+						  /* Add the link to the individual listing created above. */
+						  var link = listing.appendChild(document.createElement('a'));
+						  link.href = '#';
+						  link.className = 'title';
+						  link.id = "link-" + prop.id;
+						  link.innerHTML = prop.Name;
+				
+						  /* Add details to the individual listing. */
+						  var details = listing.appendChild(document.createElement('div'));
+						  details.innerHTML = "lat &nbsp "+prop.Lat+" &nbsplon &nbsp"+prop.Lon;
+						 
+				
+						  /**
+						   * Listen to the element and when it is clicked, do four things:
+						   * 1. Update the `currentFeature` to the store associated with the clicked link
+						   * 2. Fly to the point
+						   * 3. Close all other popups and display popup for clicked store
+						   * 4. Highlight listing in sidebar (and remove highlight for all other listings)
+						  **/
+						  link.addEventListener('click', function(e){
+							for (var i=0; i < data.features.length; i++) {
+							  if (this.id === "link-" + data.features[i].properties.id) {
+								var clickedListing = data.features[i];
+								flyToStore(clickedListing);
+								createPopUp(clickedListing);
+							  }
+							}
+							var activeItem = document.getElementsByClassName('active');
+							if (activeItem[0]) {
+							  activeItem[0].classList.remove('active');
+							}
+							this.parentNode.classList.add('active');
+						  });
+						});
+					  }
+				
+					  /**
+					   * Use Mapbox GL JS's `flyTo` to move the camera smoothly
+					   * a given center point.
+					  **/
+					  function flyToStore(currentFeature) {
+						map.flyTo({
+						  center: currentFeature.geometry.coordinates,
+						  zoom: 20
+						});
+					  }
+				
+					  /**
+					   * Create a Mapbox GL JS `Popup`.
+					  **/
+					  function createPopUp(currentFeature) {
+						var popUps = document.getElementsByClassName('mapboxgl-popup');
+						if (popUps[0]) popUps[0].remove();
+						var popup = new mapboxgl.Popup({closeOnClick: true})
+						  .setLngLat(currentFeature.geometry.coordinates)
+						  .setHTML('<h3><center>Location</center></h3>' +
+							'<h4 class="pop" id="pop"><center><b>' + currentFeature.properties.Name + '</b></center><center align="right">'+currentFeature.properties.descriptio+'</center></h4></b><center><button style="background-color:#007bff;color:#000000"><a id="para" href='+currentFeature.properties.website_link+'>Click Here For More Info</a></button></center>')
+						  .addTo(map);
+				// myfunctionpop();
+						  responsiveVoice.speak(document.getElementById("pop").textContent);
+				
+						 
+				}
+
+
+
+				map.addControl(
+					new mapboxgl.GeolocateControl({
+					positionOptions: {
+					enableHighAccuracy: true
+					},
+					trackUserLocation: true
+					})
+					);
+
+
+			   </script>
+
+		
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery-migrate-3.0.1.min.js"></script>
+			<script src="js/popper.min.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+			<script src="js/jquery.easing.1.3.js"></script>
+			<script src="js/jquery.waypoints.min.js"></script>
+			<script src="js/jquery.stellar.min.js"></script>
+			<script src="js/jquery.animateNumber.min.js"></script>
+			<script src="js/owl.carousel.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>
+			<script src="js/scrollax.min.js"></script>
+		   
+			<script src="js/main.js"></script>
+
+	</body>
+</html>
